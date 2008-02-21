@@ -8,7 +8,6 @@
 
 #import "CustomURLHandler.h"
 
-
 @implementation MailApp(CustomURLHandler)
 - (BOOL)_ha_handleClickOnURL:(id)url visibleText:(id)linkText message:(id)msg window:(id)containerWindow dontSwitch:(BOOL)fp24 {
 	NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];

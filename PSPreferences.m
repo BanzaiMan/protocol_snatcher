@@ -40,19 +40,4 @@
 	
 }
 
-
-/* rewrite rule observation */
-
-- (void) startObservingRewriteRule: (id)rule {
-	[rule addObserver:self forKeyPath:@"matchRegex" options:NSKeyValueObservingOptionOld context:NULL];
-	[rule addObserver:self forKeyPath:@"replaceText" options:NSKeyValueObservingOptionOld context:NULL];
-	[rule addObserver:self forKeyPath:@"shareToMount" options:NSKeyValueObservingOptionOld context:NULL];
-}
-
-- (void) stopObservingRewriteRule: (id)rule {
-	[rule removeObserver:self forKeyPath:@"matchRegex"];
-	[rule removeObserver:self forKeyPath:@"replaceText"];
-	[rule removeObserver:self forKeyPath:@"shareToMount"];
-}
-
 @end

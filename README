@@ -2,3 +2,13 @@
 
 Mail URL Rewriter (MURLR)
 
+MURLR is a Mail.app plugin which processes URLs you click on before passing it to the OS.  For example, if you have a URL which looks like
+  
+
+USAGE
+* When you install MURLR, a preference panel appears in your Mail.app.
+A URL rewrite rule is composed of three properties.
+  Match regular expression will match against the entire URL
+
+KNOWN ISSUES
+* 

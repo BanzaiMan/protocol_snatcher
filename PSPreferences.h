@@ -13,7 +13,4 @@
 
 }
 
-- (void) startObservingRewriteRule: (id)rule;
-- (void) stopObservingRewriteRule: (id)rule;
-
 @end

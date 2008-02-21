@@ -14,10 +14,9 @@
 
 	IBOutlet NSTableView *rulesTableView;
 	IBOutlet NSButton *removeButoon;
-//	IBOutlet NSBox *rulesViewBox;
 	
 	NSMutableArray *rules;
-	/* rules is an array of dictionaries, each dictionary being a rule */
+	/* rules is an array of dictionaries, each dictionary representing a rule */
 	BOOL _canRemove;
 }
 
