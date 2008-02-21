@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		93E925240A4C8BD70039ADAD /* ProtocolSnatcher Installer */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 93E9252F0A4C8C230039ADAD /* Build configuration list for PBXAggregateTarget "ProtocolSnatcher Installer" */;
+			buildPhases = (
+				93E925290A4C8BE80039ADAD /* Compile Installer Applescript */,
+				93E925320A4C8C2D0039ADAD /* Create disk image */,
+			);
+			dependencies = (
+				93E925280A4C8BE30039ADAD /* PBXTargetDependency */,
+			);
+			name = "ProtocolSnatcher Installer";
+			productName = "ProtocolSnatcher Installer";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		4A25BF580D6275D9007AB34A /* CustomURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */; };
+		4A30027D0D6B626700814E8A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4A30027C0D6B626700814E8A /* README */; };
+		4A4A8D550D672CF20010005D /* OgreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4A8D540D672CF20010005D /* OgreKit.framework */; };
+		4A4A8D590D672CFA0010005D /* OgreKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A4A8D540D672CF20010005D /* OgreKit.framework */; };
+		4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A8EF90D6731B70010005D /* MURLR.tiff */; };
+		4A4A8F800D6762250010005D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49B7048680CD000E48DA /* Info.plist */; };
+		4A6A98970D68E0B900DE08F6 /* PSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A98960D68E0B900DE08F6 /* PSPreferences.m */; };
+		4AD3E7BE0D65584D00A5D7B5 /* PSPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */; };
+		4AD3E7DF0D655F1700A5D7B5 /* PSPreferencesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */; };
+		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
+		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		93E925510A4C8D530039ADAD /* ProtocolSnatcher.icns in Resources */ = {isa = PBXBuildFile; fileRef = 93E925500A4C8D530039ADAD /* ProtocolSnatcher.icns */; };
+		93E925550A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E925540A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m */; };
+		93E9268F0A4C8E020039ADAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9268E0A4C8E020039ADAD /* main.m */; };
+		93E9269B0A4C8E6F0039ADAD /* NSObject+ProtocolSnatcherSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9269A0A4C8E6F0039ADAD /* NSObject+ProtocolSnatcherSwizzle.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93E925270A4C8BE30039ADAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = ProtocolSnatcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4AD3E62B0D65456F00A5D7B5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A4A8D590D672CFA0010005D /* OgreKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		4A25BED40D626E8A007AB34A /* SyncableApp-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SyncableApp-Protocol.h"; sourceTree = "<group>"; };
+		4A25BF560D6275D9007AB34A /* CustomURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLHandler.h; sourceTree = "<group>"; };
+		4A25BF570D6275D9007AB34A /* CustomURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLHandler.m; sourceTree = "<group>"; };
+		4A30027C0D6B626700814E8A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		4A4A8CB40D6724880010005D /* appkit-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "appkit-headers.h"; sourceTree = "<group>"; };
+		4A4A8CB50D6724880010005D /* mail-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mail-headers.h"; sourceTree = "<group>"; };
+		4A4A8D540D672CF20010005D /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OgreKit.framework; path = ../../Library/Frameworks/OgreKit.framework; sourceTree = SOURCE_ROOT; };
+		4A4A8EF90D6731B70010005D /* MURLR.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = MURLR.tiff; path = Resources/MURLR.tiff; sourceTree = "<group>"; };
+		4A6A94950D68771600DE08F6 /* ProtocolSnatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcher.h; sourceTree = "<group>"; };
+		4A6A98950D68E0B900DE08F6 /* PSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferences.h; sourceTree = "<group>"; };
+		4A6A98960D68E0B900DE08F6 /* PSPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferences.m; sourceTree = "<group>"; };
+		4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = PSPreferences.nib; path = Resources/PSPreferences.nib; sourceTree = "<group>"; };
+		4AD3E7DD0D655F1700A5D7B5 /* PSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferencesModule.h; sourceTree = "<group>"; };
+		4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferencesModule.m; sourceTree = "<group>"; };
+		4AD3E90A0D6565BD00A5D7B5 /* NSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferences.h; sourceTree = "<group>"; };
+		4AD3E90B0D6565ED00A5D7B5 /* NSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferencesModule.h; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* ProtocolSnatcher.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProtocolSnatcher.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		93E925500A4C8D530039ADAD /* ProtocolSnatcher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = ProtocolSnatcher.icns; path = Resources/ProtocolSnatcher.icns; sourceTree = "<group>"; };
+		93E925520A4C8D570039ADAD /* ProtocolSnatcher.icns.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = ProtocolSnatcher.icns.r; path = Resources/ProtocolSnatcher.icns.r; sourceTree = "<group>"; };
+		93E925530A4C8D660039ADAD /* ProtocolSnatcherBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcherBundle.h; sourceTree = "<group>"; };
+		93E925540A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolSnatcherBundle.m; sourceTree = "<group>"; };
+		93E925560A4C8D710039ADAD /* Install.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; name = Install.applescript; path = Installer/Install.applescript; sourceTree = "<group>"; };
+		93E925570A4C8D780039ADAD /* Installer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Installer.icns; path = Installer/Installer.icns; sourceTree = "<group>"; };
+		93E925580A4C8D870039ADAD /* MailApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailApp.h; sourceTree = "<group>"; };
+		93E925590A4C8D8D0039ADAD /* MailApp-MFUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MailApp-MFUserAgent.h"; sourceTree = "<group>"; };
+		93E9255A0A4C8D930039ADAD /* ProtocolSnatcher_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcher_Prefix.pch; sourceTree = "<group>"; };
+		93E9268E0A4C8E020039ADAD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		93E926930A4C8E430039ADAD /* MFUserAgent-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFUserAgent-Protocol.h"; sourceTree = "<group>"; };
+		93E926940A4C8E4A0039ADAD /* MVMailboxSelectionOwner-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVMailboxSelectionOwner-Protocol.h"; sourceTree = "<group>"; };
+		93E926950A4C8E530039ADAD /* MVMailBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVMailBundle.h; sourceTree = "<group>"; };
+		93E926960A4C8E570039ADAD /* MVMailboxSelectionOwner-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVMailboxSelectionOwner-Protocol.h"; sourceTree = "<group>"; };
+		93E926970A4C8E630039ADAD /* NSObject+ProtocolSnatcherSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ProtocolSnatcherSwizzle.h"; sourceTree = "<group>"; };
+		93E9269A0A4C8E6F0039ADAD /* NSObject+ProtocolSnatcherSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ProtocolSnatcherSwizzle.m"; sourceTree = "<group>"; };
+		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D5B49B3048680CD000E48DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				4A4A8D550D672CF20010005D /* OgreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* ProtocolSnatcher */ = {
+			isa = PBXGroup;
+			children = (
+				4A4A8CB30D6724880010005D /* class-dump */,
+				93E925060A4C8AA70039ADAD /* Apple Headers */,
+				93E9250A0A4C8AC50039ADAD /* Customization Categories */,
+				93E9250B0A4C8AD80039ADAD /* Customization Classes */,
+				93E9250F0A4C8AEF0039ADAD /* ProtocolSnatcher Headers */,
+				93E9250C0A4C8AE20039ADAD /* ProtocolSnatcher Classes */,
+				4AD3E7C10D655D9D00A5D7B5 /* ProtocolSnatcher Preferences */,
+				08FB77AFFE84173DC02AAC07 /* Installer */,
+				93E9268D0A4C8DF50039ADAD /* Other Sources */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				19C28FB8FE9D52D311CA2CBB /* Products */,
+			);
+			name = ProtocolSnatcher;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
+				1058C7AEFEA557BF11CA2CBB /* Other Frameworks */,
+			);
+			name = "Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A4A8EF90D6731B70010005D /* MURLR.tiff */,
+				93E925570A4C8D780039ADAD /* Installer.icns */,
+				93E925500A4C8D530039ADAD /* ProtocolSnatcher.icns */,
+				93E925520A4C8D570039ADAD /* ProtocolSnatcher.icns.r */,
+				8D5B49B7048680CD000E48DA /* Info.plist */,
+				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */,
+				4A30027C0D6B626700814E8A /* README */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Installer */ = {
+			isa = PBXGroup;
+			children = (
+				93E925560A4C8D710039ADAD /* Install.applescript */,
+			);
+			name = Installer;
+			sourceTree = "<group>";
+		};
+		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A4A8D540D672CF20010005D /* OgreKit.framework */,
+				089C167FFE841241C02AAC07 /* AppKit.framework */,
+				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FB8FE9D52D311CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D5B49B6048680CD000E48DA /* ProtocolSnatcher.mailbundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A4A8C4F0D671CCB0010005D /* AppKit Headers */ = {
+			isa = PBXGroup;
+			children = (
+				4AD3E90A0D6565BD00A5D7B5 /* NSPreferences.h */,
+				4AD3E90B0D6565ED00A5D7B5 /* NSPreferencesModule.h */,
+			);
+			name = "AppKit Headers";
+			path = AppKit;
+			sourceTree = "<group>";
+		};
+		4A4A8CB30D6724880010005D /* class-dump */ = {
+			isa = PBXGroup;
+			children = (
+				4A4A8CB40D6724880010005D /* appkit-headers.h */,
+				4A4A8CB50D6724880010005D /* mail-headers.h */,
+			);
+			path = "class-dump";
+			sourceTree = "<group>";
+		};
+		4AD3E7C10D655D9D00A5D7B5 /* ProtocolSnatcher Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				4A6A98950D68E0B900DE08F6 /* PSPreferences.h */,
+				4A6A98960D68E0B900DE08F6 /* PSPreferences.m */,
+				4AD3E7DD0D655F1700A5D7B5 /* PSPreferencesModule.h */,
+				4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */,
+			);
+			name = "ProtocolSnatcher Preferences";
+			sourceTree = "<group>";
+		};
+		93E925060A4C8AA70039ADAD /* Apple Headers */ = {
+			isa = PBXGroup;
+			children = (
+				4A4A8C4F0D671CCB0010005D /* AppKit Headers */,
+				93E925100A4C8B2D0039ADAD /* Mail Headers */,
+			);
+			name = "Apple Headers";
+			sourceTree = "<group>";
+		};
+		93E9250A0A4C8AC50039ADAD /* Customization Categories */ = {
+			isa = PBXGroup;
+			children = (
+				93E926990A4C8E660039ADAD /* Swizzling */,
+				93E9251C0A4C8B920039ADAD /* Models */,
+				93E9251B0A4C8B8D0039ADAD /* Views */,
+				93E9251A0A4C8B860039ADAD /* Controllers */,
+			);
+			name = "Customization Categories";
+			sourceTree = "<group>";
+		};
+		93E9250B0A4C8AD80039ADAD /* Customization Classes */ = {
+			isa = PBXGroup;
+			children = (
+				93E9251F0A4C8BA30039ADAD /* Models */,
+				93E9251E0A4C8B9F0039ADAD /* Views */,
+				93E9251D0A4C8B980039ADAD /* Controllers */,
+			);
+			name = "Customization Classes";
+			sourceTree = "<group>";
+		};
+		93E9250C0A4C8AE20039ADAD /* ProtocolSnatcher Classes */ = {
+			isa = PBXGroup;
+			children = (
+				93E925230A4C8BBD0039ADAD /* Models */,
+				93E925220A4C8BB90039ADAD /* Views */,
+				93E925210A4C8BB40039ADAD /* Controllers */,
+			);
+			name = "ProtocolSnatcher Classes";
+			sourceTree = "<group>";
+		};
+		93E9250F0A4C8AEF0039ADAD /* ProtocolSnatcher Headers */ = {
+			isa = PBXGroup;
+			children = (
+				93E9255A0A4C8D930039ADAD /* ProtocolSnatcher_Prefix.pch */,
+				4A6A94950D68771600DE08F6 /* ProtocolSnatcher.h */,
+			);
+			name = "ProtocolSnatcher Headers";
+			sourceTree = "<group>";
+		};
+		93E925100A4C8B2D0039ADAD /* Mail Headers */ = {
+			isa = PBXGroup;
+			children = (
+				93E926950A4C8E530039ADAD /* MVMailBundle.h */,
+				93E925580A4C8D870039ADAD /* MailApp.h */,
+				93E925590A4C8D8D0039ADAD /* MailApp-MFUserAgent.h */,
+				4A25BED40D626E8A007AB34A /* SyncableApp-Protocol.h */,
+				93E926930A4C8E430039ADAD /* MFUserAgent-Protocol.h */,
+				93E926940A4C8E4A0039ADAD /* MVMailboxSelectionOwner-Protocol.h */,
+				93E926960A4C8E570039ADAD /* MVMailboxSelectionOwner-Protocol.h */,
+			);
+			name = "Mail Headers";
+			path = Mail;
+			sourceTree = "<group>";
+		};
+		93E9251A0A4C8B860039ADAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A25BF560D6275D9007AB34A /* CustomURLHandler.h */,
+				4A25BF570D6275D9007AB34A /* CustomURLHandler.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		93E9251B0A4C8B8D0039ADAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		93E9251C0A4C8B920039ADAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		93E9251D0A4C8B980039ADAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		93E9251E0A4C8B9F0039ADAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		93E9251F0A4C8BA30039ADAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		93E925210A4C8BB40039ADAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				93E925530A4C8D660039ADAD /* ProtocolSnatcherBundle.h */,
+				93E925540A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		93E925220A4C8BB90039ADAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		93E925230A4C8BBD0039ADAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		93E9268D0A4C8DF50039ADAD /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				93E9268E0A4C8E020039ADAD /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		93E926990A4C8E660039ADAD /* Swizzling */ = {
+			isa = PBXGroup;
+			children = (
+				93E926970A4C8E630039ADAD /* NSObject+ProtocolSnatcherSwizzle.h */,
+				93E9269A0A4C8E6F0039ADAD /* NSObject+ProtocolSnatcherSwizzle.m */,
+			);
+			name = Swizzling;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D5B49AC048680CD000E48DA /* ProtocolSnatcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ProtocolSnatcher" */;
+			buildPhases = (
+				8D5B49AF048680CD000E48DA /* Resources */,
+				8D5B49B1048680CD000E48DA /* Sources */,
+				8D5B49B3048680CD000E48DA /* Frameworks */,
+				4AD3E62B0D65456F00A5D7B5 /* CopyFiles */,
+				93E925400A4C8CD70039ADAD /* Set Bundle Bit */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProtocolSnatcher;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = ProtocolSnatcher;
+			productReference = 8D5B49B6048680CD000E48DA /* ProtocolSnatcher.mailbundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "ProtocolSnatcher" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 089C166AFE841209C02AAC07 /* ProtocolSnatcher */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D5B49AC048680CD000E48DA /* ProtocolSnatcher */,
+				93E925240A4C8BD70039ADAD /* ProtocolSnatcher Installer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D5B49AF048680CD000E48DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A4A8F800D6762250010005D /* Info.plist in Resources */,
+				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				93E925510A4C8D530039ADAD /* ProtocolSnatcher.icns in Resources */,
+				4AD3E7BE0D65584D00A5D7B5 /* PSPreferences.nib in Resources */,
+				4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */,
+				4A30027D0D6B626700814E8A /* README in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93E925290A4C8BE80039ADAD /* Compile Installer Applescript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Installer Applescript";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "input_script=\"$SRCROOT/Installer/Install.applescript\"\ninput_icon=\"$SRCROOT/Installer/Installer.icns\"\n\noutput_app=\"$TARGET_BUILD_DIR/Install ProtocolSnatcher.app\"\n\n# compile the script into an application\nosacompile  -o \"$output_app\" \"$input_script\"\n\n# and set the icon for the application\ncp \"$input_icon\" \"$output_app/Contents/Resources/applet.icns\"\n\n";
+		};
+		93E925320A4C8C2D0039ADAD /* Create disk image */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create disk image";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n# This build phase creates a disk image containing the plugin and an installer.\n#\nvolume_name=\"ProtocolSnatcher\"\ndisk_image_name=\"ProtocolSnatcher.dmg\"\n\noutput_dmg=\"$TARGET_BUILD_DIR/$disk_image_name\"\nrm \"$TARGET_BUILD_DIR/\"*.dmg 2>/dev/null\n\nhdiutil create -fs HFS+ -srcfolder \"$TARGET_BUILD_DIR\" -volname \"$volume_name\" -format UDZO -imagekey zlig-level=9 -o \"$output_dmg\"\n";
+		};
+		93E925400A4C8CD70039ADAD /* Set Bundle Bit */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Bundle Bit";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# We set the 'bundle bit' so that the plugin\n# appears as a single file, rather than as a folder.\n\n/Developer/Tools/SetFile -a B \"$TARGET_BUILD_DIR/$TARGET_NAME.$WRAPPER_EXTENSION\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D5B49B1048680CD000E48DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93E925550A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m in Sources */,
+				93E9268F0A4C8E020039ADAD /* main.m in Sources */,
+				93E9269B0A4C8E6F0039ADAD /* NSObject+ProtocolSnatcherSwizzle.m in Sources */,
+				4A25BF580D6275D9007AB34A /* CustomURLHandler.m in Sources */,
+				4AD3E7DF0D655F1700A5D7B5 /* PSPreferencesModule.m in Sources */,
+				4A6A98970D68E0B900DE08F6 /* PSPreferences.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93E925280A4C8BE30039ADAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* ProtocolSnatcher */;
+			targetProxy = 93E925270A4C8BE30039ADAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C167EFE841241C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB913B08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+				);
+				BUNDLE_LOADER = /Applications/Mail.app/Contents/MacOS/Mail;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../Library/Frameworks\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ProtocolSnatcher_Prefix.pch;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = ProtocolSnatcher;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				USER_HEADER_SEARCH_PATHS = /usr/include;
+				WRAPPER_EXTENSION = mailbundle;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		1DEB913C08733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+				);
+				BUNDLE_LOADER = /Applications/Mail.app/Contents/MacOS/Mail;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../Library/Frameworks\"";
+				GCC_ENABLE_OBJC_GC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ProtocolSnatcher_Prefix.pch;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = ProtocolSnatcher;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				USER_HEADER_SEARCH_PATHS = /usr/include;
+				WRAPPER_EXTENSION = mailbundle;
+			};
+			name = Release;
+		};
+		1DEB913F08733D840010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		1DEB914008733D840010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+		93E925300A4C8C230039ADAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "ProtocolSnatcher Installer";
+			};
+			name = Debug;
+		};
+		93E925310A4C8C230039ADAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				PRODUCT_NAME = "ProtocolSnatcher Installer";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ProtocolSnatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913B08733D840010E9CD /* Debug */,
+				1DEB913C08733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "ProtocolSnatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB913F08733D840010E9CD /* Debug */,
+				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93E9252F0A4C8C230039ADAD /* Build configuration list for PBXAggregateTarget "ProtocolSnatcher Installer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E925300A4C8C230039ADAD /* Debug */,
+				93E925310A4C8C230039ADAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
