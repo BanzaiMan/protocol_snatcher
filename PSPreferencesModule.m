@@ -8,8 +8,6 @@
 /* This is the data source for an NSTableView */
 
 #import "PSPreferencesModule.h"
-#define MyPrivateTableViewDataType @"PSURLRewriteRuleDataType"
-#define MyPluginVersion @"0.1"
 
 @implementation PSPreferencesModule
 
@@ -28,8 +26,6 @@
 }
 
 - (IBAction) addRewriteRule: (id) sender {
-	NSLog(@"addRewriteRule");
-	
 	// a new rule with default values
 	NSMutableDictionary *newRule = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 		@"regular expression", @"matchRegex",
@@ -50,7 +46,6 @@
 - (IBAction) removeRewriteRule: (id) sender {
 	if ([rulesTableView selectedRow] < 0) return; // make sure selected row is sane
 	if ([rules count] > 0) {
-//		NSLog(@"removing a rule");
 		[rules removeObjectAtIndex:[rulesTableView selectedRow]];
 		[rulesTableView reloadData];
 	}
@@ -78,7 +73,6 @@
 	[rules replaceObjectAtIndex:rowIndex withObject:rule];
 	[[NSUserDefaults standardUserDefaults] setObject:rules forKey:@"URLRewriteRules"];
 	[rulesTableView reloadData];
-//	NSLog(@"in tableView:setObjectValue:forTableColumn:row:");
 }
 
 - (void) tableViewSelectionDidChange: (NSNotification *)aNotification {
@@ -109,26 +103,30 @@
 	NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
 	int dragRow = [rowIndexes firstIndex];
 
+	// ignore this drag unless it is a copy to an acceptable row
 	if ( operation != NSDragOperationCopy || row == dragRow || row == dragRow + 1 ) return NSDragOperationNone;
-	return NSDragOperationMove;
+	return NSDragOperationCopy;
 }
 - (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation {
 	NSPasteboard *pboard = [info draggingPasteboard];
 	NSData* rowData = [pboard dataForType:MyPrivateTableViewDataType];
 	NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
-	int dragRow = [rowIndexes firstIndex];
-//	NSLog(@"acceptDrop-- dragRow: %d\nrow: %d",dragRow,row);
+	int dragRow = [rowIndexes firstIndex];  // row index of the dragged row
+
 	NSMutableDictionary *aRule = [rules objectAtIndex:dragRow];
 	[rules insertObject:aRule atIndex:row];
 	if (row <= dragRow) {
+		// rule is dragged up
 		[rules removeObjectAtIndex:dragRow + 1];
 	} else {
+		// rule is dragged down
 		[rules removeObjectAtIndex:dragRow];
 	}
 	[[NSUserDefaults standardUserDefaults] setObject:rules forKey:@"URLRewriteRules"];
 	[rulesTableView reloadData];
 	return YES;
 }
+
 /*
  * GUI Methods
  */
