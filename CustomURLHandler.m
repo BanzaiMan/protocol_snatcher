@@ -10,11 +10,11 @@
 
 @implementation MailApp(CustomURLHandler)
 - (BOOL)_ha_handleClickOnURL:(id)url visibleText:(id)linkText message:(id)msg window:(id)containerWindow dontSwitch:(BOOL)fp24 {
-	NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];
-
-	NSDictionary *errDict;
-	NSAppleScript *as;
-    NSAppleEventDescriptor *ae;
+	NSMutableString *string = [ NSMutableString stringWithString: [[url absoluteString] lowercaseString] ];
+	
+	OSStatus status;
+	CFURLRef urlRef;
+	FSVolumeRefNum *fs;
 	
 	NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
 	
@@ -39,12 +39,13 @@
 
 		if (matchCount > 0) {
 			if ([[aRewriteRule objectForKey:@"shareToMount"] length] > 0 ) {
-				as = [[NSAppleScript alloc] initWithSource: [NSString stringWithFormat: @"mount volume \"%@\"", [aRewriteRule objectForKey:@"shareToMount"]]];
-				ae = [as executeAndReturnError: &errDict];
-				if (ae == nil) {
-					NSLog(@"mount volume failed");
-					// return [self _ha_handleClickOnURL:url visibleText:linkText message:msg window:containerWindow dontSwitch:fp24];
+				
+				if ((status = FSMountServerVolumeSync( CFURLCreateWithString(NULL, (CFStringRef)[aRewriteRule objectForKey:@"shareToMount"], urlRef), NULL, (CFStringRef)@"", (CFStringRef)@"",fs,(UInt32) NULL)) < 0 ) {
+					; // it failed.
+				} else {
+					; // it succeeded.
 				}
+
 			}
 			
 			NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
@@ -58,16 +59,8 @@
 		}
 	}
 
-	NSLog(@"calling the original handleClickOnURL method");
+//	NSLog(@"calling the original handleClickOnURL method");
 	return [self _ha_handleClickOnURL:url visibleText:linkText message:msg window:containerWindow dontSwitch:fp24];
-/*
-	NSString *logMsg = [
-		[NSString alloc] initWithFormat: @"url: %@\nlinkText: %@\nmsg: %@\ncontainerWindow: %@\nfp24: %@", 
-			url, linkText, msg, containerWindow, fp24
-	];
-	NSLog(logMsg);
-*/	
-//	return [[NSWorkspace sharedWorkspace] openFile: @""];
 	
 }
 @end
