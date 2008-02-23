@@ -24,3 +24,7 @@
 
 // miscellaneous headers
 #import <OgreKit/OgreKit.h>
+
+// and constants
+#define MyPrivateTableViewDataType @"PSURLRewriteRuleDataType"
+#define MyPluginVersion @"0.1"

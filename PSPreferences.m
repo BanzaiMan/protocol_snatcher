@@ -14,19 +14,6 @@
 	// pose as NSPreferences so that Mail.app will load us correctly.
 	[PSPreferences poseAsClass:[NSPreferences class]];
 	
-	// load defaults
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	
-	NSMutableArray *rewriteRules = [defaults objectForKey:@"URLRewriteRules"];
-	if (rewriteRules == nil) rewriteRules = [NSMutableArray array];
-	
-	NSLog(@"PSPreferences: %@",rewriteRules);
-	NSEnumerator *enumerator = [rewriteRules objectEnumerator];
-	id aRewriteRule;
-	while ( aRewriteRule = [enumerator nextObject]) {
-		NSLog(@"%@", aRewriteRule);
-	}
-	
 }
 
 + (id) sharedPreferences {
@@ -34,7 +21,8 @@
 	id preferences = [super sharedPreferences];
 	if (preferences && !added) {
 		added = YES;
-		[preferences addPreferenceNamed: [ProtocolSnatcherBundle preferencesPanelName] owner: [PSPreferencesModule sharedInstance]];
+		[preferences addPreferenceNamed: [ProtocolSnatcherBundle preferencesPanelName]
+								  owner: [PSPreferencesModule sharedInstance]];
 	}
 	return preferences;
 	

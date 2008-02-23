@@ -16,7 +16,7 @@
 + (void)ProtocolSnatcherSwizzleMethod:(SEL)orig_sel withMethod:(SEL)alt_sel {
     NSString *originalMethodName = [NSString stringWithCString:sel_getName(orig_sel)];
     NSString *alternateMethodName = [NSString stringWithCString:sel_getName(alt_sel)];    
-    NSLog(@"Attempting to swizzle in class '%@': swapping method '%@' with '%@'...",[self class], originalMethodName, alternateMethodName);
+//    NSLog(@"Attempting to swizzle in class '%@': swapping method '%@' with '%@'...",[self class], originalMethodName, alternateMethodName);
 	
     // First, look for the methods
     Method orig_method = nil, alt_method = nil;
@@ -37,8 +37,8 @@
         temp2 = orig_method->method_imp;
         orig_method->method_imp = alt_method->method_imp;
         alt_method->method_imp = temp2;
-*/
 	NSLog(@"  ...succeeded!");
+ */
     } else {
 	if (orig_method == nil) {
 	    NSLog(@"    ...ERROR: original method '%@' doesn't exist",originalMethodName);
