@@ -15,8 +15,6 @@
 	[versionStringField setObjectValue: MyPluginVersion];
 	rules = [[ NSMutableArray alloc ] init ];
 	
-	NSLog(@"rules allocated and initialized");
-	
 	[self readRewriteRules];
 	[rulesTableView reloadData];
 	[rulesTableView setAllowsColumnReordering: NO];
@@ -61,12 +59,17 @@
 	return [rules count];
 }
 
-- (id) tableView: (NSTableView *)aTableView objectValueForTableColumn: (NSTableColumn *)aTableColumn row:(int)rowIndex {
+- (id)          tableView: (NSTableView *)aTableView
+objectValueForTableColumn: (NSTableColumn *)aTableColumn
+					  row:(int)rowIndex {
 	NSMutableDictionary *rule = [NSMutableDictionary dictionaryWithDictionary: [rules objectAtIndex:rowIndex]];
 	return ([rule objectForKey:[aTableColumn identifier]]);
 }
 
-- (void) tableView: (NSTableView *)aTableView setObjectValue:(id)anObject forTableColumn:(NSTableColumn *)aTableColumn row:(int)rowIndex {
+- (void) tableView: (NSTableView *) aTableView
+	setObjectValue: (id) anObject
+	forTableColumn: (NSTableColumn *) aTableColumn
+			   row: (int) rowIndex {
 	// TODO: compile regular expressions before setting the object value
 	NSMutableDictionary *rule = [NSMutableDictionary dictionaryWithDictionary: [rules objectAtIndex:rowIndex]];
 	[rule setObject:anObject forKey:[aTableColumn identifier]];
@@ -89,7 +92,9 @@
 }
 
 /* Drag and Drop */
-- (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
+- (BOOL)   tableView:(NSTableView *)aTableView
+writeRowsWithIndexes:(NSIndexSet *)rowIndexes
+		toPasteboard:(NSPasteboard *)pboard {
 	NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
 	[pboard declareTypes:[NSArray arrayWithObject:MyPrivateTableViewDataType] owner:self];
 	[pboard setData:data forType:MyPrivateTableViewDataType];
@@ -97,17 +102,24 @@
 	return YES;
 }
 
-- (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation {
-	NSPasteboard *pboard = [info draggingPasteboard];
-	NSData* rowData = [pboard dataForType:MyPrivateTableViewDataType];
+- (NSDragOperation)tableView:(NSTableView *)aTableView
+				validateDrop:(id < NSDraggingInfo >)info
+				 proposedRow:(NSInteger)row
+	   proposedDropOperation:(NSTableViewDropOperation)operation {
+	NSPasteboard   *pboard = [info draggingPasteboard];
+	NSData*        rowData = [pboard dataForType:MyPrivateTableViewDataType];
 	NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
-	int dragRow = [rowIndexes firstIndex];
+	int            dragRow = [rowIndexes firstIndex];
 
 	// ignore this drag unless it is a copy to an acceptable row
 	if ( operation != NSDragOperationCopy || row == dragRow || row == dragRow + 1 ) return NSDragOperationNone;
 	return NSDragOperationCopy;
 }
-- (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation {
+
+- (BOOL)tableView:(NSTableView *)aTableView
+	   acceptDrop:(id < NSDraggingInfo >)info
+			  row:(NSInteger)row
+	dropOperation:(NSTableViewDropOperation)operation {
 	NSPasteboard *pboard = [info draggingPasteboard];
 	NSData* rowData = [pboard dataForType:MyPrivateTableViewDataType];
 	NSIndexSet *rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
@@ -125,6 +137,13 @@
 	[[NSUserDefaults standardUserDefaults] setObject:rules forKey:@"URLRewriteRules"];
 	[rulesTableView reloadData];
 	return YES;
+}
+
+- (void)tableViewColumnDidResize:(NSNotification *)aNotification {
+//	NSLog(@"table column was resized");
+//	NSTableColumn *editedColumn = [[aNotification userInfo] objectForKey:@"NSTableColumn"];
+//	NSNumber *oldWidth = [[aNotification userInfo] objectForKey:@"NSOldWidth"];
+//	NSLog(@"table column %@ was resized from %4.2f to %4.2f", [editedColumn identifier], [oldWidth floatValue], [editedColumn width]);
 }
 
 /*
@@ -146,8 +165,8 @@
     return NSMakeSize( 650.0f, 450.0f  );
 }
 
-- (void) didChange {
-}
+//- (void) didChange {
+//}
 
 - (NSView*) viewForPreferenceNamed:(NSString *)aName {
 	// In NIB, set File Owner to this module, and set outlet _preferencesView to NSBox
@@ -157,36 +176,34 @@
 }
 
 /* Called when switching preference panels. */
-- (void) willBeDisplayed {
-}
+//- (void) willBeDisplayed {
+//}
 
 /* Called when window closes or "save" button is clicked. */
-- (void) saveChanges {
-//	NSLog(@"saveChanges");
-}
+//- (void) saveChanges {
+//}
 
 /* Not sure how useful this is, so far always seems to return YES. */
-- (BOOL) hasChangesPending {
-	return YES;
-}
+//- (BOOL) hasChangesPending {
+//	return YES;
+//}
 
 /* Called when we relinquish ownership of the preferences panel. */
-- (void)moduleWillBeRemoved {
-//	NSLog(@"moduleWillBeRemoved");
-}
+//- (void)moduleWillBeRemoved {
+//}
 
 /* Called after willBeDisplayed, once we "own" the preferences panel. */
-- (void)moduleWasInstalled {
-//	NSLog(@"moduleWasInstalled");
-}
+//- (void)moduleWasInstalled {
+//}
 
-- (void)initializeFromDefaults {
-	[super initializeFromDefaults];
-}
+//- (void)initializeFromDefaults {
+//	[super initializeFromDefaults];
+//}
 
 - (BOOL)moduleCanBeRemoved {
 	return YES;
 }
+
 - (BOOL)preferencesWindowShouldClose {
 	return YES;
 }
@@ -196,9 +213,10 @@
 	id anObject;
 	
 	NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
-	NSEnumerator *enumerator = [rulesArray objectEnumerator];
+	NSEnumerator   *enumerator = [rulesArray objectEnumerator];
 	
-	while (anObject = [enumerator nextObject]) {
+	while (anObject = [enumerator nextObject])
+	{
 		[rules addObject:anObject];
 	}
 	
