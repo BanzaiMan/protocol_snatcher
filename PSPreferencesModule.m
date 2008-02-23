@@ -113,7 +113,7 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 
 	// ignore this drag unless it is a copy to an acceptable row
 	if ( operation != NSDragOperationCopy || row == dragRow || row == dragRow + 1 ) return NSDragOperationNone;
-	return NSDragOperationCopy;
+	return NSDragOperationMove;
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView
