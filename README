@@ -1,14 +1,53 @@
-(c) Copyright 2008 Hirotsugu Asari. All Rights Reserved. 
+(c) Copyright 2008 Hirotsugu Asari. All Rights Reserved.
 
 Mail URL Rewriter (MURLR)
 
-MURLR is a Mail.app plugin which processes URLs you click on before passing it to the OS.  For example, if you have a URL which looks like
-  
+MURLR is a Mail.app plugin which lets you modify URLs before passing it to the
+OS.
+
+MINIMUM REQUIREMENT
+==============================================================================
+Mac OS X Leopard.
+(It might be possible to make it work on Tiger, but I have no access to Tiger
+at this time.)
+
+
+INSTALL
+==============================================================================
+* Create ~/Library/Mail/Bundles.
+* Put the Bundle there.
+* Type the following commands in the Terminal:
+  defaults write com.apple.mail EnableBundles YES
+  defaults write com.apple.mail BundleCompatibilityVersion 3
+* Restart Mail.app.
 
 USAGE
-* When you install MURLR, a preference panel appears in your Mail.app.
-A URL rewrite rule is composed of three properties.
-  Match regular expression will match against the entire URL
+==============================================================================
+When you install MURLR, a preference panel is added to Mail.app's Preferences.
+A URL rewrite rule is composed of three properties. - A regular expression to
+match the URL you click on - A replacement text in case of a match - Optional
+volume to mount in case of a match
+
+The regular expression and the replacement text will be passed on to
+/usr/bin/perl. So they should confirm to whatever perl thinks is good form. At
+this point, the plugin does not check your input is viable.
+
+The order is significant, as the first matching rule will trigger the OS to
+handle the URL. You can drag and drop to re-order the rules. No undo is
+available with the rules. And rules are saved to the preferences with every
+edit.
 
 KNOWN ISSUES
-* 
+==============================================================================
+* If the volume you specify with the rule is not available when a match
+happens, it may take a few minutes before Mail.app returns with an error.
+
+IMPROVEMENT POSSIBILITIES
+==============================================================================
+* Help window.
+* Import/Export rules.
+* Asynchronous volume mount.
+* Preference item to specify 'perl' executable.
+* Link to PCRE/oniguruma and compile regular expressions. (Certain replacement
+possibilities are lost. For example, '\u\1\E' won't work.)
+* Embed a perl interpreter.

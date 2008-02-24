@@ -24,4 +24,3 @@
 
 // and constants
 #define MyPrivateTableViewDataType @"PSURLRewriteRuleDataType"
-#define MyPluginVersion @"0.1"

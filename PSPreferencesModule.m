@@ -12,7 +12,7 @@
 @implementation PSPreferencesModule
 
 - (void) awakeFromNib {
-	[versionStringField setObjectValue: MyPluginVersion];
+	[versionStringField setObjectValue: [[NSBundle bundleWithIdentifier:@"net.asari.murlr"] objectForInfoDictionaryKey:@"CFBundleVersion"]];
 	rules = [[ NSMutableArray alloc ] init ];
 	
 	[self readRewriteRules];
@@ -208,6 +208,11 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 
 - (BOOL)preferencesWindowShouldClose {
 	return YES;
+}
+
+- (void)dealloc {
+	[rules release];
+	[super dealloc];
 }
 
 - (void) readRewriteRules {

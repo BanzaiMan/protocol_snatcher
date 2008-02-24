@@ -1,19 +1,17 @@
--- Simple installer for "ProtocolSnatcher" plugin for Mail.app.
+-- Simple installer for "MURLR" plugin for Mail.app.
 -- Send suggestions, bug reports, praise, and cookies to
--- ProtocolSnatcher@
---                software.harnly.net
 -- copyright 2006 Aaron Harnly
 
 property mail_folder_subpath : "Library:Mail:"
 property plugins_folder_name : "Bundles"
-property plugin_filename : "ProtocolSnatcher.mailbundle"
+property plugin_filename : "MURLR.mailbundle"
 
-property announce_intro : "Welcome to the ProtocolSnatcher plugin installer."
+property announce_intro : "Welcome to the MURLR plugin installer."
 property announce_quit_mail_warning : return & " ** I will have to quit Mail to install. ** " & return
 property announce_prompt : "Shall I install the plugin?"
 
-property install_success : "ProtocolSnatcher is activated. " & return & "To remove (if you must!), run the installer again and choose 'Uninstall', or simply remove the plugin from ~/Library/Mail/Bundles"
-property uninstall_success : "ProtocolSnatcher has been removed."
+property install_success : "MURLR is activated. " & return & "To remove (if you must!), run the installer again and choose 'Uninstall', or simply remove the plugin from ~/Library/Mail/Bundles"
+property uninstall_success : "MURLR has been removed."
 
 global debug
 
@@ -155,10 +153,10 @@ on is_app_running(appname)
 end is_app_running
 
 on get_source_folder()
-    tell application "Finder"
-	set container_path to (the container of (the path to me) as text)
-    end tell
-    return container_path
+	tell application "Finder"
+		set container_path to (the container of (the path to me) as text)
+	end tell
+	return container_path
 end get_source_folder
 
 on get_mail_folder()

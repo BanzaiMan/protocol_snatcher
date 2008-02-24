@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>ProtocolSnatcher</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.asari.protocolsnatcher</string>
+	<string>net.asari.murlr</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

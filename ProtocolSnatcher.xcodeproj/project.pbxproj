@@ -80,7 +80,7 @@
 		4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferencesModule.m; sourceTree = "<group>"; };
 		4AD3E90A0D6565BD00A5D7B5 /* NSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferences.h; sourceTree = "<group>"; };
 		4AD3E90B0D6565ED00A5D7B5 /* NSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferencesModule.h; sourceTree = "<group>"; };
-		8D5B49B6048680CD000E48DA /* ProtocolSnatcher.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProtocolSnatcher.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B6048680CD000E48DA /* MURLR.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MURLR.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
 		93E925500A4C8D530039ADAD /* ProtocolSnatcher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = ProtocolSnatcher.icns; path = Resources/ProtocolSnatcher.icns; sourceTree = "<group>"; };
 		93E925520A4C8D570039ADAD /* ProtocolSnatcher.icns.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = ProtocolSnatcher.icns.r; path = Resources/ProtocolSnatcher.icns.r; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* ProtocolSnatcher.mailbundle */,
+				8D5B49B6048680CD000E48DA /* MURLR.mailbundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -371,9 +371,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D5B49AC048680CD000E48DA /* ProtocolSnatcher */ = {
+		8D5B49AC048680CD000E48DA /* MURLR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ProtocolSnatcher" */;
+			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "MURLR" */;
 			buildPhases = (
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
@@ -385,10 +385,10 @@
 			);
 			dependencies = (
 			);
-			name = ProtocolSnatcher;
+			name = MURLR;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = ProtocolSnatcher;
-			productReference = 8D5B49B6048680CD000E48DA /* ProtocolSnatcher.mailbundle */;
+			productReference = 8D5B49B6048680CD000E48DA /* MURLR.mailbundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -403,7 +403,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D5B49AC048680CD000E48DA /* ProtocolSnatcher */,
+				8D5B49AC048680CD000E48DA /* MURLR */,
 				93E925240A4C8BD70039ADAD /* ProtocolSnatcher Installer */,
 			);
 		};
@@ -489,7 +489,7 @@
 /* Begin PBXTargetDependency section */
 		93E925280A4C8BE30039ADAD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D5B49AC048680CD000E48DA /* ProtocolSnatcher */;
+			target = 8D5B49AC048680CD000E48DA /* MURLR */;
 			targetProxy = 93E925270A4C8BE30039ADAD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -531,11 +531,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/CORE\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
@@ -543,9 +539,12 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = ProtocolSnatcher;
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
+				PRODUCT_NAME = MURLR;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				USER_HEADER_SEARCH_PATHS = "~/Library/Frameworks /usr/include";
+				VERSION_INFO_FILE = "$(PRODUCT_NAME)_vers.c";
 				WRAPPER_EXTENSION = mailbundle;
 				ZERO_LINK = YES;
 			};
@@ -573,11 +572,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
-				);
+				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/CORE\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
@@ -585,9 +580,12 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = ProtocolSnatcher;
+				PRIVATE_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/PrivateHeaders";
+				PRODUCT_NAME = MURLR;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				USER_HEADER_SEARCH_PATHS = "~/Library/Frameworks /usr/include";
+				VERSION_INFO_FILE = "$(PRODUCT_NAME)_vers.c";
 				WRAPPER_EXTENSION = mailbundle;
 			};
 			name = Release;
@@ -609,96 +607,6 @@
 				PREBINDING = NO;
 			};
 			name = Release;
-		};
-		4AF6FAD80D6D36E600EBA20C /* Embed Perl */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				OTHER_CFLAGS = (
-					"-arch",
-					i386,
-					"-arch",
-					ppc,
-					"-g",
-					"-pipe",
-					"-fno-common",
-					"-DPERL_DARWIN",
-					"-no-cpp-precomp",
-					"-fno-strict-aliasing",
-					"-Wdeclaration-after-statement",
-					"-I/usr/local/include",
-					"-I/System/Library/Perl/5.8.8/darwin-thread-multi-2level/CORE",
-				);
-				OTHER_LDFLAGS = (
-					"-arch",
-					i386,
-					"-arch",
-					ppc,
-					"-L/usr/local/lib",
-					"/System/Library/Perl/5.8.8/darwin-thread-multi-2level/auto/DynaLoader/DynaLoader.a",
-					"-L/System/Library/Perl/5.8.8/darwin-thread-multi-2level/CORE",
-					"-lperl",
-					"-ldl",
-					"-lm",
-					"-lutil",
-					"-lc",
-				);
-				PREBINDING = NO;
-			};
-			name = "Embed Perl";
-		};
-		4AF6FAD90D6D36E600EBA20C /* Embed Perl */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
-				BUNDLE_LOADER = /Applications/Mail.app/Contents/MacOS/Mail;
-				FRAMEWORK_SEARCH_PATHS = "~/Library/Frameworks";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../Library/Frameworks\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../Library/Frameworks\"";
-				GCC_ENABLE_OBJC_GC = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = "";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ProtocolSnatcher_Prefix.pch;
-				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
-					"$(LIBRARY_SEARCH_PATHS_QUOTED_2)",
-				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/CORE\"";
-				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)\"";
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				OTHER_LDFLAGS = (
-					"-undefined",
-					dynamic_lookup,
-				);
-				PRODUCT_NAME = ProtocolSnatcher;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
-				USER_HEADER_SEARCH_PATHS = "~/Library/Frameworks /usr/include";
-				WRAPPER_EXTENSION = mailbundle;
-			};
-			name = "Embed Perl";
-		};
-		4AF6FADA0D6D36E600EBA20C /* Embed Perl */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				PRODUCT_NAME = "ProtocolSnatcher Installer";
-				ZERO_LINK = NO;
-			};
-			name = "Embed Perl";
 		};
 		93E925300A4C8C230039ADAD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -725,12 +633,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "ProtocolSnatcher" */ = {
+		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "MURLR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB913B08733D840010E9CD /* Debug */,
 				1DEB913C08733D840010E9CD /* Release */,
-				4AF6FAD90D6D36E600EBA20C /* Embed Perl */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -740,7 +647,6 @@
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,
 				1DEB914008733D840010E9CD /* Release */,
-				4AF6FAD80D6D36E600EBA20C /* Embed Perl */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -750,7 +656,6 @@
 			buildConfigurations = (
 				93E925300A4C8C230039ADAD /* Debug */,
 				93E925310A4C8C230039ADAD /* Release */,
-				4AF6FADA0D6D36E600EBA20C /* Embed Perl */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
