@@ -16,6 +16,8 @@
 	rules = [[ NSMutableArray alloc ] init ];
 	
 	[self readRewriteRules];
+	[self setMinSize: NSMakeSize( 650.0f, 450.0f )];
+	[_preferencesView setFrameSize: NSMakeSize( 650.0f, 450.0f )];
 	[rulesTableView reloadData];
 	[rulesTableView setAllowsColumnReordering: NO];
 	[removeButoon setEnabled:NO];
@@ -161,9 +163,9 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	return @"PSPreferences";
 }
 
-- (NSSize) minSize {
-    return NSMakeSize( 650.0f, 450.0f  );
-}
+//- (NSSize) minSize {
+//    return NSMakeSize( 650.0f, 450.0f  );
+//}
 
 //- (void) didChange {
 //}
