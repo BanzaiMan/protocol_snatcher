@@ -46,6 +46,7 @@
 		NSString *replaceText  = [aRewriteRule objectForKey:@"replaceText"];
 		NSString *shareToMount = [aRewriteRule objectForKey:@"shareToMount"];
 		
+		// spawn a perl process for rewriting URLs
 		NSTask *perlTask = [[NSTask alloc] init];
 		NSPipe *perlPipe = [NSPipe pipe];
 		[perlTask setStandardOutput:perlPipe];
@@ -80,7 +81,7 @@
 		if ([unescapedString compare:newstring] != NSOrderedSame) {
 			NSLog(@"unescaedString: %@", unescapedString);
 			NSLog(@"newstring: %@", newstring);
-			NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+			NSString *unescaped_url_str = [newstring stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
 
 			if ([shareToMount length] > 0 ) {
 				OSStatus status;
