@@ -51,3 +51,7 @@ IMPROVEMENT POSSIBILITIES
 * Link to PCRE/oniguruma and compile regular expressions. (Certain replacement
 possibilities are lost. For example, '\u\1\E' won't work.)
 * Embed a perl interpreter.
+
+LICENSE
+==============================================================================
+...TBD

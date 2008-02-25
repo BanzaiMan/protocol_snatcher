@@ -75,12 +75,12 @@
 		
 		[perlTask release];
 
-		// Since perl's output won't tell us the substitution happened, we'll
-		// compare the resulting string with the "original" to determine if
-		// we had a match
+		// Since perl's output won't tell us the substitution happened with
+		// a status code, we'll compare the resulting string with the
+		// "original" to determine if we had a match
 		if ([unescapedString compare:newstring] != NSOrderedSame) {
-			NSLog(@"unescaedString: %@", unescapedString);
-			NSLog(@"newstring: %@", newstring);
+//			NSLog(@"unescaedString: %@", unescapedString);
+//			NSLog(@"newstring: %@", newstring);
 			NSString *unescaped_url_str = [newstring stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
 
 			if ([shareToMount length] > 0 ) {
@@ -108,7 +108,7 @@
 				} // FSMountServerVolumeSync
 
 				free(fs);
-			} // if ...shareToMount...
+			} // there is a volume to mount
 			else {
 				return [self _ha_handleClickOnURL:unescaped_url_str
 									  visibleText:linkText

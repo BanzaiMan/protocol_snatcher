@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		93E925240A4C8BD70039ADAD /* ProtocolSnatcher Installer */ = {
+		93E925240A4C8BD70039ADAD /* MURLR Installer */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 93E9252F0A4C8C230039ADAD /* Build configuration list for PBXAggregateTarget "ProtocolSnatcher Installer" */;
+			buildConfigurationList = 93E9252F0A4C8C230039ADAD /* Build configuration list for PBXAggregateTarget "MURLR Installer" */;
 			buildPhases = (
 				93E925290A4C8BE80039ADAD /* Compile Installer Applescript */,
 				93E925320A4C8C2D0039ADAD /* Create disk image */,
@@ -17,14 +17,13 @@
 			dependencies = (
 				93E925280A4C8BE30039ADAD /* PBXTargetDependency */,
 			);
-			name = "ProtocolSnatcher Installer";
+			name = "MURLR Installer";
 			productName = "ProtocolSnatcher Installer";
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		4A25BF580D6275D9007AB34A /* CustomURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */; };
-		4A30027D0D6B626700814E8A /* README in Resources */ = {isa = PBXBuildFile; fileRef = 4A30027C0D6B626700814E8A /* README */; };
 		4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A8EF90D6731B70010005D /* MURLR.tiff */; };
 		4A4A8F800D6762250010005D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49B7048680CD000E48DA /* Info.plist */; };
 		4A6A98970D68E0B900DE08F6 /* PSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A98960D68E0B900DE08F6 /* PSPreferences.m */; };
@@ -404,7 +403,7 @@
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* MURLR */,
-				93E925240A4C8BD70039ADAD /* ProtocolSnatcher Installer */,
+				93E925240A4C8BD70039ADAD /* MURLR Installer */,
 			);
 		};
 /* End PBXProject section */
@@ -419,7 +418,6 @@
 				93E925510A4C8D530039ADAD /* ProtocolSnatcher.icns in Resources */,
 				4AD3E7BE0D65584D00A5D7B5 /* PSPreferences.nib in Resources */,
 				4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */,
-				4A30027D0D6B626700814E8A /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,7 +649,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		93E9252F0A4C8C230039ADAD /* Build configuration list for PBXAggregateTarget "ProtocolSnatcher Installer" */ = {
+		93E9252F0A4C8C230039ADAD /* Build configuration list for PBXAggregateTarget "MURLR Installer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93E925300A4C8C230039ADAD /* Debug */,

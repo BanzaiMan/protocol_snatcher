@@ -1039,10 +1039,10 @@
 	};
 	4A25BF570D6275D9007AB34A /* CustomURLHandler.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1276, 341}\";\n        },\n                {\n            r = \"{2457, 218}\";\n        }\n    );\n    r = \"{0, 4663}\";\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1009, 1760}}";
-			sepNavSelRange = "{1821, 0}";
-			sepNavVisRange = "{26, 1597}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1276, 341}\";\n        },\n                {\n            r = \"{2457, 218}\";\n        }\n    );\n    r = \"{0, 4691}\";\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1009, 1872}}";
+			sepNavSelRange = "{3616, 0}";
+			sepNavVisRange = "{0, 1543}";
 			sepNavWindowFrame = "{{267, 59}, {1139, 969}}";
 		};
 	};
@@ -1061,7 +1061,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 15";
 		rLen = 0;
-		rLoc = 4396;
+		rLoc = 4424;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 0;
@@ -1292,14 +1292,14 @@
 	};
 	4A6A98950D68E0B900DE08F6 /* PSPreferences.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {875, 460}}";
+			sepNavIntBoundsRect = "{{0, 0}, {799, 652}}";
 			sepNavSelRange = "{222, 0}";
 			sepNavVisRange = "{0, 234}";
 		};
 	};
 	4A6A98960D68E0B900DE08F6 /* PSPreferences.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {926, 652}}";
+			sepNavIntBoundsRect = "{{0, 0}, {799, 652}}";
 			sepNavSelRange = "{345, 0}";
 			sepNavVisRange = "{0, 661}";
 		};
@@ -1384,9 +1384,9 @@
 	};
 	4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {988, 3792}}";
-			sepNavSelRange = "{1827, 0}";
-			sepNavVisRange = "{300, 535}";
+			sepNavIntBoundsRect = "{{0, 0}, {988, 3632}}";
+			sepNavSelRange = "{386, 0}";
+			sepNavVisRange = "{559, 1388}";
 			sepNavWindowFrame = "{{416, 143}, {1058, 853}}";
 		};
 	};
@@ -1603,7 +1603,7 @@
 			sepNavWindowFrame = "{{15, 181}, {1230, 842}}";
 		};
 	};
-	93E925240A4C8BD70039ADAD /* ProtocolSnatcher Installer */ = {
+	93E925240A4C8BD70039ADAD /* MURLR Installer */ = {
 		activeExec = 0;
 	};
 	93E925520A4C8D570039ADAD /* ProtocolSnatcher.icns.r */ = {
@@ -1622,7 +1622,7 @@
 	};
 	93E925540A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {926, 704}}";
+			sepNavIntBoundsRect = "{{0, 0}, {820, 704}}";
 			sepNavSelRange = "{505, 0}";
 			sepNavVisRange = "{32, 1006}";
 			sepNavWindowFrame = "{{317, 174}, {1230, 842}}";
