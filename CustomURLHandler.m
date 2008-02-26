@@ -27,11 +27,10 @@
 	
 	NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
 	
-	NSEnumerator *enumerator = [ rulesArray objectEnumerator];
 	id aRewriteRule;
 	// go through the list and rewrite URL
 	// first one that succeeds in match will trigger
-	while ( aRewriteRule = [enumerator nextObject]) {
+	for ( aRewriteRule in rulesArray) {
 		if (![aRewriteRule isKindOfClass: [NSDictionary class]]) {
 			// there is a problem with this object in URLRewriteRules, so we just fall through to the original method
 			NSLog(@"%s contains a non-dictionary object", @"URLRewriteRules");

@@ -230,9 +230,8 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	id anObject;
 	
 	NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
-	NSEnumerator   *enumerator = [rulesArray objectEnumerator];
 	
-	while (anObject = [enumerator nextObject])
+	for (anObject in rulesArray)
 	{
 		[rules addObject:anObject];
 	}
@@ -241,4 +240,11 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 }
 
 
+@synthesize rules;
+@synthesize rulesTableView;
+@synthesize helpPanel;
+@synthesize removeButoon;
+@synthesize _canRemove;
+@synthesize versionStringField;
+@synthesize helpContent;
 @end
