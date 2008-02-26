@@ -22,6 +22,14 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
+			<string>NSWindow</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSResponder</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>NSBox</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
@@ -59,6 +67,14 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSView</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NSPanel</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSWindow</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>
@@ -152,6 +168,14 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
+			<key>CLASS</key>
+			<string>WebView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSView</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>addRewriteRule</key>
@@ -160,8 +184,6 @@
 				<string>id</string>
 				<key>showHelpWindow</key>
 				<string>id</string>
-				<key>showRewriteRules</key>
-				<string>id</string>
 			</dict>
 			<key>CLASS</key>
 			<string>PSPreferencesModule</string>
@@ -169,6 +191,10 @@
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
+				<key>helpContent</key>
+				<string>WebView</string>
+				<key>helpPanel</key>
+				<string>NSPanel</string>
 				<key>removeButoon</key>
 				<string>NSButton</string>
 				<key>rulesTableView</key>

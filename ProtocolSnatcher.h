@@ -8,6 +8,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebKit.h>
 // headers for barebones mail plugin
 #import "NSObject+ProtocolSnatcherSwizzle.h"
 #import "Mail/MailApp-MFUserAgent.h"

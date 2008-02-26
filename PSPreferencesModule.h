@@ -13,6 +13,8 @@
 	IBOutlet NSTextField *versionStringField;
 
 	IBOutlet NSTableView *rulesTableView;
+	IBOutlet NSPanel *helpPanel;
+	IBOutlet WebView *helpContent;
 	IBOutlet NSButton *removeButoon;
 	
 	NSMutableArray *rules;

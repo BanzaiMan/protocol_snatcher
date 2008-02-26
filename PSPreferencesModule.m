@@ -16,11 +16,14 @@
 	rules = [[ NSMutableArray alloc ] init ];
 	
 	[self readRewriteRules];
-	[self setMinSize: NSMakeSize( 650.0f, 450.0f )];
-	[_preferencesView setFrameSize: NSMakeSize( 650.0f, 450.0f )];
+	[helpPanel setHidesOnDeactivate: YES];
+	[helpPanel setReleasedWhenClosed: NO];
+	const NSSize prefFrameSize = NSMakeSize(650.0f,450.0f);
+	[self setMinSize: prefFrameSize];
+	[_preferencesView setFrameSize: prefFrameSize];
 	[rulesTableView reloadData];
 	[rulesTableView setAllowsColumnReordering: NO];
-	[removeButoon setEnabled:NO];
+	[removeButoon setEnabled: NO];
 	[rulesTableView registerForDraggedTypes:[NSArray arrayWithObject: MyPrivateTableViewDataType]];
 	
 }
@@ -53,10 +56,15 @@
 }
 
 - (IBAction) showHelpWindow: (id) sender {
-	NSLog(@"showHelpWindow");
+//	NSLog(@"showHelpWindow: %@", [helpPanel windowController]);
+	NSString *bundleResourcePath = [[NSBundle bundleWithIdentifier:@"net.asari.murlr"] resourcePath];
+	[[helpContent mainFrame] loadRequest: [NSURLRequest requestWithURL:
+	 [NSURL fileURLWithPath: [bundleResourcePath stringByAppendingString: @"/help.html"]]]];
+	[helpPanel makeKeyAndOrderFront:sender];
 }
 
-/* for NSTableView class and NSTableDataSource protocol*/
+#pragma mark -
+#pragma mark for NSTableView class and NSTableDataSource protocol
 - (int) numberOfRowsInTableView: (NSTableView *)aTableView {
 	return [rules count];
 }
@@ -93,7 +101,8 @@ objectValueForTableColumn: (NSTableColumn *)aTableColumn
 	}
 }
 
-/* Drag and Drop */
+#pragma mark -
+#pragma mark Drag and Drop
 - (BOOL)   tableView:(NSTableView *)aTableView
 writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 		toPasteboard:(NSPasteboard *)pboard {
@@ -141,6 +150,7 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 	return YES;
 }
 
+#pragma mark -
 - (void)tableViewColumnDidResize:(NSNotification *)aNotification {
 //	NSLog(@"table column was resized");
 //	NSTableColumn *editedColumn = [[aNotification userInfo] objectForKey:@"NSTableColumn"];

@@ -24,6 +24,9 @@
 
 /* Begin PBXBuildFile section */
 		4A25BF580D6275D9007AB34A /* CustomURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */; };
+		4A337CF80D73C4FC0019D6D2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A337CF70D73C4FC0019D6D2 /* WebKit.framework */; };
+		4A337E510D73CC640019D6D2 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A337E500D73CC640019D6D2 /* help.html */; };
+		4A337E5B0D73CE670019D6D2 /* help.css in Resources */ = {isa = PBXBuildFile; fileRef = 4A337E5A0D73CE670019D6D2 /* help.css */; };
 		4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A8EF90D6731B70010005D /* MURLR.tiff */; };
 		4A4A8F800D6762250010005D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49B7048680CD000E48DA /* Info.plist */; };
 		4A6A98970D68E0B900DE08F6 /* PSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A98960D68E0B900DE08F6 /* PSPreferences.m */; };
@@ -68,6 +71,9 @@
 		4A25BF560D6275D9007AB34A /* CustomURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLHandler.h; sourceTree = "<group>"; };
 		4A25BF570D6275D9007AB34A /* CustomURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLHandler.m; sourceTree = "<group>"; };
 		4A30027C0D6B626700814E8A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		4A337CF70D73C4FC0019D6D2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		4A337E500D73CC640019D6D2 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = help.html; path = Resources/help.html; sourceTree = "<group>"; };
+		4A337E5A0D73CE670019D6D2 /* help.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = help.css; path = Resources/help.css; sourceTree = "<group>"; };
 		4A4A8CB40D6724880010005D /* appkit-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "appkit-headers.h"; sourceTree = "<group>"; };
 		4A4A8CB50D6724880010005D /* mail-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mail-headers.h"; sourceTree = "<group>"; };
 		4A4A8EF90D6731B70010005D /* MURLR.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = MURLR.tiff; path = Resources/MURLR.tiff; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				4A337CF80D73C4FC0019D6D2 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +150,8 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A337E5A0D73CE670019D6D2 /* help.css */,
+				4A337E500D73CC640019D6D2 /* help.html */,
 				4A4A8EF90D6731B70010005D /* MURLR.tiff */,
 				93E925570A4C8D780039ADAD /* Installer.icns */,
 				93E925500A4C8D530039ADAD /* ProtocolSnatcher.icns */,
@@ -174,6 +183,7 @@
 		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A337CF70D73C4FC0019D6D2 /* WebKit.framework */,
 				089C167FFE841241C02AAC07 /* AppKit.framework */,
 				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
 				089C1672FE841209C02AAC07 /* Foundation.framework */,
@@ -418,6 +428,8 @@
 				93E925510A4C8D530039ADAD /* ProtocolSnatcher.icns in Resources */,
 				4AD3E7BE0D65584D00A5D7B5 /* PSPreferences.nib in Resources */,
 				4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */,
+				4A337E510D73CC640019D6D2 /* help.html in Resources */,
+				4A337E5B0D73CE670019D6D2 /* help.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,7 +532,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../Library/Frameworks\"";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_OBJC_GC = NO;
+				GCC_ENABLE_OBJC_GC = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -561,7 +573,7 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../Library/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../Library/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_4 = "\"$(SRCROOT)/../../Library/Frameworks\"";
-				GCC_ENABLE_OBJC_GC = NO;
+				GCC_ENABLE_OBJC_GC = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
