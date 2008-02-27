@@ -58,17 +58,17 @@
 													  )) < 0 ) {
 					/* unable to mount volume--this could take a while
 					 perhaps FSMountServerVolumeASync() might be faster when it fails */
-					;
+					free(fs);
 				} else {
 					if ( [[NSWorkspace sharedWorkspace] openFile: unescaped_url_str] ) {
+						free(fs);
 						return YES;
 					} else {
 						// should alert user
+						free(fs);
 						return NO;
 					}
 				} // FSMountServerVolumeSync
-
-				free(fs);
 			} // there is a volume to mount
 			else {
 				return [self _ha_handleClickOnURL:unescaped_url_str
