@@ -15,16 +15,8 @@
 					 message:(id)msg
 					  window:(id)containerWindow
 				  dontSwitch:(BOOL)fp24 {
-	/* Assume that url is UTF8-encoded.
-	 * If the boot disk's filesystem is case-sensitive, it is quite significant
-	 * to get the mount points right.
-	 * Unfortunately, CIFS is _probably_ on NTFS on the file server end, so
-	 * the links we click on is not guaranteed to have the same case for the
-	 * same share.
-	 */
-	NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];
-	NSString *unescapedString = [string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-	
+	/* Assume that url is UTF8-encoded. */
+	NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];	
 	NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
 	
 	id aRewriteRule;
@@ -45,42 +37,12 @@
 		NSString *replaceText  = [aRewriteRule objectForKey:@"replaceText"];
 		NSString *shareToMount = [aRewriteRule objectForKey:@"shareToMount"];
 		
-		// spawn a perl process for rewriting URLs
-		NSTask *perlTask = [[NSTask alloc] init];
-		NSPipe *perlPipe = [NSPipe pipe];
-		[perlTask setStandardOutput:perlPipe];
-
-		NSFileHandle *perlOutputFH = [perlPipe fileHandleForReading];
-		NSData *inputData = nil;
-		NSString *perlCommand = [NSString stringWithFormat: @"$s = '%@'; $s =~ s#%@#%@#; print $s;", unescapedString, matchRegex, replaceText];
-		
-		[perlTask setLaunchPath: @"/usr/bin/perl"];
-		[perlTask setArguments:[NSArray arrayWithObjects:@"-e",perlCommand, nil]];
-		
-		[perlTask launch];
-		[perlTask waitUntilExit];
-		
-		if ([perlTask terminationStatus] != 0) {
-			NSLog(@"perl string replacement failed.");
-			NSLog(@"string: %@",string);
-			NSLog(@"matchRegex: %@",matchRegex);
-			NSLog(@"replaceText: %@",replaceText);
-			NSLog(@"perlCommand: %@",perlCommand);
-			continue;
-		}
-		
-		inputData = [perlOutputFH readDataToEndOfFile];
-		NSString *newstring = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
-		
-		[perlTask release];
-
-		// Since perl's output won't tell us the substitution happened with
-		// a status code, we'll compare the resulting string with the
-		// "original" to determine if we had a match
-		if ([unescapedString compare:newstring] != NSOrderedSame) {
-//			NSLog(@"unescaedString: %@", unescapedString);
-//			NSLog(@"newstring: %@", newstring);
-			NSString *unescaped_url_str = [newstring stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+		if ([string replaceOccurrencesOfRegularExpressionString: matchRegex
+													 withString: replaceText
+														options: OgreNoneOption
+														  range: NSMakeRange(0, [string length])] > 0) {
+			
+			NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
 
 			if ([shareToMount length] > 0 ) {
 				OSStatus status;

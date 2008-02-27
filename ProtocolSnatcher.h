@@ -23,5 +23,7 @@
 #import "PSPreferences.h"
 #import "PSPreferencesModule.h"
 
+#import <OgreKit/OgreKit.h>
+
 // and constants
 #define MyPrivateTableViewDataType @"PSURLRewriteRuleDataType"

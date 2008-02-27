@@ -7,31 +7,57 @@
   <link rel="stylesheet" href="./help.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body id="murlr_help">
+  <h1 id="introduction">Mail.app URL Rewriter</h1>
+  <p>
+    Mail.app URL Rewriter (MURLR) lets you any URL you click in your Mail.app
+    message view.
+    This can be handy if you correspondents send you link to a shared local
+    area network.
+  </p>
   <h1 id="rules">Rules</h1>
   <p>
-    Rewrite rules are an ordered list.  The first rule that matches
-    the clicked link will trigger an event.
-    If no match happens, the click is passed on verbatim to the OS, just
-    as though you did not have MURLR.
+    Rewrite rules are an ordered list.
+    The first rule that matches the clicked link will trigger an event.
+    If the URL doesn't match any rule, the click is passed on verbatim to
+    Mail.app, just as though you did not have MURLR.
   </p>
   <h2 id="properties">Properties</h2>
   <dl>
     <dt>Match Regular Expression</dt>
-    <dd>A Perl regular expression to match against the clicked link</dd>
+    <dd>
+      A oniguruma library regular expression to match against the clicked
+      link.
+    </dd>
     <dt>Replace Text</dt>
-    <dd>The text that replaces the URL.
-      Just as in Perl, you can use numbered captures in replacement text.
+    <dd>
+      The text that replaces the URL.
+      Note that you can use numbered captures in replacement text.
     </dd>
     <dt>Remote Volume (Optional)</dt>
     <dd>
-      If this property is not empty, MURLR will attempt to mount it before
-      opening the rewritten URL.
+      If this property is empty, MURLR will pass the re-written URL to
+      Mail.app.
+      If this property is not empty, MURLR will attempt to mount it, and then
+      opens the file specified by the re-written URL.
     </dd>
   </dl>
 
-  <h1 id="license">License</h1>
+  <h1 id="license">Licenses and Acknowledgements</h1>
   <p>
-    TBD.
+    oniguruma is (c)2002-2008 K.Kosako. (<a href="http://www.geocities.jp/kosako3/oniguruma/index.html">License</a>)
+  </p>
+  <p>
+    OgreKit is (c)2003-2008 Isao Snobe. (<a href="http://www8.ocn.ne.jp/~sonoisa/OgreKit/license.html">License</a>)
+  </p>
+  <p>
+    The XCode project was based on <a href="http://harnly.net/2006/software/mail-plugin-template/mail-plugin-template-10">Mail Plug-in Template 1.0</a> by Aaron Harnly.
+    Much of his code has been gutted out, though the skeleton is still his
+    creation.
+  </p>
+  <h1 id="copyright">Copyright</h1>
+  <p>
+    &copy; 2008 Hirotsugu Aari.
+    Distributed under the MIT License.
   </p>
 </body>
 </html>

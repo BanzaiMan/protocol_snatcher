@@ -2,6 +2,11 @@ body {
     font: 10pt "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
+h1 {
+    background-color: #fdffc6;
+    border: 2px solid #c9ce58;
+}
+
 dt {
     font-variant: small-caps;
     color: #002ea0;

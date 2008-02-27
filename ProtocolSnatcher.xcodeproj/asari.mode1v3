@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -277,15 +275,22 @@
 								<string>93E9250C0A4C8AE20039ADAD</string>
 								<string>93E925210A4C8BB40039ADAD</string>
 								<string>4AD3E7C10D655D9D00A5D7B5</string>
-								<string>089C167CFE841241C02AAC07</string>
+								<string>089C1671FE841209C02AAC07</string>
+								<string>1058C7ACFEA557BF11CA2CBB</string>
+								<string>1058C7AEFEA557BF11CA2CBB</string>
 								<string>19C28FB8FE9D52D311CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
+								<string>4A7667290D7546EF006C62C9</string>
+								<string>4A76672A0D7546EF006C62C9</string>
 								<string>1C37FABC05509CD000000102</string>
 								<string>1CC0EA4004350EF90041110B</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>11</integer>
+									<integer>9</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -309,7 +314,7 @@
 							<real>334</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>283 119 1222 862 0 0 1680 1028 </string>
+						<string>168 141 1222 862 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -320,12 +325,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PSPreferencesModule.m</string>
+								<string>NSObject+ProtocolSnatcherSwizzle.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +340,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PSPreferencesModule.m</string>
+										<string>NSObject+ProtocolSnatcherSwizzle.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4A6FEAC90D74B010001BE194</string>
+										<string>4A7667360D754BA8006C62C9</string>
 										<key>history</key>
 										<array>
 											<string>4AF866520D61385300DDA4DC</string>
@@ -354,7 +361,6 @@
 											<string>4AEA9EFF0D71007A001BAA7E</string>
 											<string>4AEAA0140D7120E1001BAA7E</string>
 											<string>4A0A19E80D71444500B5CD7C</string>
-											<string>4A0A1A4E0D71494800B5CD7C</string>
 											<string>4A0A1A520D71494800B5CD7C</string>
 											<string>4A0A1A530D71494800B5CD7C</string>
 											<string>4A0A1A550D71494800B5CD7C</string>
@@ -367,13 +373,14 @@
 											<string>4A337C160D728B010019D6D2</string>
 											<string>4A337C170D728B010019D6D2</string>
 											<string>4A337C710D7307930019D6D2</string>
-											<string>4A337E3B0D73C88D0019D6D2</string>
 											<string>4A337E570D73CD420019D6D2</string>
 											<string>4A337E720D73D27D0019D6D2</string>
 											<string>4A337E800D73E07D0019D6D2</string>
-											<string>4A6FEAC30D74B010001BE194</string>
-											<string>4A6FEAC40D74B010001BE194</string>
-											<string>4A6FEAC50D74B010001BE194</string>
+											<string>4A6FEB960D74E3CF001BE194</string>
+											<string>4A76672B0D7546EF006C62C9</string>
+											<string>4A76672C0D7546EF006C62C9</string>
+											<string>4A76672D0D7546EF006C62C9</string>
+											<string>4A7667260D7546EE006C62C9</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -411,9 +418,10 @@
 											<string>4AEA9EF60D710000001BAA7E</string>
 											<string>4A337E6F0D73D0C60019D6D2</string>
 											<string>4A337E730D73D27D0019D6D2</string>
-											<string>4A6FEAC60D74B010001BE194</string>
-											<string>4A6FEAC70D74B010001BE194</string>
-											<string>4A6FEAC80D74B010001BE194</string>
+											<string>4A76672E0D7546EF006C62C9</string>
+											<string>4A76672F0D7546EF006C62C9</string>
+											<string>4A7667300D7546EF006C62C9</string>
+											<string>4A7667310D7546EF006C62C9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -427,7 +435,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {866, 624}}</string>
 								<key>RubberWindowFrame</key>
-								<string>283 119 1222 862 0 0 1680 1028 </string>
+								<string>168 141 1222 862 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -447,7 +455,7 @@
 								<key>Frame</key>
 								<string>{{0, 629}, {866, 192}}</string>
 								<key>RubberWindowFrame</key>
-								<string>283 119 1222 862 0 0 1680 1028 </string>
+								<string>168 141 1222 862 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -471,9 +479,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4A6FEAAF0D74AF91001BE194</string>
+				<string>4A7666E10D754041006C62C9</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4A6FEAB00D74AF91001BE194</string>
+				<string>4A7666E20D754041006C62C9</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -607,11 +615,11 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4A6FEAB20D74AF91001BE194</string>
+		<string>4AE0F66B0D6128D0007B4BE5</string>
 		<string>/Users/asari/Development/ProtocolSnatcher/trunk/ProtocolSnatcher.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>283 119 1222 862 0 0 1680 1028 </string>
+	<string>168 141 1222 862 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -634,7 +642,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PSPreferencesModule.m</string>
+								<string>NSObject+ProtocolSnatcherSwizzle.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -692,7 +700,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4AE0F66B0D6128D0007B4BE5</string>
-				<string>4A337C8A0D73248D0019D6D2</string>
+				<string>4A7667280D7546EE006C62C9</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

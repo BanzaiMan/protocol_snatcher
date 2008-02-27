@@ -30,6 +30,8 @@
 		4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A8EF90D6731B70010005D /* MURLR.tiff */; };
 		4A4A8F800D6762250010005D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49B7048680CD000E48DA /* Info.plist */; };
 		4A6A98970D68E0B900DE08F6 /* PSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A98960D68E0B900DE08F6 /* PSPreferences.m */; };
+		4A7666EE0D754119006C62C9 /* OgreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7666ED0D754119006C62C9 /* OgreKit.framework */; };
+		4A76671F0D754131006C62C9 /* OgreKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A7666ED0D754119006C62C9 /* OgreKit.framework */; };
 		4AD3E7BE0D65584D00A5D7B5 /* PSPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */; };
 		4AD3E7DF0D655F1700A5D7B5 /* PSPreferencesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -57,6 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4A76671F0D754131006C62C9 /* OgreKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +83,7 @@
 		4A6A94950D68771600DE08F6 /* ProtocolSnatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcher.h; sourceTree = "<group>"; };
 		4A6A98950D68E0B900DE08F6 /* PSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferences.h; sourceTree = "<group>"; };
 		4A6A98960D68E0B900DE08F6 /* PSPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferences.m; sourceTree = "<group>"; };
+		4A7666ED0D754119006C62C9 /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OgreKit.framework; path = ../../../Library/Frameworks/OgreKit.framework; sourceTree = SOURCE_ROOT; };
 		4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = PSPreferences.nib; path = Resources/PSPreferences.nib; sourceTree = "<group>"; };
 		4AD3E7DD0D655F1700A5D7B5 /* PSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferencesModule.h; sourceTree = "<group>"; };
 		4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferencesModule.m; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			files = (
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				4A337CF80D73C4FC0019D6D2 /* WebKit.framework in Frameworks */,
+				4A7666EE0D754119006C62C9 /* OgreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +188,7 @@
 		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4A7666ED0D754119006C62C9 /* OgreKit.framework */,
 				4A337CF70D73C4FC0019D6D2 /* WebKit.framework */,
 				089C167FFE841241C02AAC07 /* AppKit.framework */,
 				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
