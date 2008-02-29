@@ -26,7 +26,6 @@
 		4A25BF580D6275D9007AB34A /* CustomURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */; };
 		4A337CF80D73C4FC0019D6D2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A337CF70D73C4FC0019D6D2 /* WebKit.framework */; };
 		4A337E510D73CC640019D6D2 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A337E500D73CC640019D6D2 /* help.html */; };
-		4A337E5B0D73CE670019D6D2 /* help.css in Resources */ = {isa = PBXBuildFile; fileRef = 4A337E5A0D73CE670019D6D2 /* help.css */; };
 		4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A8EF90D6731B70010005D /* MURLR.tiff */; };
 		4A4A8F800D6762250010005D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49B7048680CD000E48DA /* Info.plist */; };
 		4A6A98970D68E0B900DE08F6 /* PSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A98960D68E0B900DE08F6 /* PSPreferences.m */; };
@@ -36,7 +35,6 @@
 		4AD3E7DF0D655F1700A5D7B5 /* PSPreferencesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
-		93E925510A4C8D530039ADAD /* ProtocolSnatcher.icns in Resources */ = {isa = PBXBuildFile; fileRef = 93E925500A4C8D530039ADAD /* ProtocolSnatcher.icns */; };
 		93E925550A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E925540A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m */; };
 		93E9268F0A4C8E020039ADAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9268E0A4C8E020039ADAD /* main.m */; };
 		93E9269B0A4C8E6F0039ADAD /* NSObject+ProtocolSnatcherSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E9269A0A4C8E6F0039ADAD /* NSObject+ProtocolSnatcherSwizzle.m */; };
@@ -76,7 +74,6 @@
 		4A30027C0D6B626700814E8A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		4A337CF70D73C4FC0019D6D2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		4A337E500D73CC640019D6D2 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = help.html; path = Resources/help.html; sourceTree = "<group>"; };
-		4A337E5A0D73CE670019D6D2 /* help.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = help.css; path = Resources/help.css; sourceTree = "<group>"; };
 		4A4A8CB40D6724880010005D /* appkit-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "appkit-headers.h"; sourceTree = "<group>"; };
 		4A4A8CB50D6724880010005D /* mail-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mail-headers.h"; sourceTree = "<group>"; };
 		4A4A8EF90D6731B70010005D /* MURLR.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = MURLR.tiff; path = Resources/MURLR.tiff; sourceTree = "<group>"; };
@@ -91,8 +88,6 @@
 		4AD3E90B0D6565ED00A5D7B5 /* NSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferencesModule.h; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* MURLR.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MURLR.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
-		93E925500A4C8D530039ADAD /* ProtocolSnatcher.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = ProtocolSnatcher.icns; path = Resources/ProtocolSnatcher.icns; sourceTree = "<group>"; };
-		93E925520A4C8D570039ADAD /* ProtocolSnatcher.icns.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; name = ProtocolSnatcher.icns.r; path = Resources/ProtocolSnatcher.icns.r; sourceTree = "<group>"; };
 		93E925530A4C8D660039ADAD /* ProtocolSnatcherBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcherBundle.h; sourceTree = "<group>"; };
 		93E925540A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolSnatcherBundle.m; sourceTree = "<group>"; };
 		93E925560A4C8D710039ADAD /* Install.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; name = Install.applescript; path = Installer/Install.applescript; sourceTree = "<group>"; };
@@ -155,12 +150,9 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4A337E5A0D73CE670019D6D2 /* help.css */,
 				4A337E500D73CC640019D6D2 /* help.html */,
 				4A4A8EF90D6731B70010005D /* MURLR.tiff */,
 				93E925570A4C8D780039ADAD /* Installer.icns */,
-				93E925500A4C8D530039ADAD /* ProtocolSnatcher.icns */,
-				93E925520A4C8D570039ADAD /* ProtocolSnatcher.icns.r */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 				4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */,
@@ -431,11 +423,9 @@
 			files = (
 				4A4A8F800D6762250010005D /* Info.plist in Resources */,
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
-				93E925510A4C8D530039ADAD /* ProtocolSnatcher.icns in Resources */,
 				4AD3E7BE0D65584D00A5D7B5 /* PSPreferences.nib in Resources */,
 				4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */,
 				4A337E510D73CC640019D6D2 /* help.html in Resources */,
-				4A337E5B0D73CE670019D6D2 /* help.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +444,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "input_script=\"$SRCROOT/Installer/Install.applescript\"\ninput_icon=\"$SRCROOT/Installer/Installer.icns\"\n\noutput_app=\"$TARGET_BUILD_DIR/Install ProtocolSnatcher.app\"\n\n# compile the script into an application\nosacompile  -o \"$output_app\" \"$input_script\"\n\n# and set the icon for the application\ncp \"$input_icon\" \"$output_app/Contents/Resources/applet.icns\"\n\n";
+			shellScript = "input_script=\"$SRCROOT/Installer/Install.applescript\"\ninput_icon=\"$SRCROOT/Installer/Installer.icns\"\n\noutput_app=\"$TARGET_BUILD_DIR/Install MURLR.app\"\n\n# compile the script into an application\nosacompile  -o \"$output_app\" \"$input_script\"\n\n# and set the icon for the application\ncp \"$input_icon\" \"$output_app/Contents/Resources/applet.icns\"\n\n";
 		};
 		93E925320A4C8C2D0039ADAD /* Create disk image */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -468,7 +458,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\n# This build phase creates a disk image containing the plugin and an installer.\n#\nvolume_name=\"ProtocolSnatcher\"\ndisk_image_name=\"ProtocolSnatcher.dmg\"\n\noutput_dmg=\"$TARGET_BUILD_DIR/$disk_image_name\"\nrm \"$TARGET_BUILD_DIR/\"*.dmg 2>/dev/null\n\nhdiutil create -fs HFS+ -srcfolder \"$TARGET_BUILD_DIR\" -volname \"$volume_name\" -format UDZO -imagekey zlig-level=9 -o \"$output_dmg\"\n";
+			shellScript = "#\n# This build phase creates a disk image containing the plugin and an installer.\n#\nvolume_name=\"MURLR\"\ndisk_image_name=\"MURLR.dmg\"\n\noutput_dmg=\"$TARGET_BUILD_DIR/$disk_image_name\"\nrm \"$TARGET_BUILD_DIR/\"*.dmg 2>/dev/null\n\nhdiutil create -fs HFS+ -srcfolder \"$TARGET_BUILD_DIR\" -volname \"$volume_name\" -format UDZO -imagekey zlig-level=9 -o \"$output_dmg\"\n";
 		};
 		93E925400A4C8CD70039ADAD /* Set Bundle Bit */ = {
 			isa = PBXShellScriptBuildPhase;
