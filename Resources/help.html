@@ -9,10 +9,10 @@
 <body id="murlr_help">
   <h1 id="introduction">Mail.app URL Rewriter</h1>
   <p>
-    Mail.app URL Rewriter (MURLR) lets you any URL you click in your Mail.app
-    message view.
-    This can be handy if you correspondents send you link to a shared local
-    area network.
+    Mail.app URL Rewriter (MURLR) lets you edit any URL you click in your
+    Mail.app message view.
+    This can be handy if you correspondents send you links to documents on the
+    local area network.
   </p>
   <h1 id="rules">Rules</h1>
   <p>
@@ -25,8 +25,11 @@
   <dl>
     <dt>Match Regular Expression</dt>
     <dd>
-      A oniguruma library regular expression to match against the clicked
+      An oniguruma library regular expression to match against the clicked
       link.
+	  MURLR does not validate the regular expression, so you are
+	  responsible for crafting a valid (and hopefully efficient) regular
+	  expression.
     </dd>
     <dt>Replace Text</dt>
     <dd>
@@ -51,8 +54,6 @@
   </p>
   <p>
     The XCode project was based on <a href="http://harnly.net/2006/software/mail-plugin-template/mail-plugin-template-10">Mail Plug-in Template 1.0</a> by Aaron Harnly.
-    Much of his code has been gutted out, though the skeleton is still his
-    creation.
   </p>
   <h1 id="copyright">Copyright</h1>
   <p>

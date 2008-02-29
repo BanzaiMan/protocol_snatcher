@@ -5,6 +5,11 @@ body {
 h1 {
     background-color: #fdffc6;
     border: 2px solid #c9ce58;
+    font-size: 120%;
+}
+
+h2 {
+    font-size: 110%;
 }
 
 dt {

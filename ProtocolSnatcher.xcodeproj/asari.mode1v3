@@ -280,8 +280,6 @@
 								<string>1058C7AEFEA557BF11CA2CBB</string>
 								<string>19C28FB8FE9D52D311CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>4A7667290D7546EF006C62C9</string>
-								<string>4A76672A0D7546EF006C62C9</string>
 								<string>1C37FABC05509CD000000102</string>
 								<string>1CC0EA4004350EF90041110B</string>
 							</array>
@@ -344,7 +342,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4A7667360D754BA8006C62C9</string>
+										<string>4A306B580D77B2C0008D6C85</string>
 										<key>history</key>
 										<array>
 											<string>4AF866520D61385300DDA4DC</string>
@@ -380,7 +378,7 @@
 											<string>4A76672B0D7546EF006C62C9</string>
 											<string>4A76672C0D7546EF006C62C9</string>
 											<string>4A76672D0D7546EF006C62C9</string>
-											<string>4A7667260D7546EE006C62C9</string>
+											<string>4A7667360D754BA8006C62C9</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -418,10 +416,6 @@
 											<string>4AEA9EF60D710000001BAA7E</string>
 											<string>4A337E6F0D73D0C60019D6D2</string>
 											<string>4A337E730D73D27D0019D6D2</string>
-											<string>4A76672E0D7546EF006C62C9</string>
-											<string>4A76672F0D7546EF006C62C9</string>
-											<string>4A7667300D7546EF006C62C9</string>
-											<string>4A7667310D7546EF006C62C9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -479,9 +473,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4A7666E10D754041006C62C9</string>
+				<string>4A306B590D77B2C0008D6C85</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4A7666E20D754041006C62C9</string>
+				<string>4A306B5A0D77B2C0008D6C85</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -615,7 +609,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4AE0F66B0D6128D0007B4BE5</string>
 		<string>/Users/asari/Development/ProtocolSnatcher/trunk/ProtocolSnatcher.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
