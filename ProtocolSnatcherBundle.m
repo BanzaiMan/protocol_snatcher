@@ -13,7 +13,6 @@
 	[super initialize];
 	myBundle = [NSBundle bundleForClass:self];
 	[self registerBundle];
-
 	[MailApp ProtocolSnatcherSwizzleMethod: @selector(handleClickOnURL:visibleText:message:window:dontSwitch:)
 		withMethod: @selector(_ha_handleClickOnURL:visibleText:message:window:dontSwitch:)];
 	NSLog(@"Mail.app URL Rewriter loaded");

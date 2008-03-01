@@ -4,27 +4,27 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <title>Mail.app URL Rewriter</title>
-<style type="text/css">
-body {
+  <style type="text/css">
+  body {
     font: 10pt "Lucida Grande", Lucida, Verdana, sans-serif;
-}
+  }
 
-h1 {
+  h1 {
     background-color: #fdffc6;
     border: 2px solid #c9ce58;
     font-size: 120%;
-}
+  }
 
-h2 {
+  h2 {
     font-size: 110%;
-}
+  }
 
-dt {
+  dt {
     font-variant: small-caps;
     color: #002ea0;
     font-weight: bold;
-}
-</style>
+  }
+  </style>
 </head>
 <body id="murlr_help">
   <h1 id="introduction">Mail.app URL Rewriter</h1>
@@ -36,7 +36,7 @@ dt {
   </p>
   <h1 id="rules">Rules</h1>
   <p>
-    Rewrite rules ordered.
+    Rewrite rules are ordered.
     The first rule that matches the clicked link will trigger an event.
     If the URL doesn't match any rule, the click is passed on verbatim to
     Mail.app, just as though you did not have MURLR.
@@ -47,38 +47,41 @@ dt {
     <dd>
       An oniguruma library regular expression to match against the clicked
       link.
-	  MURLR does not validate the regular expression, so you are
-	  responsible for crafting a valid (and hopefully efficient) regular
-	  expression.
-    </dd>
-    <dt>Replace Text</dt>
-    <dd>
-      The text that replaces the URL.
-      Note that you can use numbered captures in replacement text.
-    </dd>
-    <dt>Remote Volume (Optional)</dt>
-    <dd>
-      If this property is empty, MURLR will pass the re-written URL to
-      Mail.app.
-      If this property is not empty, MURLR will attempt to mount it, and then
-      opens the file specified by the re-written URL.
-    </dd>
-  </dl>
+      MURLR does not validate the regular expression, so you are responsible
+      for crafting a valid (and hopefully efficient)
+      <a href="./Oniguruma-RE.txt">regular expression</a>.
+      </dd>
+      <dt>Replacement Text</dt>
+      <dd>
+        The text that replaces the match.
+        Usual regular expression tricks like back references apply.
+      </dd>
+      <dt>Remote Volume (Optional)</dt>
+      <dd>
+        If this property is empty, MURLR will pass the re-written URL to
+        Mail.app. If this property is not empty, MURLR will mount the volume
+        and open the file specified by the re-written path (so you probably
+        want to specify the replacement text that starts with
+        <tt>/Volumes</tt>).
+      </dd>
+    </dl>
 
-  <h1 id="license">Licenses and Acknowledgements</h1>
-  <p>
-    oniguruma is (c)2002-2008 K.Kosako. (<a href="http://www.geocities.jp/kosako3/oniguruma/index.html">License</a>)
-  </p>
-  <p>
-    OgreKit is (c)2003-2008 Isao Snobe. (<a href="http://www8.ocn.ne.jp/~sonoisa/OgreKit/license.html">License</a>)
-  </p>
-  <p>
-    The XCode project was based on <a href="http://harnly.net/2006/software/mail-plugin-template/mail-plugin-template-10">Mail Plug-in Template 1.0</a> by Aaron Harnly.
-  </p>
-  <h1 id="copyright">Copyright</h1>
-  <p>
-    &copy; 2008 Hirotsugu Asari
-    Distributed under the MIT License.
-  </p>
-</body>
-</html>
+    <h1 id="copyright">Copyright</h1>
+    <p>
+      &copy; 2008 Hirotsugu Asari.
+      Distributed under the MIT License.
+    </p>
+
+    <h1 id="license">Licenses and Acknowledgements</h1>
+    <p>
+      oniguruma is &copy;2002-2007 K.Kosako.
+      (<a href="./Oniguruma-License.txt">License</a>)
+    </p>
+    <p>
+      OgreKit is &copy;2003-2007 Isao Sonobe. (<a href="./OgreKit-License.txt">License</a>)
+    </p>
+    <p>
+      The XCode project was based onMail Plug-in Template 1.0 by Aaron Harnly.
+    </p>
+  </body>
+  </html>

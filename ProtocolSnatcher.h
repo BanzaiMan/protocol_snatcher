@@ -9,6 +9,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
+
+#import <OgreKit/OgreKit.h>
+
 // headers for barebones mail plugin
 #import "NSObject+ProtocolSnatcherSwizzle.h"
 #import "Mail/MailApp-MFUserAgent.h"
@@ -22,8 +25,6 @@
 #import "NSPreferencesModule.h"
 #import "PSPreferences.h"
 #import "PSPreferencesModule.h"
-
-#import <OgreKit/OgreKit.h>
 
 // and constants
 #define MyPrivateTableViewDataType @"PSURLRewriteRuleDataType"

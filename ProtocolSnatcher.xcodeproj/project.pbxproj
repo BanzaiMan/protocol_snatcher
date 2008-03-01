@@ -29,8 +29,12 @@
 		4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A8EF90D6731B70010005D /* MURLR.tiff */; };
 		4A4A8F800D6762250010005D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49B7048680CD000E48DA /* Info.plist */; };
 		4A6A98970D68E0B900DE08F6 /* PSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A98960D68E0B900DE08F6 /* PSPreferences.m */; };
-		4A7666EE0D754119006C62C9 /* OgreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7666ED0D754119006C62C9 /* OgreKit.framework */; };
-		4A76671F0D754131006C62C9 /* OgreKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4A7666ED0D754119006C62C9 /* OgreKit.framework */; };
+		4ABF3A480D7843B300C639F4 /* Oniguruma-License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF3A470D7843B300C639F4 /* Oniguruma-License.txt */; };
+		4ABF3A4A0D7843E500C639F4 /* OgreKit-License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF3A490D7843E500C639F4 /* OgreKit-License.txt */; };
+		4ABF3A610D78596900C639F4 /* Oniguruma-RE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF3A600D78596900C639F4 /* Oniguruma-RE.txt */; };
+		4ABF3C0C0D78862000C639F4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089C167FFE841241C02AAC07 /* AppKit.framework */; };
+		4ABF3CE40D788AB900C639F4 /* OgreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABF3CE30D788AB900C639F4 /* OgreKit.framework */; };
+		4ABF3CE80D788AD600C639F4 /* OgreKit.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 4ABF3CE30D788AB900C639F4 /* OgreKit.framework */; };
 		4AD3E7BE0D65584D00A5D7B5 /* PSPreferences.nib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */; };
 		4AD3E7DF0D655F1700A5D7B5 /* PSPreferencesModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -41,6 +45,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4A75091B0D7891D200E104A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* OgreKit.framework */;
+			remoteInfo = "OgreKit (Full Features)";
+		};
+		4A75091D0D7891D200E104A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DC40BFC09150BDB0029A2A6 /* OgreKit.framework */;
+			remoteInfo = "OgreKit (without Find Panel)";
+		};
+		4A75091F0D7891D200E104A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DC40C0409150C280029A2A6 /* OgreTest.app */;
+			remoteInfo = "Regular Expression Test";
+		};
+		4A7509210D7891D200E104A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DC40C0F09150C3E0029A2A6 /* OgreFindPanelTest.app */;
+			remoteInfo = "Find Panel Test";
+		};
+		4A7509230D7891D200E104A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DC40C1A09150C730029A2A6 /* MyFindPanelExample.app */;
+			remoteInfo = "My Find Panel Example";
+		};
+		4A7509250D7891D200E104A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DC40C3009150C9E0029A2A6 /* ReplaceWithAttributesTest.app */;
+			remoteInfo = "Replace With Attributes Test";
+		};
 		93E925270A4C8BE30039ADAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
@@ -51,14 +97,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4AD3E62B0D65456F00A5D7B5 /* CopyFiles */ = {
+		4ABF3BA80D787C7200C639F4 /* Copy Framework */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4A76671F0D754131006C62C9 /* OgreKit.framework in CopyFiles */,
+				4ABF3CE80D788AD600C639F4 /* OgreKit.framework in Copy Framework */,
 			);
+			name = "Copy Framework";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -80,7 +127,11 @@
 		4A6A94950D68771600DE08F6 /* ProtocolSnatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcher.h; sourceTree = "<group>"; };
 		4A6A98950D68E0B900DE08F6 /* PSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferences.h; sourceTree = "<group>"; };
 		4A6A98960D68E0B900DE08F6 /* PSPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferences.m; sourceTree = "<group>"; };
-		4A7666ED0D754119006C62C9 /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OgreKit.framework; path = ../../../Library/Frameworks/OgreKit.framework; sourceTree = SOURCE_ROOT; };
+		4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OgreKit.xcodeproj; path = ../../src/OgreKit_2_1_3/OgreKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4ABF3A470D7843B300C639F4 /* Oniguruma-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Oniguruma-License.txt"; path = "Resources/Oniguruma-License.txt"; sourceTree = "<group>"; };
+		4ABF3A490D7843E500C639F4 /* OgreKit-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "OgreKit-License.txt"; path = "Resources/OgreKit-License.txt"; sourceTree = "<group>"; };
+		4ABF3A600D78596900C639F4 /* Oniguruma-RE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Oniguruma-RE.txt"; path = "Resources/Oniguruma-RE.txt"; sourceTree = "<group>"; };
+		4ABF3CE30D788AB900C639F4 /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OgreKit.framework; sourceTree = "<group>"; };
 		4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = PSPreferences.nib; path = Resources/PSPreferences.nib; sourceTree = "<group>"; };
 		4AD3E7DD0D655F1700A5D7B5 /* PSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferencesModule.h; sourceTree = "<group>"; };
 		4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferencesModule.m; sourceTree = "<group>"; };
@@ -110,9 +161,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ABF3C0C0D78862000C639F4 /* AppKit.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				4A337CF80D73C4FC0019D6D2 /* WebKit.framework in Frameworks */,
-				4A7666EE0D754119006C62C9 /* OgreKit.framework in Frameworks */,
+				4ABF3CE40D788AB900C639F4 /* OgreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +174,7 @@
 		089C166AFE841209C02AAC07 /* ProtocolSnatcher */ = {
 			isa = PBXGroup;
 			children = (
+				4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */,
 				4A4A8CB30D6724880010005D /* class-dump */,
 				93E925060A4C8AA70039ADAD /* Apple Headers */,
 				93E9250A0A4C8AC50039ADAD /* Customization Categories */,
@@ -150,6 +203,9 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4ABF3A600D78596900C639F4 /* Oniguruma-RE.txt */,
+				4ABF3A490D7843E500C639F4 /* OgreKit-License.txt */,
+				4ABF3A470D7843B300C639F4 /* Oniguruma-License.txt */,
 				4A337E500D73CC640019D6D2 /* help.html */,
 				4A4A8EF90D6731B70010005D /* MURLR.tiff */,
 				93E925570A4C8D780039ADAD /* Installer.icns */,
@@ -180,7 +236,7 @@
 		1058C7AEFEA557BF11CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4A7666ED0D754119006C62C9 /* OgreKit.framework */,
+				4ABF3CE30D788AB900C639F4 /* OgreKit.framework */,
 				4A337CF70D73C4FC0019D6D2 /* WebKit.framework */,
 				089C167FFE841241C02AAC07 /* AppKit.framework */,
 				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
@@ -214,6 +270,19 @@
 				4A4A8CB50D6724880010005D /* mail-headers.h */,
 			);
 			path = "class-dump";
+			sourceTree = "<group>";
+		};
+		4A7509110D7891D200E104A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A75091C0D7891D200E104A9 /* OgreKit.framework */,
+				4A75091E0D7891D200E104A9 /* OgreKit.framework */,
+				4A7509200D7891D200E104A9 /* OgreTest.app */,
+				4A7509220D7891D200E104A9 /* OgreFindPanelTest.app */,
+				4A7509240D7891D200E104A9 /* MyFindPanelExample.app */,
+				4A7509260D7891D200E104A9 /* ReplaceWithAttributesTest.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4AD3E7C10D655D9D00A5D7B5 /* ProtocolSnatcher Preferences */ = {
@@ -383,9 +452,9 @@
 			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "MURLR" */;
 			buildPhases = (
 				8D5B49AF048680CD000E48DA /* Resources */,
+				4ABF3BA80D787C7200C639F4 /* Copy Framework */,
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
-				4AD3E62B0D65456F00A5D7B5 /* CopyFiles */,
 				93E925400A4C8CD70039ADAD /* Set Bundle Bit */,
 			);
 			buildRules = (
@@ -408,6 +477,12 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* ProtocolSnatcher */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4A7509110D7891D200E104A9 /* Products */;
+					ProjectRef = 4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* MURLR */,
@@ -415,6 +490,51 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4A75091C0D7891D200E104A9 /* OgreKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OgreKit.framework;
+			remoteRef = 4A75091B0D7891D200E104A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4A75091E0D7891D200E104A9 /* OgreKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OgreKit.framework;
+			remoteRef = 4A75091D0D7891D200E104A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4A7509200D7891D200E104A9 /* OgreTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OgreTest.app;
+			remoteRef = 4A75091F0D7891D200E104A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4A7509220D7891D200E104A9 /* OgreFindPanelTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OgreFindPanelTest.app;
+			remoteRef = 4A7509210D7891D200E104A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4A7509240D7891D200E104A9 /* MyFindPanelExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = MyFindPanelExample.app;
+			remoteRef = 4A7509230D7891D200E104A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4A7509260D7891D200E104A9 /* ReplaceWithAttributesTest.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ReplaceWithAttributesTest.app;
+			remoteRef = 4A7509250D7891D200E104A9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D5B49AF048680CD000E48DA /* Resources */ = {
@@ -426,6 +546,9 @@
 				4AD3E7BE0D65584D00A5D7B5 /* PSPreferences.nib in Resources */,
 				4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */,
 				4A337E510D73CC640019D6D2 /* help.html in Resources */,
+				4ABF3A480D7843B300C639F4 /* Oniguruma-License.txt in Resources */,
+				4ABF3A4A0D7843E500C639F4 /* OgreKit-License.txt in Resources */,
+				4ABF3A610D78596900C639F4 /* Oniguruma-RE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +644,7 @@
 				);
 				BUNDLE_LOADER = /Applications/Mail.app/Contents/MacOS/Mail;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "~/Library/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../Library/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Library/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../Library/Frameworks\"";
@@ -537,6 +660,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/CORE\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)\"";
@@ -549,7 +673,8 @@
 				PRODUCT_NAME = MURLR;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
-				USER_HEADER_SEARCH_PATHS = "~/Library/Frameworks /usr/include";
+				SYMROOT = build;
+				USER_HEADER_SEARCH_PATHS = /usr/include;
 				VERSION_INFO_FILE = "$(PRODUCT_NAME)_vers.c";
 				WRAPPER_EXTENSION = mailbundle;
 				ZERO_LINK = YES;
@@ -564,7 +689,7 @@
 					ppc,
 				);
 				BUNDLE_LOADER = /Applications/Mail.app/Contents/MacOS/Mail;
-				FRAMEWORK_SEARCH_PATHS = "~/Library/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Library/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../Library/Frameworks\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_3 = "\"$(SRCROOT)/../../Library/Frameworks\"";
@@ -578,6 +703,7 @@
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Mail/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/CORE\"";
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)\"";
@@ -590,7 +716,8 @@
 				PRODUCT_NAME = MURLR;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
-				USER_HEADER_SEARCH_PATHS = "~/Library/Frameworks /usr/include";
+				SYMROOT = build;
+				USER_HEADER_SEARCH_PATHS = /usr/include;
 				VERSION_INFO_FILE = "$(PRODUCT_NAME)_vers.c";
 				WRAPPER_EXTENSION = mailbundle;
 			};
