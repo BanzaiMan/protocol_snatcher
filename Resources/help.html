@@ -59,10 +59,15 @@
       <dt>Remote Volume (Optional)</dt>
       <dd>
         If this property is empty, MURLR will pass the re-written URL to
-        Mail.app. If this property is not empty, MURLR will mount the volume
+        Mail.app.
+      </dd>
+      <dd>
+        If this property is not empty, MURLR will mount the volume
         and open the file specified by the re-written path (so you probably
         want to specify the replacement text that starts with
         <tt>/Volumes</tt>).
+        Note that the mount will be performed synchronously, so it may take
+        a while to fail.
       </dd>
     </dl>
 

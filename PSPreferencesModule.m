@@ -18,7 +18,7 @@
 	[self readRewriteRules];
 	[helpPanel setHidesOnDeactivate: YES];
 	[helpPanel setReleasedWhenClosed: NO];
-	const NSSize prefFrameSize = NSMakeSize(650.0f,450.0f);
+	const NSSize prefFrameSize = NSMakeSize(650.0f,513.0f);
 	[self setMinSize: prefFrameSize];
 	[_preferencesView setFrameSize: prefFrameSize];
 	[rulesTableView reloadData];
@@ -31,9 +31,9 @@
 - (IBAction) addRewriteRule: (id) sender {
 	// a new rule with default values
 	NSMutableDictionary *newRule = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-		@"regular expression", @"matchRegex",
+		@"", @"matchRegex",
 		@"", @"replaceText",
-		@"cifs://",@"shareToMount",
+		@"",@"shareToMount",
 		nil
 	];
 	

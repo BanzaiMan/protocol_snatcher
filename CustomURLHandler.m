@@ -15,10 +15,12 @@
 					 message:(id)msg
 					  window:(id)containerWindow
 				  dontSwitch:(BOOL)fp24 {
+    // we return YES for the most part, since we will handle most errors ourselves
 	/* Assume that url is UTF8-encoded. */
 	NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];	
 	NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
-	
+    BOOL result;
+    
 	id aRewriteRule;
 	// go through the list and rewrite URL
 	// first one that succeeds in match will trigger
@@ -59,23 +61,46 @@
 					/* unable to mount volume--this could take a while
 					 perhaps FSMountServerVolumeASync() might be faster when it fails */
 					free(fs);
-				} else {
+                    [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to mount %@", shareURL]
+                                     defaultButton: @"OK"
+                                   alternateButton: nil
+                                       otherButton: nil
+                         informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+                      url, matchRegex, replaceText, string ] runModal];
+                    return YES;
+                } else {
+                    // this portion should be inside FSVolumeMountProcPtr
 					if ( [[NSWorkspace sharedWorkspace] openFile: unescaped_url_str] ) {
 						free(fs);
 						return YES;
 					} else {
 						// should alert user
 						free(fs);
-						return NO;
+                        [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
+                                         defaultButton: @"OK"
+                                       alternateButton: nil
+                                           otherButton: nil
+                             informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+                          url, matchRegex, replaceText, string ] runModal];
+						return YES;
 					}
 				} // FSMountServerVolumeSync
 			} // there is a volume to mount
 			else {
-				return [self _ha_handleClickOnURL:unescaped_url_str
-									  visibleText:linkText
-										  message:msg
-										   window:containerWindow
-									   dontSwitch:fp24];
+				result = [self _ha_handleClickOnURL:unescaped_url_str
+                                        visibleText:linkText
+                                            message:msg
+                                             window:containerWindow
+                                         dontSwitch:fp24];
+                if (!result){
+                    [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
+                                     defaultButton: @"OK"
+                                   alternateButton: nil
+                                       otherButton: nil
+                         informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+                      url, matchRegex, replaceText, string ] runModal];
+                }
+                return YES;
 			}
 		} // URL matched this rule...
 	} // looping over rules array
@@ -83,10 +108,10 @@
 	// none of the rewrite rules matched, so we'll
 	// just hand this request off to the original method
 	return [self _ha_handleClickOnURL:url
-						  visibleText:linkText
-							  message:msg
-							   window:containerWindow
-						   dontSwitch:fp24];	
+                            visibleText:linkText
+                                message:msg
+                                 window:containerWindow
+                             dontSwitch:fp24];
 }
 
 @end

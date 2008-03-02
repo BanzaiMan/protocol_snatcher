@@ -7,6 +7,9 @@
 //
 
 #import "ProtocolSnatcher.h"
+#define MURLR_ERROR_DOMAIN @"MURLR Error Domain"
+#define MURLR_VOLUME_MOUNT_ERROR 1
+#define MURLR_OPEN_FILE_ERROR 2
 
 @interface MailApp  (CustomURLHandler)
 
