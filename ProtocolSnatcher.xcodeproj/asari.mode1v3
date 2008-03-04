@@ -336,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4A4CF1DB0D7DD3DE00DC48FF</string>
+										<string>4A4CF1E00D7DD86700DC48FF</string>
 										<key>history</key>
 										<array>
 											<string>4AF866520D61385300DDA4DC</string>
@@ -611,6 +611,7 @@
 	<key>WindowOrderList</key>
 	<array>
 		<string>4AE0F66B0D6128D0007B4BE5</string>
+		<string>/Users/asari/Development/ProtocolSnatcher/trunk/ProtocolSnatcher.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>200 83 1444 904 0 0 1680 1028 </string>

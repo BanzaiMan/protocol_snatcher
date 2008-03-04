@@ -29,7 +29,9 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
         return;
     }
     
+    // Volume mount was successful, so try opening the file
     if ( ! [[NSWorkspace sharedWorkspace] openFile: unescaped_url_str] ) {
+        // failed to open the file, so alert the user
         [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
             defaultButton: @"Dismiss"
             alternateButton: nil
@@ -40,6 +42,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     FSDisposeVolumeOperation(volumeOp);
     return;
 }
+
 @implementation MailApp(CustomURLHandler)
 
 - (BOOL)_ha_handleClickOnURL:(id)url
@@ -51,7 +54,6 @@ dontSwitch:(BOOL)fp24 {
     /* Assume that url is UTF8-encoded. */
     NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];	
     NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
-    BOOL result;
 
     FSVolumeMountUPP volumeMountUPP = NewFSVolumeMountUPP(volumeMountCallback);
     FSVolumeOperation volumeOp;
@@ -84,31 +86,23 @@ dontSwitch:(BOOL)fp24 {
             NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
             NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: url, @"OriginalURL", matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"RewrittenURL",unescaped_url_str, @"UnescapedURL",nil];
             if ([shareToMount length] > 0 ) {
-                // OSStatus status;
-                // FSVolumeRefNum *fs = malloc(sizeof(FSVolumeRefNum));
 
                 NSURL *shareURL = [NSURL URLWithString: shareToMount];
                 if ((err = FSMountServerVolumeAsync( (CFURLRef) shareURL,
-                    NULL, // use system default mount dir
-                    NULL, // user name; let underlying filesystem handle authentication
-                    NULL, // password
-                    volumeOp,
-                    remoteVolumeMountInfo,
-                    0,
-                    volumeMountUPP,
-                    CFRunLoopGetCurrent(),
-                    kCFRunLoopCommonModes
-                )) == noErr) {
+                    NULL, /* use system default mount dir */
+                    NULL, /* user name; let underlying filesystem handle authentication */
+                    NULL, /* password */
+                    volumeOp, remoteVolumeMountInfo, 0, volumeMountUPP, CFRunLoopGetCurrent(), kCFRunLoopCommonModes)) != noErr) {
                     FSDisposeVolumeOperation(volumeOp);
-                } // FSMountServerVolumeSync
-            } // there is a volume to mount
+                } // FSMountServerVolumeAsync
+                
+            }
             else {
-                result = [self _ha_handleClickOnURL:unescaped_url_str
+                if ( ! [self _ha_handleClickOnURL:unescaped_url_str
                     visibleText:linkText
                     message:msg
                     window:containerWindow
-                    dontSwitch:fp24];
-                if (!result){
+                    dontSwitch:fp24] ) {
                     [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
                         defaultButton: @"Dismiss"
                         alternateButton: nil

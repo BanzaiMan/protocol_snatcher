@@ -3,7 +3,7 @@
 	089C1669FE841209C02AAC07 /* Project object */ = {
 		activeArchitecture = i386;
 		activeBuildConfigurationName = Release;
-		activeTarget = 8D5B49AC048680CD000E48DA /* MURLR */;
+		activeTarget = 93E925240A4C8BD70039ADAD /* MURLR Installer */;
 		addToTargets = (
 			8D5B49AC048680CD000E48DA /* MURLR */,
 		);
@@ -188,6 +188,9 @@
 			4A4CF1D90D7DD25200DC48FF /* PBXTextBookmark */ = 4A4CF1D90D7DD25200DC48FF /* PBXTextBookmark */;
 			4A4CF1DA0D7DD2E800DC48FF /* PBXTextBookmark */ = 4A4CF1DA0D7DD2E800DC48FF /* PBXTextBookmark */;
 			4A4CF1DB0D7DD3DE00DC48FF /* PBXTextBookmark */ = 4A4CF1DB0D7DD3DE00DC48FF /* PBXTextBookmark */;
+			4A4CF1DE0D7DD75600DC48FF /* PBXTextBookmark */ = 4A4CF1DE0D7DD75600DC48FF /* PBXTextBookmark */;
+			4A4CF1DF0D7DD7D500DC48FF /* PBXTextBookmark */ = 4A4CF1DF0D7DD7D500DC48FF /* PBXTextBookmark */;
+			4A4CF1E00D7DD86700DC48FF /* PBXTextBookmark */ = 4A4CF1E00D7DD86700DC48FF /* PBXTextBookmark */;
 			4A56583A0D668AB6007DE2C2 = 4A56583A0D668AB6007DE2C2 /* PBXTextBookmark */;
 			4A5658AC0D66962E007DE2C2 = 4A5658AC0D66962E007DE2C2 /* PBXTextBookmark */;
 			4A5780AE0D68F7F000062C83 = 4A5780AE0D68F7F000062C83 /* PBXTextBookmark */;
@@ -355,9 +358,9 @@
 	};
 	4A25BF570D6275D9007AB34A /* CustomURLHandler.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1184, 2576}}";
-			sepNavSelRange = "{7423, 0}";
-			sepNavVisRange = "{0, 1922}";
+			sepNavIntBoundsRect = "{{0, 0}, {1667, 2032}}";
+			sepNavSelRange = "{6200, 0}";
+			sepNavVisRange = "{3343, 2464}";
 			sepNavWindowFrame = "{{267, 59}, {1139, 969}}";
 		};
 	};
@@ -376,7 +379,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 15";
 		rLen = 0;
-		rLoc = 4939;
+		rLoc = 4940;
 		rType = 0;
 		vrLen = 376;
 		vrLoc = 0;
@@ -569,7 +572,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 116";
 		rLen = 0;
-		rLoc = 5462;
+		rLoc = 5463;
 		rType = 0;
 		vrLen = 2498;
 		vrLoc = 1715;
@@ -579,7 +582,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 115";
 		rLen = 0;
-		rLoc = 5395;
+		rLoc = 5396;
 		rType = 0;
 		vrLen = 2090;
 		vrLoc = 494;
@@ -589,7 +592,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 140";
 		rLen = 0;
-		rLoc = 6741;
+		rLoc = 6742;
 		rType = 0;
 		vrLen = 1639;
 		vrLoc = 0;
@@ -599,7 +602,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 146";
 		rLen = 0;
-		rLoc = 6874;
+		rLoc = 6875;
 		rType = 0;
 		vrLen = 1730;
 		vrLoc = 0;
@@ -609,7 +612,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 144";
 		rLen = 0;
-		rLoc = 6835;
+		rLoc = 6836;
 		rType = 0;
 		vrLen = 1806;
 		vrLoc = 0;
@@ -619,7 +622,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 145";
 		rLen = 0;
-		rLoc = 6855;
+		rLoc = 6856;
 		rType = 0;
 		vrLen = 1725;
 		vrLoc = 0;
@@ -629,7 +632,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 146";
 		rLen = 0;
-		rLoc = 6993;
+		rLoc = 6994;
 		rType = 0;
 		vrLen = 1823;
 		vrLoc = 0;
@@ -639,7 +642,7 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 146";
 		rLen = 0;
-		rLoc = 7011;
+		rLoc = 7012;
 		rType = 0;
 		vrLen = 1823;
 		vrLoc = 0;
@@ -649,10 +652,40 @@
 		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
 		name = "CustomURLHandler.m: 152";
 		rLen = 0;
-		rLoc = 7423;
+		rLoc = 7424;
 		rType = 0;
 		vrLen = 1922;
 		vrLoc = 0;
+	};
+	4A4CF1DE0D7DD75600DC48FF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
+		name = "CustomURLHandler.m: 134";
+		rLen = 0;
+		rLoc = 6086;
+		rType = 0;
+		vrLen = 1697;
+		vrLoc = 0;
+	};
+	4A4CF1DF0D7DD7D500DC48FF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
+		name = "CustomURLHandler.m: 103";
+		rLen = 0;
+		rLoc = 4896;
+		rType = 0;
+		vrLen = 2358;
+		vrLoc = 3075;
+	};
+	4A4CF1E00D7DD86700DC48FF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */;
+		name = "CustomURLHandler.m: 136";
+		rLen = 0;
+		rLoc = 6200;
+		rType = 0;
+		vrLen = 2464;
+		vrLoc = 3343;
 	};
 	4A56583A0D668AB6007DE2C2 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
