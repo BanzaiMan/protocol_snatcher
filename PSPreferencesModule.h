@@ -40,11 +40,4 @@
 /* helper methods for NSTableDataSource */
 - (void) readRewriteRules;
 
-@property (retain) NSPanel *helpPanel;
-@property (retain) NSMutableArray *rules;
-@property (retain) NSButton *removeButoon;
-@property (retain) WebView *helpContent;
-@property BOOL _canRemove;
-@property (retain) NSTableView *rulesTableView;
-@property (retain) NSTextField *versionStringField;
 @end

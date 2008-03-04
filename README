@@ -8,12 +8,13 @@ OS.
 MINIMUM REQUIREMENT
 ==============================================================================
 Mac OS X Leopard.
-(It might be possible to make it work on Tiger, but I have no access to Tiger
-at this time.)
-
 
 INSTALL
 ==============================================================================
+* Run the installer.
+
+-or-
+
 * Create ~/Library/Mail/Bundles if it does not exist already.
 * Put the Bundle there.
 * Type the following commands in the Terminal:
@@ -27,13 +28,11 @@ Online help is available from the MURLR Preferences pane.
 
 KNOWN ISSUES
 ==============================================================================
-* If the volume you specify with the rule is not available when a match
-happens, it may take a few minutes before Mail.app returns with an error.
+* None at the moment.
 
 IMPROVEMENT POSSIBILITIES
 ==============================================================================
 * Import/Export rules.
-* Asynchronous volume mount.
 * Better alert in case something goes wrong during our handling of the URL.
 
 LICENSE

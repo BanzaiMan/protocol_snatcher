@@ -12,7 +12,9 @@
 			buildConfigurationList = 93E9252F0A4C8C230039ADAD /* Build configuration list for PBXAggregateTarget "MURLR Installer" */;
 			buildPhases = (
 				93E925290A4C8BE80039ADAD /* Compile Installer Applescript */,
+				4A739EE20D7A782000EBAA50 /* Copy README */,
 				93E925320A4C8C2D0039ADAD /* Create disk image */,
+				4A739EED0D7A7A9A00EBAA50 /* Remove copied README */,
 			);
 			dependencies = (
 				93E925280A4C8BE30039ADAD /* PBXTargetDependency */,
@@ -555,6 +557,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A739EE20D7A782000EBAA50 /* Copy README */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy README";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp $SRCROOT/README $TARGET_BUILD_DIR";
+		};
+		4A739EED0D7A7A9A00EBAA50 /* Remove copied README */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Remove copied README";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm $TARGET_BUILD_DIR/README";
+		};
 		93E925290A4C8BE80039ADAD /* Compile Installer Applescript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -581,7 +611,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\n# This build phase creates a disk image containing the plugin and an installer.\n#\nvolume_name=\"MURLR\"\ndisk_image_name=\"MURLR.dmg\"\n\noutput_dmg=\"$TARGET_BUILD_DIR/$disk_image_name\"\nrm \"$TARGET_BUILD_DIR/\"*.dmg 2>/dev/null\n\nhdiutil create -fs HFS+ -srcfolder \"$TARGET_BUILD_DIR\" -volname \"$volume_name\" -format UDZO -imagekey zlig-level=9 -o \"$output_dmg\"\n";
+			shellScript = "#\n# This build phase creates a disk image containing the plugin and an installer.\n#\nvolume_name=\"Mail URL Rewriter 0.2\"\ndisk_image_name=\"MURLR.dmg\"\n\noutput_dmg=\"$TARGET_BUILD_DIR/$disk_image_name\"\nrm \"$TARGET_BUILD_DIR/\"*.dmg 2>/dev/null\n\nhdiutil create -fs HFS+ -srcfolder \"$TARGET_BUILD_DIR\" -volname \"$volume_name\" -format UDZO -imagekey zlig-level=9 -o \"$output_dmg\"\n";
 		};
 		93E925400A4C8CD70039ADAD /* Set Bundle Bit */ = {
 			isa = PBXShellScriptBuildPhase;

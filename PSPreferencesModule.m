@@ -240,11 +240,4 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
 }
 
 
-@synthesize rules;
-@synthesize rulesTableView;
-@synthesize helpPanel;
-@synthesize removeButoon;
-@synthesize _canRemove;
-@synthesize versionStringField;
-@synthesize helpContent;
 @end
