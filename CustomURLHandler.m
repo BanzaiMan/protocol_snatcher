@@ -49,7 +49,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     visibleText:(id)linkText
     message:(id)msg
     window:(id)containerWindow
-dontSwitch:(BOOL)fp24 {
+    dontSwitch:(BOOL)fp24 {
     // we return YES for the most part, since we will handle most errors ourselves
     /* Assume that url is UTF8-encoded. */
     NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];	
@@ -77,11 +77,16 @@ dontSwitch:(BOOL)fp24 {
         NSString *matchRegex   = [aRewriteRule objectForKey:@"matchRegex"];
         NSString *replaceText  = [aRewriteRule objectForKey:@"replaceText"];
         NSString *shareToMount = [aRewriteRule objectForKey:@"shareToMount"];
+        
+        if (matchRegex == nil || replaceText == nil || shareToMount == nil) {
+            NSLog(@"Rewrite rule lacks required parameter");
+            continue;
+        }
 
         if ([string replaceOccurrencesOfRegularExpressionString: matchRegex
-                                                     withString: replaceText
-                                                        options: OgreNoneOption
-                                                          range: NSMakeRange(0, [string length])] > 0) {
+            withString: replaceText
+            options: OgreNoneOption
+            range: NSMakeRange(0, [string length])] > 0) {
                                                               
             NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
             NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: url, @"OriginalURL", matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"RewrittenURL",unescaped_url_str, @"UnescapedURL",nil];
