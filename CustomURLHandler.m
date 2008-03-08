@@ -11,7 +11,6 @@
 static void
 volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, FSVolumeRefNum mountedVolumeRefNum)
 {
-    // NSError *nserr = nil;
 	NSDictionary *dict = [(NSString *)clientData autorelease];
 	id url = [dict objectForKey:@"OriginalURL"];
     id matchRegex = [dict objectForKey: @"matchRegex"];
@@ -49,8 +48,10 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     visibleText:(id)linkText
     message:(id)msg
     window:(id)containerWindow
-    dontSwitch:(BOOL)fp24 {
+    dontSwitch:(BOOL)fp24
+{
     // we return YES for the most part, since we will handle most errors ourselves
+    // if we return NO, Mail.app will display error dialog as well
     /* Assume that url is UTF8-encoded. */
     NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];	
     NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
@@ -58,7 +59,6 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     FSVolumeMountUPP volumeMountUPP = NewFSVolumeMountUPP(volumeMountCallback);
     FSVolumeOperation volumeOp;
     OSStatus err = FSCreateVolumeOperation(&volumeOp);
-    // NSMutableDictionary *remoteVolumeMountInfo;
 
     id aRewriteRule;
     // go through the list and rewrite URL
@@ -84,20 +84,20 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
         }
 
         if ([string replaceOccurrencesOfRegularExpressionString: matchRegex
-            withString: replaceText
-            options: OgreNoneOption
+            withString: replaceText options: OgreNoneOption
             range: NSMakeRange(0, [string length])] > 0) {
                                                               
             NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-            NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: url, @"OriginalURL", matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"RewrittenURL",unescaped_url_str, @"UnescapedURL",nil];
-            if ([shareToMount length] > 0 ) {
+            NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: url, @"OriginalURL",
+                matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"RewrittenURL",unescaped_url_str, @"UnescapedURL",nil];
+            if ([shareToMount length] > 0 )
+            {
 
                 NSURL *shareURL = [NSURL URLWithString: shareToMount];
                 if ((err = FSMountServerVolumeAsync( (CFURLRef) shareURL,
-                    NULL, /* use system default mount dir */
-                    NULL, /* user name; let underlying filesystem handle authentication */
-                    NULL, /* password */
-                    volumeOp, remoteVolumeMountInfo, 0, volumeMountUPP, CFRunLoopGetCurrent(), kCFRunLoopCommonModes)) != noErr) {
+                    NULL, NULL, NULL, volumeOp, remoteVolumeMountInfo, 0,
+                    volumeMountUPP, CFRunLoopGetCurrent(), kCFRunLoopCommonModes)) != noErr)
+                {
                     FSDisposeVolumeOperation(volumeOp);
                 } // FSMountServerVolumeAsync
                 
@@ -107,7 +107,8 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
                     visibleText:linkText
                     message:msg
                     window:containerWindow
-                    dontSwitch:fp24] ) {
+                    dontSwitch:fp24] )
+                {
                     [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
                         defaultButton: @"Dismiss"
                         alternateButton: nil
@@ -122,11 +123,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
 
     // none of the rewrite rules matched, so we'll
     // just hand this request off to the original method
-    return [self _ha_handleClickOnURL:url
-        visibleText:linkText
-        message:msg
-        window:containerWindow
-        dontSwitch:fp24];
+    return [self _ha_handleClickOnURL:url visibleText:linkText message:msg window:containerWindow dontSwitch:fp24];
 }
 
 @end

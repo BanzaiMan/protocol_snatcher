@@ -28,12 +28,11 @@ Online help is available from the MURLR Preferences pane.
 
 KNOWN ISSUES
 ==============================================================================
-* None at the moment.
+* MURLR does not validate the regular expression.  It should.
 
 IMPROVEMENT POSSIBILITIES
 ==============================================================================
 * Import/Export rules.
-* Better alert in case something goes wrong during our handling of the URL.
 
 LICENSE
 ==============================================================================
