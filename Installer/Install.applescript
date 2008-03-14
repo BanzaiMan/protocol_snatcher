@@ -81,7 +81,7 @@ end do_launch
 
 on do_defaults()
 	do shell script "defaults write com.apple.mail EnableBundles -bool true"
-	do shell script "defaults write com.apple.mail BundleCompatibilityVersion 2"
+	do shell script "defaults write com.apple.mail BundleCompatibilityVersion 3"
 end do_defaults
 
 on do_install()
