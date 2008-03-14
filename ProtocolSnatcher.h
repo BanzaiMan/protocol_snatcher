@@ -11,6 +11,7 @@
 #import <WebKit/WebKit.h>
 
 #import <OgreKit/OgreKit.h>
+#import <Growl/Growl.h>
 
 // headers for barebones mail plugin
 #import "NSObject+ProtocolSnatcherSwizzle.h"
@@ -28,3 +29,6 @@
 
 // and constants
 #define MyPrivateTableViewDataType @"PSURLRewriteRuleDataType"
+#define MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED @"Remote Volume Mount Failed"
+#define MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED @"No Regular Expression Matched"
+#define MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED @"Unable To Open File"

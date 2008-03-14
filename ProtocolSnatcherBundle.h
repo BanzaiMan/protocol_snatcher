@@ -12,7 +12,7 @@
 #define NSLOG(x)
 #endif
 
-@interface ProtocolSnatcherBundle : MVMailBundle {
+@interface ProtocolSnatcherBundle : MVMailBundle <GrowlApplicationBridgeDelegate> {
 //	NSMutableArray *rules;
 }
 
@@ -20,5 +20,6 @@
 //+ (NSString *) preferencesOwnerClassName;
 //+ (NSString *) preferencesPanelName;
 + (NSBundle *) bundle;
+- (NSDictionary *) registrationDictionaryForGrowl;
 
 @end

@@ -1,9 +1,8 @@
-(c) Copyright 2008 Hirotsugu Asari. All Rights Reserved.
+(c) Copyright 2008 Hirotsugu Asari.
 
 Mail URL Rewriter (MURLR)
 
-MURLR is a Mail.app plugin which lets you modify URLs before passing it to the
-OS.
+MURLR is a Mail.app plugin which lets you modify URLs.
 
 MINIMUM REQUIREMENT
 ==============================================================================

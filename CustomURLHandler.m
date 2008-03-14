@@ -12,18 +12,30 @@ static void
 volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, FSVolumeRefNum mountedVolumeRefNum)
 {
 	NSDictionary *dict = [(NSString *)clientData autorelease];
-	id url = [dict objectForKey:@"OriginalURL"];
-    id matchRegex = [dict objectForKey: @"matchRegex"];
-    id replaceText = [dict objectForKey: @"replaceText"];
-    id string = [dict objectForKey:@"RewrittenURL"];
+	id url               = [dict objectForKey:@"OriginalURL"];
+    id matchRegex        = [dict objectForKey:@"matchRegex"];
+    id replaceText       = [dict objectForKey:@"replaceText"];
+    id string            = [dict objectForKey:@"RewrittenURL"];
     id unescaped_url_str = [dict objectForKey:@"UnescapedURL"];
-	if (err != noErr) {
-        [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to mount requested volume"]
-            defaultButton: @"Dismiss"
-            alternateButton: nil
-            otherButton: nil
-            informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
-            url, matchRegex, replaceText, string ] runModal];
+    
+    if (err != noErr) {
+        if ([GrowlApplicationBridge isGrowlRunning]) {
+            [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED
+                                        description: [NSString stringWithFormat:@"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+                                                      url, matchRegex, replaceText, string]
+                                   notificationName: MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED
+                                           iconData: nil
+                                           priority: 0
+                                           isSticky: NO
+                                       clickContext: nil];
+        } else {
+            [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to mount requested volume"]
+                             defaultButton: @"Dismiss"
+                           alternateButton: nil
+                               otherButton: nil
+                 informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+              url, matchRegex, replaceText, string ] runModal];            
+        }
         FSDisposeVolumeOperation(volumeOp);
         return;
     }
@@ -31,12 +43,23 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     // Volume mount was successful, so try opening the file
     if ( ! [[NSWorkspace sharedWorkspace] openFile: unescaped_url_str] ) {
         // failed to open the file, so alert the user
-        [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
-            defaultButton: @"Dismiss"
-            alternateButton: nil
-            otherButton: nil
-            informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
-            url, matchRegex, replaceText, string ] runModal];
+        if ([GrowlApplicationBridge isGrowlRunning]) {
+            [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
+                                        description: [NSString stringWithFormat:@"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+                                                      url, matchRegex, replaceText, string]
+                                   notificationName: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
+                                           iconData: nil
+                                           priority: 0
+                                           isSticky: NO
+                                       clickContext: nil];
+        } else {
+            [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
+                             defaultButton: @"Dismiss"
+                           alternateButton: nil
+                               otherButton: nil
+                 informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+              url, matchRegex, replaceText, string ] runModal];            
+        }
     }
     FSDisposeVolumeOperation(volumeOp);
     return;
@@ -53,12 +76,12 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     // we return YES for the most part, since we will handle most errors ourselves
     // if we return NO, Mail.app will display error dialog as well
     /* Assume that url is UTF8-encoded. */
-    NSMutableString *string = [ NSMutableString stringWithString: [url absoluteString] ];	
+    NSMutableString *string    = [ NSMutableString stringWithString: [url absoluteString] ];	
     NSMutableArray *rulesArray = [[NSUserDefaults standardUserDefaults] objectForKey: @"URLRewriteRules"];
 
     FSVolumeMountUPP volumeMountUPP = NewFSVolumeMountUPP(volumeMountCallback);
     FSVolumeOperation volumeOp;
-    OSStatus err = FSCreateVolumeOperation(&volumeOp);
+    OSStatus err                    = FSCreateVolumeOperation(&volumeOp);
 
     id aRewriteRule;
     // go through the list and rewrite URL
@@ -90,31 +113,37 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
             NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
             NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: url, @"OriginalURL",
                 matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"RewrittenURL",unescaped_url_str, @"UnescapedURL",nil];
-            if ([shareToMount length] > 0 )
-            {
-
+            if ([shareToMount length] > 0 ) {
                 NSURL *shareURL = [NSURL URLWithString: shareToMount];
                 if ((err = FSMountServerVolumeAsync( (CFURLRef) shareURL,
                     NULL, NULL, NULL, volumeOp, remoteVolumeMountInfo, 0,
-                    volumeMountUPP, CFRunLoopGetCurrent(), kCFRunLoopCommonModes)) != noErr)
-                {
+                    volumeMountUPP, CFRunLoopGetCurrent(), kCFRunLoopCommonModes)) != noErr) {
                     FSDisposeVolumeOperation(volumeOp);
                 } // FSMountServerVolumeAsync
-                
             }
             else {
                 if ( ! [self _ha_handleClickOnURL:unescaped_url_str
                     visibleText:linkText
                     message:msg
                     window:containerWindow
-                    dontSwitch:fp24] )
-                {
-                    [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
-                        defaultButton: @"Dismiss"
-                        alternateButton: nil
-                        otherButton: nil
-                        informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
-                        url, matchRegex, replaceText, string ] runModal];
+                    dontSwitch:fp24] ) {
+                    if ([GrowlApplicationBridge isGrowlRunning]) {
+                        [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
+                                                    description: [NSString stringWithFormat:@"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+                                                                  url, matchRegex, replaceText, string]
+                                               notificationName: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
+                                                       iconData: nil
+                                                       priority: 0
+                                                       isSticky: NO
+                                                   clickContext: nil];
+                    } else {
+                        [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
+                                         defaultButton: @"Dismiss"
+                                       alternateButton: nil
+                                           otherButton: nil
+                             informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+                          url, matchRegex, replaceText, string ] runModal];            
+                    }
                 }
             }
             return YES;
@@ -123,6 +152,13 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
 
     // none of the rewrite rules matched, so we'll
     // just hand this request off to the original method
+    [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED
+                                description: [NSString stringWithFormat:@"%@ did not match any regular expression",url]
+                           notificationName: MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED
+                                   iconData: nil
+                                   priority: 0
+                                   isSticky: NO
+                               clickContext: nil];
     return [self _ha_handleClickOnURL:url visibleText:linkText message:msg window:containerWindow dontSwitch:fp24];
 }
 

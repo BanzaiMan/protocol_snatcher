@@ -162,7 +162,7 @@
 }
 
 /*
-* GUI Methods
+ * GUI Methods
  */
 
 /* Image to display in the preferences toolbar */
@@ -246,7 +246,7 @@
         [rules addObject:anObject];
     }
 
-    [[NSUserDefaults standardUserDefaults] setObject: rules forKey: @"URLRewriteRules"];
+    // [[NSUserDefaults standardUserDefaults] setObject: rules forKey: @"URLRewriteRules"];
 }
 
 

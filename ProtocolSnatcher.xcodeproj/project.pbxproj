@@ -31,6 +31,8 @@
 		4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A8EF90D6731B70010005D /* MURLR.tiff */; };
 		4A4A8F800D6762250010005D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49B7048680CD000E48DA /* Info.plist */; };
 		4A6A98970D68E0B900DE08F6 /* PSPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6A98960D68E0B900DE08F6 /* PSPreferences.m */; };
+		4AAE32710D89BEF500FE72C4 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAE32700D89BEF500FE72C4 /* Growl.framework */; };
+		4AAE32920D89BF2500FE72C4 /* Growl.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 4AAE32700D89BEF500FE72C4 /* Growl.framework */; };
 		4ABF3A480D7843B300C639F4 /* Oniguruma-License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF3A470D7843B300C639F4 /* Oniguruma-License.txt */; };
 		4ABF3A4A0D7843E500C639F4 /* OgreKit-License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF3A490D7843E500C639F4 /* OgreKit-License.txt */; };
 		4ABF3A610D78596900C639F4 /* Oniguruma-RE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4ABF3A600D78596900C639F4 /* Oniguruma-RE.txt */; };
@@ -105,6 +107,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4AAE32920D89BF2500FE72C4 /* Growl.framework in Copy Framework */,
 				4ABF3CE80D788AD600C639F4 /* OgreKit.framework in Copy Framework */,
 			);
 			name = "Copy Framework";
@@ -120,7 +123,7 @@
 		4A25BED40D626E8A007AB34A /* SyncableApp-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SyncableApp-Protocol.h"; sourceTree = "<group>"; };
 		4A25BF560D6275D9007AB34A /* CustomURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLHandler.h; sourceTree = "<group>"; };
 		4A25BF570D6275D9007AB34A /* CustomURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLHandler.m; sourceTree = "<group>"; };
-		4A30027C0D6B626700814E8A /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		4A30027C0D6B626700814E8A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		4A337CF70D73C4FC0019D6D2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		4A337E500D73CC640019D6D2 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = help.html; path = Resources/help.html; sourceTree = "<group>"; };
 		4A4A8CB40D6724880010005D /* appkit-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "appkit-headers.h"; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		4A6A98950D68E0B900DE08F6 /* PSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferences.h; sourceTree = "<group>"; };
 		4A6A98960D68E0B900DE08F6 /* PSPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferences.m; sourceTree = "<group>"; };
 		4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OgreKit.xcodeproj; path = ../../src/OgreKit_2_1_3/OgreKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4AAE32700D89BEF500FE72C4 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		4ABF3A470D7843B300C639F4 /* Oniguruma-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Oniguruma-License.txt"; path = "Resources/Oniguruma-License.txt"; sourceTree = "<group>"; };
 		4ABF3A490D7843E500C639F4 /* OgreKit-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "OgreKit-License.txt"; path = "Resources/OgreKit-License.txt"; sourceTree = "<group>"; };
 		4ABF3A600D78596900C639F4 /* Oniguruma-RE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Oniguruma-RE.txt"; path = "Resources/Oniguruma-RE.txt"; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				4A337CF80D73C4FC0019D6D2 /* WebKit.framework in Frameworks */,
 				4ABF3CE40D788AB900C639F4 /* OgreKit.framework in Frameworks */,
+				4AAE32710D89BEF500FE72C4 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +219,7 @@
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 				4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */,
-				4A30027C0D6B626700814E8A /* README */,
+				4A30027C0D6B626700814E8A /* README.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
 				089C1672FE841209C02AAC07 /* Foundation.framework */,
 				4ABF3CE30D788AB900C639F4 /* OgreKit.framework */,
+				4AAE32700D89BEF500FE72C4 /* Growl.framework */,
 				4A337CF70D73C4FC0019D6D2 /* WebKit.framework */,
 			);
 			name = "Other Frameworks";
@@ -569,7 +575,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp $SRCROOT/README $TARGET_BUILD_DIR";
+			shellScript = "cp $SRCROOT/README.txt $TARGET_BUILD_DIR";
 		};
 		4A739EED0D7A7A9A00EBAA50 /* Remove copied README */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -583,7 +589,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm $TARGET_BUILD_DIR/README";
+			shellScript = "rm $TARGET_BUILD_DIR/README.txt";
 		};
 		93E925290A4C8BE80039ADAD /* Compile Installer Applescript */ = {
 			isa = PBXShellScriptBuildPhase;
