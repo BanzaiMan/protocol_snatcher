@@ -73,7 +73,18 @@
 }
 
 - (void) growlNotificationWasClicked:(id)clickContext {
-    NSLog(@"growlNotificationWasClicked: %@", clickContext);
+    [[NSAlert alertWithMessageText: @"MURLR information"
+                    defaultButton: @"Dismiss"
+                  alternateButton: nil
+                      otherButton: nil
+        informativeTextWithFormat: [ NSString stringWithFormat:@"Original URL: %@\nRegular Expression: %@\nReplacement Text: %@\nRewritten URL: %@\nVolume To Mount: %@\n",
+                                    [clickContext objectForKey:@"originalURL"],
+                                    [clickContext objectForKey:@"matchRegex"],
+                                    [clickContext objectForKey:@"replaceText"],
+                                    [clickContext objectForKey:@"rewrittenURL"],
+                                    [clickContext objectForKey:@"shareToMount"]
+     ]
+    ] runModal];
 }
 
 @end

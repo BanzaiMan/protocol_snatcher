@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -280,15 +278,16 @@
 								<string>08FB77AFFE84173DC02AAC07</string>
 								<string>93E9268D0A4C8DF50039ADAD</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>4A28AC870D8DDA8D00327CBF</string>
 								<string>1C37FABC05509CD000000102</string>
-								<string>E2644B35053B69B200211256</string>
 								<string>1CC0EA4004350EF90041110B</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>48</integer>
+									<integer>21</integer>
+									<integer>19</integer>
+									<integer>16</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -324,12 +323,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CustomURLHandler.m</string>
+								<string>ProtocolSnatcherBundle.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -337,11 +338,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CustomURLHandler.m</string>
+										<string>ProtocolSnatcherBundle.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4A28AE3D0D8E2E0600327CBF</string>
+										<string>4A28AEA80D8E377100327CBF</string>
 										<key>history</key>
 										<array>
 											<string>4AF866520D61385300DDA4DC</string>
@@ -374,11 +375,11 @@
 											<string>4AAE34DB0D89F66100FE72C4</string>
 											<string>4AE1CDB10D8A1A7F0042E43A</string>
 											<string>4AE1CDD00D8A1FAD0042E43A</string>
-											<string>4A28AC730D8DD88B00327CBF</string>
 											<string>4A28AC7E0D8DD95100327CBF</string>
 											<string>4A28ACB40D8DDEBF00327CBF</string>
-											<string>4A28AE0F0D8E1C8A00327CBF</string>
-											<string>4A28AE100D8E1C8A00327CBF</string>
+											<string>4A28AE830D8E353C00327CBF</string>
+											<string>4A28AEA50D8E377100327CBF</string>
+											<string>4A28AEA60D8E377100327CBF</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -417,30 +418,23 @@
 											<string>4A9D0E520D79D06B00E443AC</string>
 											<string>4A421F6C0D7F8DB600802CEB</string>
 											<string>4A5520110D88EB4300D81935</string>
-											<string>4A28AC750D8DD88B00327CBF</string>
-											<string>4A28AC760D8DD88B00327CBF</string>
-											<string>4A28AC770D8DD88B00327CBF</string>
-											<string>4A28AC810D8DD95100327CBF</string>
-											<string>4A28AC820D8DD95100327CBF</string>
-											<string>4A28AC830D8DD95100327CBF</string>
-											<string>4A28AC840D8DD95100327CBF</string>
-											<string>4A28AC8B0D8DDA8D00327CBF</string>
-											<string>4A28AC8C0D8DDA8D00327CBF</string>
-											<string>4A28AC8D0D8DDA8D00327CBF</string>
-											<string>4A28AC9C0D8DDD1200327CBF</string>
-											<string>4A28AC9D0D8DDD1200327CBF</string>
-											<string>4A28AC9E0D8DDD1200327CBF</string>
-											<string>4A28AC9F0D8DDD1200327CBF</string>
-											<string>4A28ACA30D8DDD4A00327CBF</string>
-											<string>4A28ACA40D8DDD4A00327CBF</string>
-											<string>4A28ACA50D8DDD4A00327CBF</string>
-											<string>4A28ACB60D8DDEBF00327CBF</string>
-											<string>4A28ACB70D8DDEBF00327CBF</string>
-											<string>4A28ADF30D8E15E300327CBF</string>
-											<string>4A28ADFE0D8E17E100327CBF</string>
-											<string>4A28AE030D8E182000327CBF</string>
-											<string>4A28AE110D8E1C8A00327CBF</string>
-											<string>4A28AE120D8E1C8A00327CBF</string>
+											<string>4A28AE860D8E353C00327CBF</string>
+											<string>4A28AE870D8E353C00327CBF</string>
+											<string>4A28AE880D8E353C00327CBF</string>
+											<string>4A28AE890D8E353C00327CBF</string>
+											<string>4A28AE8A0D8E353C00327CBF</string>
+											<string>4A28AE8B0D8E353C00327CBF</string>
+											<string>4A28AE8C0D8E353C00327CBF</string>
+											<string>4A28AE8D0D8E353C00327CBF</string>
+											<string>4A28AE8E0D8E353C00327CBF</string>
+											<string>4A28AE8F0D8E353C00327CBF</string>
+											<string>4A28AE900D8E353C00327CBF</string>
+											<string>4A28AE910D8E353C00327CBF</string>
+											<string>4A28AE920D8E353C00327CBF</string>
+											<string>4A28AE930D8E353C00327CBF</string>
+											<string>4A28AE940D8E353C00327CBF</string>
+											<string>4A28AEA20D8E374300327CBF</string>
+											<string>4A28AEA70D8E377100327CBF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -498,9 +492,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>4A28AC790D8DD88B00327CBF</string>
+				<string>4A28AE960D8E353C00327CBF</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>4A28AC7A0D8DD88B00327CBF</string>
+				<string>4A28AE970D8E353C00327CBF</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -634,7 +628,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>4AF6FB090D6DF12E00EBA20C</string>
 		<string>4AE0F66B0D6128D0007B4BE5</string>
 		<string>/Users/asari/Development/ProtocolSnatcher/trunk/ProtocolSnatcher.xcodeproj</string>
 	</array>
@@ -720,7 +713,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>4AE0F66B0D6128D0007B4BE5</string>
-				<string>4A28AC7B0D8DD88B00327CBF</string>
+				<string>4A28AE7E0D8E32E100327CBF</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

@@ -14,4 +14,7 @@
 @interface MailApp  (CustomURLHandler)
 
 - (BOOL)_ha_handleClickOnURL:(id)fp8 visibleText:(id)fp12 message:(id)fp16 window:(id)fp20 dontSwitch:(BOOL)fp24;
+
++ (void)postGrowlNotificationName:(NSString *)notification details:(NSDictionary *)detailedInfo;
+
 @end

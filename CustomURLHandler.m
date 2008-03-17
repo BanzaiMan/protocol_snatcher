@@ -21,13 +21,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     
     if (err != noErr) {
         if ([GrowlApplicationBridge isGrowlRunning]) {
-            [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED
-                                        description: @"Click for more information...."
-                                   notificationName: MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED
-                                           iconData: nil
-                                           priority: 0
-                                           isSticky: NO
-                                       clickContext: dict];
+            [MailApp postGrowlNotificationName:MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED details:dict];
         } else {
             [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to mount requested volume"]
                              defaultButton: @"Dismiss"
@@ -44,13 +38,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     if ( ! [[NSWorkspace sharedWorkspace] openFile: unescaped_url_str] ) {
         // failed to open the file, so alert the user
         if ([GrowlApplicationBridge isGrowlRunning]) {
-            [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
-                                        description: @"Click for more information...."
-                                   notificationName: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
-                                           iconData: nil
-                                           priority: 0
-                                           isSticky: NO
-                                       clickContext: dict];
+            [MailApp postGrowlNotificationName:MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED details:dict];
         } else {
             [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
                              defaultButton: @"Dismiss"
@@ -101,8 +89,8 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
         NSString *matchRegex   = [aRewriteRule objectForKey:@"matchRegex"];
         NSString *replaceText  = [aRewriteRule objectForKey:@"replaceText"];
         NSString *shareToMount = [aRewriteRule objectForKey:@"shareToMount"];
-        [detailedInfo setObject:matchRegex forKey:@"matchRegex"];
-        [detailedInfo setObject:replaceText forKey:@"replaceText"];
+        [detailedInfo setObject:matchRegex   forKey:@"matchRegex"];
+        [detailedInfo setObject:replaceText  forKey:@"replaceText"];
         [detailedInfo setObject:shareToMount forKey:@"shareToMount"];
         
         if (matchRegex == nil || replaceText == nil || shareToMount == nil) {
@@ -132,13 +120,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
                     window:containerWindow
                     dontSwitch:fp24] ) {
                     if ([GrowlApplicationBridge isGrowlRunning]) {
-                        [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
-                                                    description: @"Click for more information...."
-                                               notificationName: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
-                                                       iconData: nil
-                                                       priority: 0
-                                                       isSticky: NO
-                                                   clickContext: detailedInfo];
+                        [MailApp postGrowlNotificationName:MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED details:detailedInfo];
                     } else {
                         [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
                                          defaultButton: @"Dismiss"
@@ -155,14 +137,19 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
 
     // none of the rewrite rules matched, so we'll
     // just hand this request off to the original method
-    [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED
+    [MailApp postGrowlNotificationName: MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED
+                               details:[NSDictionary dictionaryWithObject:[url absoluteString] forKey:@"originalURL"]];
+    return [self _ha_handleClickOnURL:url visibleText:linkText message:msg window:containerWindow dontSwitch:fp24];
+}
+
++ (void)postGrowlNotificationName:(NSString *)notification details:(NSDictionary *)detailedInfo {
+    [GrowlApplicationBridge notifyWithTitle: notification
                                 description: @"Click for more information...."
-                           notificationName: MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED
+                           notificationName: notification
                                    iconData: nil
                                    priority: 0
                                    isSticky: NO
                                clickContext: detailedInfo];
-    return [self _ha_handleClickOnURL:url visibleText:linkText message:msg window:containerWindow dontSwitch:fp24];
 }
 
 @end
