@@ -12,22 +12,22 @@ static void
 volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, FSVolumeRefNum mountedVolumeRefNum)
 {
 	NSDictionary *dict = [(NSString *)clientData autorelease];
-	id url               = [dict objectForKey:@"OriginalURL"];
-    id matchRegex        = [dict objectForKey:@"matchRegex"];
-    id replaceText       = [dict objectForKey:@"replaceText"];
-    id string            = [dict objectForKey:@"RewrittenURL"];
-    id unescaped_url_str = [dict objectForKey:@"UnescapedURL"];
+	NSString *url               = [dict objectForKey:@"originalURL"];
+    NSString *matchRegex        = [dict objectForKey:@"matchRegex"];
+    NSString *replaceText       = [dict objectForKey:@"replaceText"];
+    NSString *string            = [dict objectForKey:@"rewrittenURL"];
+    NSString *unescaped_url_str = [dict objectForKey:@"unescapedURL"];
+    
     
     if (err != noErr) {
         if ([GrowlApplicationBridge isGrowlRunning]) {
             [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED
-                                        description: [NSString stringWithFormat:@"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
-                                                      url, matchRegex, replaceText, string]
+                                        description: @"Click for more information...."
                                    notificationName: MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED
                                            iconData: nil
                                            priority: 0
                                            isSticky: NO
-                                       clickContext: nil];
+                                       clickContext: dict];
         } else {
             [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to mount requested volume"]
                              defaultButton: @"Dismiss"
@@ -45,13 +45,12 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
         // failed to open the file, so alert the user
         if ([GrowlApplicationBridge isGrowlRunning]) {
             [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
-                                        description: [NSString stringWithFormat:@"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
-                                                      url, matchRegex, replaceText, string]
+                                        description: @"Click for more information...."
                                    notificationName: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
                                            iconData: nil
                                            priority: 0
                                            isSticky: NO
-                                       clickContext: nil];
+                                       clickContext: dict];
         } else {
             [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
                              defaultButton: @"Dismiss"
@@ -82,6 +81,8 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     FSVolumeMountUPP volumeMountUPP = NewFSVolumeMountUPP(volumeMountCallback);
     FSVolumeOperation volumeOp;
     OSStatus err                    = FSCreateVolumeOperation(&volumeOp);
+    
+    NSMutableDictionary *detailedInfo = [NSMutableDictionary dictionaryWithObject: string forKey: @"originalURL"];
 
     id aRewriteRule;
     // go through the list and rewrite URL
@@ -100,6 +101,9 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
         NSString *matchRegex   = [aRewriteRule objectForKey:@"matchRegex"];
         NSString *replaceText  = [aRewriteRule objectForKey:@"replaceText"];
         NSString *shareToMount = [aRewriteRule objectForKey:@"shareToMount"];
+        [detailedInfo setObject:matchRegex forKey:@"matchRegex"];
+        [detailedInfo setObject:replaceText forKey:@"replaceText"];
+        [detailedInfo setObject:shareToMount forKey:@"shareToMount"];
         
         if (matchRegex == nil || replaceText == nil || shareToMount == nil) {
             NSLog(@"Rewrite rule lacks required parameter");
@@ -111,8 +115,8 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
             range: NSMakeRange(0, [string length])] > 0) {
                                                               
             NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-            NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: url, @"OriginalURL",
-                matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"RewrittenURL",unescaped_url_str, @"UnescapedURL",nil];
+            NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: [url absoluteString], @"originalURL",
+                matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"rewrittenURL",unescaped_url_str, @"unescapedURL",nil];
             if ([shareToMount length] > 0 ) {
                 NSURL *shareURL = [NSURL URLWithString: shareToMount];
                 if ((err = FSMountServerVolumeAsync( (CFURLRef) shareURL,
@@ -129,13 +133,12 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
                     dontSwitch:fp24] ) {
                     if ([GrowlApplicationBridge isGrowlRunning]) {
                         [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
-                                                    description: [NSString stringWithFormat:@"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
-                                                                  url, matchRegex, replaceText, string]
+                                                    description: @"Click for more information...."
                                                notificationName: MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED
                                                        iconData: nil
                                                        priority: 0
                                                        isSticky: NO
-                                                   clickContext: nil];
+                                                   clickContext: detailedInfo];
                     } else {
                         [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
                                          defaultButton: @"Dismiss"
@@ -153,12 +156,12 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     // none of the rewrite rules matched, so we'll
     // just hand this request off to the original method
     [GrowlApplicationBridge notifyWithTitle: MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED
-                                description: [NSString stringWithFormat:@"%@ did not match any regular expression",url]
+                                description: @"Click for more information...."
                            notificationName: MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED
                                    iconData: nil
                                    priority: 0
                                    isSticky: NO
-                               clickContext: nil];
+                               clickContext: detailedInfo];
     return [self _ha_handleClickOnURL:url visibleText:linkText message:msg window:containerWindow dontSwitch:fp24];
 }
 
