@@ -21,5 +21,6 @@
 //+ (NSString *) preferencesPanelName;
 + (NSBundle *) bundle;
 - (NSDictionary *) registrationDictionaryForGrowl;
+//- (void) growlNotificationWasClicked:(NSString *)clickContext;
 
 @end

@@ -55,7 +55,7 @@
 #pragma mark -
 #pragma mark Growl delegate methods
 - (NSString *) applicationNameForGrowl {
-    return @"Mail (with Mail.app URL Rewriter)";
+    return @"MURLR";
 }
 
 - (NSDictionary *) registrationDictionaryForGrowl {
@@ -70,6 +70,10 @@
                                      nil];
     return [NSDictionary dictionaryWithObjectsAndKeys: allNotifications, GROWL_NOTIFICATIONS_ALL,
             defaultNotifications, GROWL_NOTIFICATIONS_DEFAULT, nil];
+}
+
+- (void) growlNotificationWasClicked:(id)clickContext {
+    NSLog(@"growlNotificationWasClicked: %@", clickContext);
 }
 
 @end
