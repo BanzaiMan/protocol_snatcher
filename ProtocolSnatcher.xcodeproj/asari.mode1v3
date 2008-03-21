@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -272,11 +274,8 @@
 								<string>93E9250A0A4C8AC50039ADAD</string>
 								<string>93E9251A0A4C8B860039ADAD</string>
 								<string>93E9250F0A4C8AEF0039ADAD</string>
-								<string>93E9250C0A4C8AE20039ADAD</string>
-								<string>93E925210A4C8BB40039ADAD</string>
-								<string>4AD3E7C10D655D9D00A5D7B5</string>
-								<string>08FB77AFFE84173DC02AAC07</string>
-								<string>93E9268D0A4C8DF50039ADAD</string>
+								<string>089C1671FE841209C02AAC07</string>
+								<string>1058C7AEFEA557BF11CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 								<string>1CC0EA4004350EF90041110B</string>
@@ -284,8 +283,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>26</integer>
-									<integer>22</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -311,7 +309,7 @@
 							<real>344</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>213 124 1444 904 0 0 1680 1028 </string>
+						<string>212 124 1444 904 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -322,14 +320,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PSPreferencesModule.m</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -337,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PSPreferencesModule.m</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4A93BCF40D93695F00F732DE</string>
+										<string>4A93BD300D9371E600F732DE</string>
 										<key>history</key>
 										<array>
 											<string>4AF866520D61385300DDA4DC</string>
@@ -364,7 +360,6 @@
 											<string>4AF898360D79298E00C7D0B4</string>
 											<string>4A9D0E440D79D06B00E443AC</string>
 											<string>4A9D0E4E0D79D06B00E443AC</string>
-											<string>4A2B1D5B0D7EFB1900824796</string>
 											<string>4A421F690D7F8DB600802CEB</string>
 											<string>4A5520000D88EB4300D81935</string>
 											<string>4A5520010D88EB4300D81935</string>
@@ -378,7 +373,8 @@
 											<string>4A93BCED0D93695F00F732DE</string>
 											<string>4A93BCEE0D93695F00F732DE</string>
 											<string>4A93BCEF0D93695F00F732DE</string>
-											<string>4A93BCF00D93695F00F732DE</string>
+											<string>4A93BD2E0D9371E600F732DE</string>
+											<string>4A2B1D5B0D7EFB1900824796</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -438,6 +434,7 @@
 											<string>4A93BCF10D93695F00F732DE</string>
 											<string>4A93BCF20D93695F00F732DE</string>
 											<string>4A93BCF30D93695F00F732DE</string>
+											<string>4A93BD2F0D9371E600F732DE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -451,7 +448,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1056, 665}}</string>
 								<key>RubberWindowFrame</key>
-								<string>213 124 1444 904 0 0 1680 1028 </string>
+								<string>212 124 1444 904 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -471,7 +468,7 @@
 								<key>Frame</key>
 								<string>{{0, 670}, {1056, 193}}</string>
 								<key>RubberWindowFrame</key>
-								<string>213 124 1444 904 0 0 1680 1028 </string>
+								<string>212 124 1444 904 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -635,7 +632,7 @@
 		<string>/Users/asari/Development/ProtocolSnatcher/trunk/ProtocolSnatcher.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>213 124 1444 904 0 0 1680 1028 </string>
+	<string>212 124 1444 904 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

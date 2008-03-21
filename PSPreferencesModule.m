@@ -251,7 +251,9 @@
 
 - (IBAction) open:(id)sender {
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
-    [openPanel beginSheetForDirectory: NSHomeDirectory()
+    NSString *directory = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"URLRewriterLastDirectory"];
+    if (!directory) directory = NSHomeDirectory();
+    [openPanel beginSheetForDirectory: directory
                                  file: nil
                                 types: [NSArray arrayWithObject:@"plist"]
                        modalForWindow: [rulesTableView window]
@@ -268,6 +270,8 @@
     NSData *rawData;
     NSString *error;
     NSPropertyListFormat format = NSPropertyListXMLFormat_v1_0;
+    
+    [[NSUserDefaults standardUserDefaults] setObject:[rulesFilePath stringByDeletingLastPathComponent] forKey:@"URLRewriterLastDirectory"];
     
     NSMutableArray *rulesArray = [NSMutableArray array];
     
@@ -315,7 +319,9 @@
 - (IBAction) save: (id) sender
 {
     NSSavePanel *savePanel = [NSSavePanel savePanel];
-    [savePanel beginSheetForDirectory: NSHomeDirectory()
+    NSString *directory = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"URLRewriterLastDirectory"];
+    if (!directory) directory = NSHomeDirectory();
+    [savePanel beginSheetForDirectory: directory
                                  file: @"rules.plist"
                        modalForWindow: [rulesTableView window]
                         modalDelegate: self
@@ -331,6 +337,7 @@
     NSData *exportData;
     NSString *error;
     
+    [[NSUserDefaults standardUserDefaults] setObject:[savePanel directory] forKey:@"URLRewriterLastDirectory"];
     exportData = [NSPropertyListSerialization dataFromPropertyList:rules format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
     
     if (exportData) {
