@@ -26,6 +26,11 @@
 - (IBAction) removeRewriteRule: (id) sender;
 - (IBAction) showHelpWindow: (id) sender;
 
+- (IBAction) open: (id) sender;
+- (void) openPanelDidEnd: (NSOpenPanel *)openPanel returnCode: (int)returnCode contextInfo: (void *)x;
+
+- (IBAction) save: (id) sender;
+- (void)savePanelDidEnd:(NSSavePanel *)savePanel returnCode:(int)returnCode  contextInfo:(void  *)x;
 
 /* NSTableDataSource methods */
 /* http://developer.apple.com/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSTableDataSource_Protocol/Reference/Reference.html */

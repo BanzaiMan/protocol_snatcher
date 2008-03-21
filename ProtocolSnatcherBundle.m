@@ -73,6 +73,7 @@
 }
 
 - (void) growlNotificationWasClicked:(id)clickContext {
+    [NSApp activateIgnoringOtherApps:YES];
     [[NSAlert alertWithMessageText: @"MURLR information"
                     defaultButton: @"Dismiss"
                   alternateButton: nil

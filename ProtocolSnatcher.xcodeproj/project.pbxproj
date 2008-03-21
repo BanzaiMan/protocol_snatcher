@@ -259,6 +259,7 @@
 		4A6A98950D68E0B900DE08F6 /* PSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferences.h; sourceTree = "<group>"; };
 		4A6A98960D68E0B900DE08F6 /* PSPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferences.m; sourceTree = "<group>"; };
 		4A7509100D7891D200E104A9 /* OgreKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OgreKit.xcodeproj; path = ../../src/OgreKit_2_1_3/OgreKit.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4AA194E10D8F7190008A8B0E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /System/Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
 		4AAE32700D89BEF500FE72C4 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = /Users/asari/Development/build/Release/Growl.framework; sourceTree = "<absolute>"; };
 		4AAE358A0D8A0F3800FE72C4 /* Growl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Growl.xcodeproj; path = "../../src/growl-1.1.2/Growl.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		4ABF3A470D7843B300C639F4 /* Oniguruma-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Oniguruma-License.txt"; path = "Resources/Oniguruma-License.txt"; sourceTree = "<group>"; };
@@ -363,6 +364,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4AA194E10D8F7190008A8B0E /* SenTestingKit.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";

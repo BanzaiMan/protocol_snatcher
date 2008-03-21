@@ -21,6 +21,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     
     if (err != noErr) {
         if ([GrowlApplicationBridge isGrowlRunning]) {
+            // Remember that we are posing as MailApp class at the moment...
             [MailApp postGrowlNotificationName:MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED details:dict];
         } else {
             [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to mount requested volume"]

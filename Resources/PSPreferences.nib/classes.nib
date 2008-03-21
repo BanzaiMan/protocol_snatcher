@@ -180,7 +180,11 @@
 			<dict>
 				<key>addRewriteRule</key>
 				<string>id</string>
+				<key>open</key>
+				<string>id</string>
 				<key>removeRewriteRule</key>
+				<string>id</string>
+				<key>save</key>
 				<string>id</string>
 				<key>showHelpWindow</key>
 				<string>id</string>

@@ -249,5 +249,96 @@
     // [[NSUserDefaults standardUserDefaults] setObject: rules forKey: @"URLRewriteRules"];
 }
 
+- (IBAction) open:(id)sender {
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+    [openPanel beginSheetForDirectory: NSHomeDirectory()
+                                 file: nil
+                                types: [NSArray arrayWithObject:@"plist"]
+                       modalForWindow: [rulesTableView window]
+                        modalDelegate: self
+                       didEndSelector: @selector(openPanelDidEnd:returnCode:contextInfo:)
+                          contextInfo: NULL];    
+}
+
+- (void) openPanelDidEnd: (NSOpenPanel *)openPanel returnCode: (int)returnCode contextInfo: (void *)x
+{
+    if (returnCode != NSOKButton) return;
+    
+    NSString *rulesFilePath = [[openPanel filenames] objectAtIndex:0];
+    NSData *rawData;
+    NSString *error;
+    NSPropertyListFormat format = NSPropertyListXMLFormat_v1_0;
+    
+    NSMutableArray *rulesArray = [NSMutableArray array];
+    
+    id plist;
+    
+    rawData = [NSData dataWithContentsOfFile:rulesFilePath];
+    
+    plist = [NSPropertyListSerialization propertyListFromData:rawData
+                                             mutabilityOption:NSPropertyListImmutable
+                                                       format:&format
+                                             errorDescription:&error];
+    if (![plist isKindOfClass:[NSArray class]] || [plist count] == 0) {
+          [[NSAlert alertWithMessageText:@"" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@""]runModal];
+          return;
+    }
+    
+    id aRule;
+    int numBadRules = 0;
+    int numGoodRules = 0;
+    for ( aRule in plist ) {
+        if (![aRule isKindOfClass:[NSDictionary class]]) {
+            ++numBadRules;
+            continue;
+        }
+        NSString *matchRegex   = [aRule objectForKey:@"matchRegex"];
+        NSString *replaceText  = [aRule objectForKey:@"replaceText"];
+        NSString *shareToMount = [aRule objectForKey:@"shareToMount"];
+        if ( matchRegex == nil || replaceText == nil || shareToMount == nil ) {
+            ++numBadRules;
+            continue;
+        }
+        [rulesArray addObject: aRule];
+        ++numGoodRules;
+    }
+    
+    [rules addObjectsFromArray: rulesArray];
+    /*
+    [[NSAlert alertWithMessageText:@"Import complete"
+                    defaultButton:@"OK" alternateButton:nil otherButton:nil
+        informativeTextWithFormat:[NSString stringWithFormat:@"Imported %d rules and rejected %d rules",numGoodRules,numBadRules]]runModal];
+    */
+    [rulesTableView reloadData];
+}
+
+- (IBAction) save: (id) sender
+{
+    NSSavePanel *savePanel = [NSSavePanel savePanel];
+    [savePanel beginSheetForDirectory: NSHomeDirectory()
+                                 file: @"rules.plist"
+                       modalForWindow: [rulesTableView window]
+                        modalDelegate: self
+                       didEndSelector: @selector(savePanelDidEnd:returnCode:contextInfo:)
+                          contextInfo: NULL];
+}
+
+- (void)savePanelDidEnd:(NSSavePanel *)savePanel returnCode:(int)returnCode  contextInfo:(void  *)x
+{
+    if (returnCode != NSOKButton) return;
+    
+    NSString *exportFilePath = [savePanel filename];
+    NSData *exportData;
+    NSString *error;
+    
+    exportData = [NSPropertyListSerialization dataFromPropertyList:rules format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+    
+    if (exportData) {
+        [exportData writeToFile: exportFilePath atomically: YES];
+    } else {
+        NSLog(error);
+        [error release];
+    }
+}
 
 @end
