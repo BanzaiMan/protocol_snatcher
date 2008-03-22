@@ -58,7 +58,7 @@
 {
     NSString *bundleResourcePath = [[NSBundle bundleWithIdentifier:@"net.asari.murlr"] resourcePath];
     [[helpContent mainFrame] loadRequest: [NSURLRequest requestWithURL:
-    [NSURL fileURLWithPath: [bundleResourcePath stringByAppendingString: @"/help.html"]]]];
+    [NSURL fileURLWithPath: [bundleResourcePath stringByAppendingPathComponent: @"help.html"]]]];
     [helpPanel makeKeyAndOrderFront:sender];
 }
 
@@ -82,8 +82,27 @@
     forTableColumn: (NSTableColumn *) aTableColumn
     row: (int) rowIndex
 {
-    // TODO: compile regular expressions before setting the object value
     NSMutableDictionary *rule = [NSMutableDictionary dictionaryWithDictionary: [rules objectAtIndex:rowIndex]];
+
+    // TODO: we should really do validation via NSFormatter (this means that we need to change the structure of rewrite rules
+    if ([[aTableColumn identifier] isEqual:@"matchRegex"]) {
+        @try {
+            OGRegularExpression *regex = [OGRegularExpression regularExpressionWithString:anObject];
+        }
+        @catch (NSException *e) {
+            NSAlert *alert = [NSAlert alertWithMessageText:@"Invalid Regular Expression"
+                                             defaultButton:@"Edit"
+                                           alternateButton:nil
+                                               otherButton:nil
+                                 informativeTextWithFormat:[NSString stringWithFormat:@"String \"%@\" is not a valid regular expression.\nReason: %@",anObject, e]];
+            [alert beginSheetModalForWindow:[aTableView window]
+                              modalDelegate:nil
+                             didEndSelector:nil
+                                contextInfo:nil];
+            [aTableView editColumn:[aTableView editedColumn] row:rowIndex withEvent:nil select:YES];
+            return;
+        }
+    }
     [rule setObject:anObject forKey:[aTableColumn identifier]];
     [rules replaceObjectAtIndex:rowIndex withObject:rule];
     [[NSUserDefaults standardUserDefaults] setObject:rules forKey:@"URLRewriteRules"];
@@ -97,11 +116,7 @@
         return;
     }
 
-    if ([[rulesTableView selectedRowIndexes] count] == 1) {
-        [removeButoon setEnabled:YES];
-    } else {
-        [removeButoon setEnabled:NO];
-    }
+    [removeButoon setEnabled: [[rulesTableView selectedRowIndexes] count] == 1];
 }
 
 #pragma mark -
@@ -249,7 +264,8 @@
     // [[NSUserDefaults standardUserDefaults] setObject: rules forKey: @"URLRewriteRules"];
 }
 
-- (IBAction) open:(id)sender {
+- (IBAction) open:(id)sender
+{
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
     NSString *directory = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"URLRewriterLastDirectory"];
     if (!directory) directory = NSHomeDirectory();
@@ -347,5 +363,7 @@
         [error release];
     }
 }
+
+
 
 @end
