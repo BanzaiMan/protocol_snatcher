@@ -83,32 +83,37 @@
     row: (int) rowIndex
 {
     NSMutableDictionary *rule = [NSMutableDictionary dictionaryWithDictionary: [rules objectAtIndex:rowIndex]];
-
-    // TODO: we should really do validation via NSFormatter (this means that we need to change the structure of rewrite rules
-    if ([[aTableColumn identifier] isEqual:@"matchRegex"]) {
-        @try {
-            OGRegularExpression *regex = [OGRegularExpression regularExpressionWithString:anObject];
-        }
-        @catch (NSException *e) {
-            NSAlert *alert = [NSAlert alertWithMessageText:@"Invalid Regular Expression"
-                                             defaultButton:@"Edit"
-                                           alternateButton:nil
-                                               otherButton:nil
-                                 informativeTextWithFormat:[NSString stringWithFormat:@"String \"%@\" is not a valid regular expression.\nReason: %@",anObject, e]];
-            [alert beginSheetModalForWindow:[aTableView window]
-                              modalDelegate:nil
-                             didEndSelector:nil
-                                contextInfo:nil];
-            [rule setObject:anObject forKey:[aTableColumn identifier]];
-            [rules replaceObjectAtIndex:rowIndex withObject:rule];
-            [aTableView reloadData];
-            [aTableView editColumn:[aTableView editedColumn] row:rowIndex withEvent:nil select:YES];
-        }
-    }
     [rule setObject:anObject forKey:[aTableColumn identifier]];
     [rules replaceObjectAtIndex:rowIndex withObject:rule];
     [[NSUserDefaults standardUserDefaults] setObject:rules forKey:@"URLRewriteRules"];
     [aTableView reloadData];
+}
+
+- (BOOL) control: (NSControl *)control textShouldEndEditing: (NSText *)fieldEditor
+{
+    
+    if (![control isKindOfClass:[NSTableView class]]) return YES;
+
+    NSTableView *aTableView = (NSTableView *)control;
+    if ([aTableView editedColumn] != [aTableView columnWithIdentifier: @"matchRegex"]) return YES;
+    
+    NSLog(@"in control:textShouldEndEditing:. %@, %@", aTableView, [fieldEditor string]);
+    @try {
+        OGRegularExpression *regex = [OGRegularExpression regularExpressionWithString:[fieldEditor string]];
+    }
+    @catch (NSException *e) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Invalid Regular Expression"
+                                         defaultButton:@"Edit"
+                                       alternateButton:nil
+                                           otherButton:nil
+                             informativeTextWithFormat:[NSString stringWithFormat:@"String \"%@\" is not a valid regular expression.\nReason: %@",[fieldEditor string], e]];
+        [alert beginSheetModalForWindow:[aTableView window]
+                          modalDelegate:nil
+                         didEndSelector:nil
+                            contextInfo:nil];
+        return NO;
+    }
+    return YES;
 }
 
 - (void) tableViewSelectionDidChange: (NSNotification *)aNotification
