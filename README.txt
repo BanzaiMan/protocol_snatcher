@@ -27,18 +27,19 @@ Online help is available from the MURLR Preferences pane.
 
 KNOWN ISSUES
 ==============================================================================
-* MURLR does not validate the regular expression.  It should.
+* None at the moment.
 
 IMPROVEMENT POSSIBILITIES
 ==============================================================================
-* Ideas?
+* Updates via Sparke(Plus).
 
 LICENSE
 ==============================================================================
-* MURLR is distributed under the MIT License.
-* OgreKit is copyrighted work of Isao Sonobe. It is reused in this plugin
-  under the modified BSD License.
-* Oniguruma library is copyrighted work of K. Kosako. It is distributed under
-  the modified BSD License.
-* MURLR's XCode project is based on Aaron Harnly's Mail Plug-in Template 1.0.
-  Much of his code has been removed, but the skeleton is his creation.
+* MURLR is distributed under the BSD License.
+
+ACKNOWLEDGEMENTS
+==============================================================================
+MURLR uses OgreKit, Oniguruma, Growl for parts of its functionalities.
+
+MURLR's XCode project is based on Aaron Harnly's Mail Plug-in Template 1.0.
+Much of his code has been removed, but the skeleton is his creation.

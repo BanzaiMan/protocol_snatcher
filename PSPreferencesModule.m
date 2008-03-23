@@ -99,14 +99,16 @@
                               modalDelegate:nil
                              didEndSelector:nil
                                 contextInfo:nil];
+            [rule setObject:anObject forKey:[aTableColumn identifier]];
+            [rules replaceObjectAtIndex:rowIndex withObject:rule];
+            [aTableView reloadData];
             [aTableView editColumn:[aTableView editedColumn] row:rowIndex withEvent:nil select:YES];
-            return;
         }
     }
     [rule setObject:anObject forKey:[aTableColumn identifier]];
     [rules replaceObjectAtIndex:rowIndex withObject:rule];
     [[NSUserDefaults standardUserDefaults] setObject:rules forKey:@"URLRewriteRules"];
-    [rulesTableView reloadData];
+    [aTableView reloadData];
 }
 
 - (void) tableViewSelectionDidChange: (NSNotification *)aNotification
