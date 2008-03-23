@@ -16,7 +16,6 @@
     [versionStringField setObjectValue: [[NSBundle bundleWithIdentifier:@"net.asari.murlr"] objectForInfoDictionaryKey:@"CFBundleVersion"]];
     rules = [[ NSMutableArray alloc ] init ];
 
-    [self readRewriteRules];
     [helpPanel setHidesOnDeactivate: YES];
     [helpPanel setReleasedWhenClosed: NO];
     const NSSize prefFrameSize = NSMakeSize(650.0f,513.0f);
@@ -40,7 +39,7 @@
     // select the newly created row...
     [rulesTableView selectRowIndexes: [NSIndexSet indexSetWithIndex:([rules count] -1)] byExtendingSelection:NO];
     // and edit the first column
-    [rulesTableView editColumn: 0 row:([rules count] -1) withEvent:nil select:YES];
+    [rulesTableView editColumn: [rulesTableView columnWithIdentifier:@"matchRegex"] row:([rules count] -1) withEvent:nil select:YES];
 
 }
 
@@ -97,7 +96,6 @@
     NSTableView *aTableView = (NSTableView *)control;
     if ([aTableView editedColumn] != [aTableView columnWithIdentifier: @"matchRegex"]) return YES;
     
-    NSLog(@"in control:textShouldEndEditing:. %@, %@", aTableView, [fieldEditor string]);
     @try {
         OGRegularExpression *regex = [OGRegularExpression regularExpressionWithString:[fieldEditor string]];
     }
@@ -113,17 +111,21 @@
                             contextInfo:nil];
         return NO;
     }
+    
     return YES;
 }
 
 - (void) tableViewSelectionDidChange: (NSNotification *)aNotification
 {
-    if ([aNotification name] != NSTableViewSelectionDidChangeNotification) {
-        NSLog(@"Received a notification other than NSTableViewSelectionDidChangeNotification");
-        return;
-    }
-
     [removeButoon setEnabled: [[rulesTableView selectedRowIndexes] count] == 1];
+}
+
+- (void)tableViewColumnDidResize:(NSNotification *)aNotification
+{
+    //	NSLog(@"table column was resized");
+    //	NSTableColumn *editedColumn = [[aNotification userInfo] objectForKey:@"NSTableColumn"];
+    //	NSNumber *oldWidth = [[aNotification userInfo] objectForKey:@"NSOldWidth"];
+    //	NSLog(@"table column %@ was resized from %4.2f to %4.2f", [editedColumn identifier], [oldWidth floatValue], [editedColumn width]);
 }
 
 #pragma mark -
@@ -175,14 +177,6 @@
 }
 
 #pragma mark -
-- (void)tableViewColumnDidResize:(NSNotification *)aNotification
-{
-//	NSLog(@"table column was resized");
-//	NSTableColumn *editedColumn = [[aNotification userInfo] objectForKey:@"NSTableColumn"];
-//	NSNumber *oldWidth = [[aNotification userInfo] objectForKey:@"NSOldWidth"];
-//	NSLog(@"table column %@ was resized from %4.2f to %4.2f", [editedColumn identifier], [oldWidth floatValue], [editedColumn width]);
-}
-
 /*
  * GUI Methods
  */
@@ -219,13 +213,14 @@
 //- (void) willBeDisplayed {
 //}
 
-/* Called when window closes or "save" button is clicked. */
+///* Called when window closes or "save" button is clicked. */
 //- (void) saveChanges {
+//    NSLog(@"in saveChanges...");
 //}
 
-/* Not sure how useful this is, so far always seems to return YES. */
 //- (BOOL) hasChangesPending {
-//	return YES;
+//    NSLog(@"in hasChangesPending: %d", _hasChanges);
+//	return _hasChanges;
 //}
 
 /* Called when we relinquish ownership of the preferences panel. */
@@ -236,19 +231,18 @@
 //- (void)moduleWasInstalled {
 //}
 
-//- (void)initializeFromDefaults {
-//	[super initializeFromDefaults];
+//- (BOOL)moduleCanBeRemoved
+//{
+//    NSLog(@"in moduleCanBeRemoved");
+//    if ([self hasChangesPending]) return NO;
+//    return YES;
 //}
-
-- (BOOL)moduleCanBeRemoved
-{
-    return YES;
-}
-
-- (BOOL)preferencesWindowShouldClose
-{
-    return YES;
-}
+//
+//- (BOOL)preferencesWindowShouldClose
+//{
+//    NSLog(@"in preferencesWindowShouldClose");
+//    return YES;
+//}
 
 - (void)dealloc
 {
@@ -256,8 +250,9 @@
     [super dealloc];
 }
 
-- (void) readRewriteRules
+- (void) initializeFromDefaults
 {
+    [super initializeFromDefaults];
     [rules removeAllObjects];
     id anObject;
 
@@ -267,10 +262,10 @@
     {
         [rules addObject:anObject];
     }
-
-    // [[NSUserDefaults standardUserDefaults] setObject: rules forKey: @"URLRewriteRules"];
 }
 
+#pragma mark -
+#pragma mark Custom Methods
 - (IBAction) open:(id)sender
 {
     NSOpenPanel *openPanel = [NSOpenPanel openPanel];
@@ -370,7 +365,5 @@
         [error release];
     }
 }
-
-
 
 @end

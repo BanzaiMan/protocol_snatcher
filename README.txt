@@ -27,7 +27,7 @@ Online help is available from the MURLR Preferences pane.
 
 KNOWN ISSUES
 ==============================================================================
-* None at the moment.
+* Regular Expression validation UI still needs some work.
 
 IMPROVEMENT POSSIBILITIES
 ==============================================================================

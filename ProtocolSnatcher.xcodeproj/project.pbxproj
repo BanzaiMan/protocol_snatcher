@@ -268,7 +268,7 @@
 		4ABF3CE30D788AB900C639F4 /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OgreKit.framework; path = /Users/asari/Development/build/Release/OgreKit.framework; sourceTree = "<absolute>"; };
 		4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = PSPreferences.nib; path = Resources/PSPreferences.nib; sourceTree = "<group>"; };
 		4AD3E7DD0D655F1700A5D7B5 /* PSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferencesModule.h; sourceTree = "<group>"; };
-		4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferencesModule.m; sourceTree = "<group>"; };
+		4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferencesModule.m; sourceTree = "<group>"; wrapsLines = 0; };
 		4AD3E90A0D6565BD00A5D7B5 /* NSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferences.h; sourceTree = "<group>"; };
 		4AD3E90B0D6565ED00A5D7B5 /* NSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferencesModule.h; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* MURLR.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MURLR.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
