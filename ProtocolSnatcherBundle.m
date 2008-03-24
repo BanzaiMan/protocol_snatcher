@@ -63,10 +63,12 @@
                                  MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED,
                                  MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED,
                                  MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED,
+                                 MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_STARTING,
                                  nil];
     NSArray *defaultNotifications = [NSArray arrayWithObjects:
                                      MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED,
                                      MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED,
+                                     MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_STARTING,
                                      nil];
     return [NSDictionary dictionaryWithObjectsAndKeys: allNotifications, GROWL_NOTIFICATIONS_ALL,
             defaultNotifications, GROWL_NOTIFICATIONS_DEFAULT, nil];

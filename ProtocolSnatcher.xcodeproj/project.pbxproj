@@ -244,19 +244,19 @@
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167EFE841241C02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ../English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		4A25BED40D626E8A007AB34A /* SyncableApp-Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SyncableApp-Protocol.h"; sourceTree = "<group>"; };
 		4A25BF560D6275D9007AB34A /* CustomURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLHandler.h; sourceTree = "<group>"; };
 		4A25BF570D6275D9007AB34A /* CustomURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLHandler.m; sourceTree = "<group>"; };
 		4A2959B80D973D5700C32389 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		4A30027C0D6B626700814E8A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		4A30027C0D6B626700814E8A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
 		4A337CF70D73C4FC0019D6D2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
-		4A337E500D73CC640019D6D2 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = help.html; path = Resources/help.html; sourceTree = "<group>"; };
+		4A337E500D73CC640019D6D2 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		4A4A8CB40D6724880010005D /* appkit-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "appkit-headers.h"; sourceTree = "<group>"; };
 		4A4A8CB50D6724880010005D /* mail-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mail-headers.h"; sourceTree = "<group>"; };
-		4A4A8EF90D6731B70010005D /* MURLR.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = MURLR.tiff; path = Resources/MURLR.tiff; sourceTree = "<group>"; };
+		4A4A8EF90D6731B70010005D /* MURLR.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = MURLR.tiff; sourceTree = "<group>"; };
 		4A6A94950D68771600DE08F6 /* ProtocolSnatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcher.h; sourceTree = "<group>"; };
 		4A6A98950D68E0B900DE08F6 /* PSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferences.h; sourceTree = "<group>"; };
 		4A6A98960D68E0B900DE08F6 /* PSPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferences.m; sourceTree = "<group>"; };
@@ -264,21 +264,21 @@
 		4AA194E10D8F7190008A8B0E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = /System/Library/Frameworks/SenTestingKit.framework; sourceTree = "<absolute>"; };
 		4AAE32700D89BEF500FE72C4 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = /Users/asari/Development/build/Release/Growl.framework; sourceTree = "<absolute>"; };
 		4AAE358A0D8A0F3800FE72C4 /* Growl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Growl.xcodeproj; path = "../../src/growl-1.1.2/Growl.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		4ABF3A470D7843B300C639F4 /* Oniguruma-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Oniguruma-License.txt"; path = "Resources/Oniguruma-License.txt"; sourceTree = "<group>"; };
-		4ABF3A490D7843E500C639F4 /* OgreKit-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "OgreKit-License.txt"; path = "Resources/OgreKit-License.txt"; sourceTree = "<group>"; };
-		4ABF3A600D78596900C639F4 /* Oniguruma-RE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "Oniguruma-RE.txt"; path = "Resources/Oniguruma-RE.txt"; sourceTree = "<group>"; };
+		4ABF3A470D7843B300C639F4 /* Oniguruma-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Oniguruma-License.txt"; sourceTree = "<group>"; };
+		4ABF3A490D7843E500C639F4 /* OgreKit-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "OgreKit-License.txt"; sourceTree = "<group>"; };
+		4ABF3A600D78596900C639F4 /* Oniguruma-RE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Oniguruma-RE.txt"; sourceTree = "<group>"; };
 		4ABF3CE30D788AB900C639F4 /* OgreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OgreKit.framework; path = /Users/asari/Development/build/Release/OgreKit.framework; sourceTree = "<absolute>"; };
-		4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = PSPreferences.nib; path = Resources/PSPreferences.nib; sourceTree = "<group>"; };
+		4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = PSPreferences.nib; sourceTree = "<group>"; };
 		4AD3E7DD0D655F1700A5D7B5 /* PSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPreferencesModule.h; sourceTree = "<group>"; };
 		4AD3E7DE0D655F1700A5D7B5 /* PSPreferencesModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPreferencesModule.m; sourceTree = "<group>"; wrapsLines = 0; };
 		4AD3E90A0D6565BD00A5D7B5 /* NSPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferences.h; sourceTree = "<group>"; };
 		4AD3E90B0D6565ED00A5D7B5 /* NSPreferencesModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPreferencesModule.h; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* MURLR.mailbundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MURLR.mailbundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		93E925530A4C8D660039ADAD /* ProtocolSnatcherBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcherBundle.h; sourceTree = "<group>"; };
 		93E925540A4C8D6A0039ADAD /* ProtocolSnatcherBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProtocolSnatcherBundle.m; sourceTree = "<group>"; };
 		93E925560A4C8D710039ADAD /* Install.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; name = Install.applescript; path = Installer/Install.applescript; sourceTree = "<group>"; };
-		93E925570A4C8D780039ADAD /* Installer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Installer.icns; path = Installer/Installer.icns; sourceTree = "<group>"; };
+		93E925570A4C8D780039ADAD /* Installer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Installer.icns; path = ../Installer/Installer.icns; sourceTree = "<group>"; };
 		93E925580A4C8D870039ADAD /* MailApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailApp.h; sourceTree = "<group>"; };
 		93E925590A4C8D8D0039ADAD /* MailApp-MFUserAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MailApp-MFUserAgent.h"; sourceTree = "<group>"; };
 		93E9255A0A4C8D930039ADAD /* ProtocolSnatcher_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProtocolSnatcher_Prefix.pch; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 				4AD3E7BD0D65584D00A5D7B5 /* PSPreferences.nib */,
 				4A30027C0D6B626700814E8A /* README.txt */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		08FB77AFFE84173DC02AAC07 /* Installer */ = {
@@ -948,7 +948,7 @@
 		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C167EFE841241C02AAC07 /* English */,
+				089C167EFE841241C02AAC07 /* InfoPlist.strings */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

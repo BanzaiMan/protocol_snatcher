@@ -32,3 +32,4 @@
 #define MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED @"Remote Volume Mount Failed"
 #define MURLR_GROWL_NOTIFICATION_NO_REGEX_MATCHED @"No Regular Expression Matched"
 #define MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED @"Unable To Open File"
+#define MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_STARTING @"Attempt To Mount Remote Volume"

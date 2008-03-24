@@ -107,6 +107,10 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
             NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: [url absoluteString], @"originalURL",
                 matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"rewrittenURL",unescaped_url_str, @"unescapedURL",nil];
             if ([shareToMount length] > 0 ) {
+                [GrowlApplicationBridge notifyWithTitle: @"Mouting Remote Volume"
+                                            description: [NSString stringWithFormat:@"Mouting %@", shareToMount]
+                                       notificationName: MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_STARTING
+                                               iconData:nil priority:0 isSticky:NO clickContext:nil];
                 NSURL *shareURL = [NSURL URLWithString: shareToMount];
                 if ((err = FSMountServerVolumeAsync( (CFURLRef) shareURL,
                     NULL, NULL, NULL, volumeOp, remoteVolumeMountInfo, 0,
