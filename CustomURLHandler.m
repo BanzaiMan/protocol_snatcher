@@ -102,7 +102,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
         if ([string replaceOccurrencesOfRegularExpressionString: matchRegex
             withString: replaceText options: OgreNoneOption
             range: NSMakeRange(0, [string length])] > 0) {
-                                                              
+            
             NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
             NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: [url absoluteString], @"originalURL",
                 matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"rewrittenURL",unescaped_url_str, @"unescapedURL",nil];
@@ -115,21 +115,20 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
                 } // FSMountServerVolumeAsync
             }
             else {
-                if ( ! [self _ha_handleClickOnURL:unescaped_url_str
-                    visibleText:linkText
-                    message:msg
-                    window:containerWindow
-                    dontSwitch:fp24] ) {
-                    if ([GrowlApplicationBridge isGrowlRunning]) {
-                        [MailApp postGrowlNotificationName:MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED details:detailedInfo];
-                    } else {
-                        [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
-                                         defaultButton: @"Dismiss"
-                                       alternateButton: nil
-                                           otherButton: nil
-                             informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
-                          url, matchRegex, replaceText, string ] runModal];            
-                    }
+                if ([[NSWorkspace sharedWorkspace] openFile:[unescaped_url_str stringByExpandingTildeInPath]]
+                    || [self _ha_handleClickOnURL: [NSURL URLWithString:unescaped_url_str]
+                                      visibleText:linkText message:msg window:containerWindow dontSwitch:fp24]
+                    ) return YES;
+                
+                if ([GrowlApplicationBridge isGrowlRunning]) {
+                    [MailApp postGrowlNotificationName:MURLR_GROWL_NOTIFICATION_OPEN_FILE_FAILED details:detailedInfo];
+                } else {
+                    [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to open %@", unescaped_url_str]
+                                     defaultButton: @"Dismiss"
+                                   alternateButton: nil
+                                       otherButton: nil
+                         informativeTextWithFormat: @"Original URL: %@\nRegular expression: %@\nReplacement Text: %@\nURL after replacement: %@",
+                      url, matchRegex, replaceText, string ] runModal];            
                 }
             }
             return YES;
