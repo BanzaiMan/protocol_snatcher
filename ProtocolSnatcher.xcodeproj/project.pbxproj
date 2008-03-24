@@ -27,6 +27,7 @@
 /* Begin PBXBuildFile section */
 		4A25BF580D6275D9007AB34A /* CustomURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A25BF570D6275D9007AB34A /* CustomURLHandler.m */; };
 		4A2959B90D973D5700C32389 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4A2959B80D973D5700C32389 /* License.txt */; };
+		4A295AA20D98081F00C32389 /* Growl-License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4A295AA10D98081F00C32389 /* Growl-License.txt */; };
 		4A337CF80D73C4FC0019D6D2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A337CF70D73C4FC0019D6D2 /* WebKit.framework */; };
 		4A337E510D73CC640019D6D2 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 4A337E500D73CC640019D6D2 /* help.html */; };
 		4A4A8EFA0D6731B70010005D /* MURLR.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 4A4A8EF90D6731B70010005D /* MURLR.tiff */; };
@@ -251,6 +252,7 @@
 		4A25BF560D6275D9007AB34A /* CustomURLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLHandler.h; sourceTree = "<group>"; };
 		4A25BF570D6275D9007AB34A /* CustomURLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLHandler.m; sourceTree = "<group>"; };
 		4A2959B80D973D5700C32389 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		4A295AA10D98081F00C32389 /* Growl-License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Growl-License.txt"; sourceTree = "<group>"; };
 		4A30027C0D6B626700814E8A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = ../README.txt; sourceTree = "<group>"; };
 		4A337CF70D73C4FC0019D6D2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		4A337E500D73CC640019D6D2 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4A295AA10D98081F00C32389 /* Growl-License.txt */,
 				4A2959B80D973D5700C32389 /* License.txt */,
 				4ABF3A600D78596900C639F4 /* Oniguruma-RE.txt */,
 				4ABF3A490D7843E500C639F4 /* OgreKit-License.txt */,
@@ -832,6 +835,7 @@
 				4ABF3A4A0D7843E500C639F4 /* OgreKit-License.txt in Resources */,
 				4ABF3A610D78596900C639F4 /* Oniguruma-RE.txt in Resources */,
 				4A2959B90D973D5700C32389 /* License.txt in Resources */,
+				4A295AA20D98081F00C32389 /* Growl-License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
