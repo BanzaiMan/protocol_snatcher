@@ -41,42 +41,43 @@
     If the URL doesn't match any rule, the click is passed on verbatim to
     Mail.app, just as though you did not have MURLR.
   </p>
+  <p>
+    Note that the replacement occurs globally.
+  </p>
   <h2 id="properties">Properties</h2>
   <dl>
     <dt>Match Regular Expression</dt>
     <dd>
       An <a href="./Oniguruma-RE.txt">oniguruma library regular expression</a>
-      to match against the clicked link. MURLR does not validate the regular
-      expression, so you are responsible for crafting a valid (and hopefully
-      efficient) regular expression.
-      </dd>
-      <dt>Replacement Text</dt>
-      <dd>
-        The text that replaces the match.
-        Usual regular expression tricks like back references apply.
-      </dd>
-      <dt>Remote Volume (Optional)</dt>
-      <dd>
-        If this property is empty, MURLR will pass the re-written URL to
-        Mail.app.
-      </dd>
-      <dd>
-        If this property is not empty, MURLR will mount the volume
-        and open the file specified by the re-written path (so you probably
-        want to specify the replacement text that starts with
-        <tt>/Volumes</tt>).
-        Note that the mount will be performed synchronously, so it may take
-        a while to fail.
-      </dd>
-    </dl>
+      to match against the clicked link.
+    </dd>
+    <dt>Replacement Text</dt>
+    <dd>
+      The text that replaces the match.
+      Usual regular expression tricks like back references apply.
+      While it is permissible to have an empty string as replacement text,
+      it is utterly useless to do so.
+    </dd>
+    <dt>Remote Volume (Optional)</dt>
+    <dd>
+      If this property is empty, MURLR will pass the re-written URL to
+      Mail.app.
+    </dd>
+    <dd>
+      If this property is not empty, MURLR will mount the volume
+      and open the file specified by the re-written path (so you probably
+      want to specify the replacement text that starts with
+      <tt>/Volumes</tt>).
+    </dd>
+  </dl>
 
     <h1 id="copyright">Copyright</h1>
     <p>
       &copy; 2008 Hirotsugu Asari.
-      Distributed under the MIT License.
+      Distributed under the <a href="./License.txt">BSD-like License</a>.
     </p>
 
-    <h1 id="license">Licenses and Acknowledgements</h1>
+    <h1 id="thanks">Acknowledgements</h1>
     <p>
       oniguruma is &copy;2002-2007 K.Kosako.
       (<a href="./Oniguruma-License.txt">License</a>)
@@ -85,7 +86,10 @@
       OgreKit is &copy;2003-2007 Isao Sonobe. (<a href="./OgreKit-License.txt">License</a>)
     </p>
     <p>
-      The XCode project was based onMail Plug-in Template 1.0 by Aaron Harnly.
+      The XCode project was based on Mail Plug-in Template 1.0 by Aaron Harnly.
+    </p>
+    <p>
+      Growl is &copy; Growl Project.
     </p>
   </body>
   </html>

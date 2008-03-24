@@ -287,7 +287,7 @@
     NSString *rulesFilePath = [[openPanel filenames] objectAtIndex:0];
     NSData *rawData;
     NSString *error;
-    NSPropertyListFormat format = NSPropertyListXMLFormat_v1_0;
+    NSPropertyListFormat format = NSPropertyListBinaryFormat_v1_0;
     
     [[NSUserDefaults standardUserDefaults] setObject:[rulesFilePath stringByDeletingLastPathComponent] forKey:@"URLRewriterLastDirectory"];
     
@@ -302,8 +302,8 @@
                                                        format:&format
                                              errorDescription:&error];
     if (![plist isKindOfClass:[NSArray class]] || [plist count] == 0) {
-          [[NSAlert alertWithMessageText:@"" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@""]runModal];
-          return;
+        [[NSAlert alertWithMessageText:@"" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@""]runModal];
+        return;
     }
     
     id aRule;
@@ -356,7 +356,7 @@
     NSString *error;
     
     [[NSUserDefaults standardUserDefaults] setObject:[savePanel directory] forKey:@"URLRewriterLastDirectory"];
-    exportData = [NSPropertyListSerialization dataFromPropertyList:rules format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+    exportData = [NSPropertyListSerialization dataFromPropertyList:rules format:NSPropertyListBinaryFormat_v1_0 errorDescription:&error];
     
     if (exportData) {
         [exportData writeToFile: exportFilePath atomically: YES];
