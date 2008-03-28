@@ -40,7 +40,7 @@
     [rulesTableView selectRowIndexes: [NSIndexSet indexSetWithIndex:([rules count] -1)] byExtendingSelection:NO];
     // and edit the first column
     [rulesTableView editColumn: [rulesTableView columnWithIdentifier:@"matchRegex"] row:([rules count] -1) withEvent:nil select:YES];
-
+    
 }
 
 - (IBAction) removeRewriteRule: (id) sender
@@ -98,6 +98,7 @@
     
     @try {
         OGRegularExpression *regex = [OGRegularExpression regularExpressionWithString:[fieldEditor string]];
+        _hasChanges = NO;
     }
     @catch (NSException *e) {
         NSAlert *alert = [NSAlert alertWithMessageText:@"Invalid Regular Expression"
@@ -109,9 +110,9 @@
                           modalDelegate:nil
                          didEndSelector:nil
                             contextInfo:nil];
+        _hasChanges = YES;
         return NO;
     }
-    
     return YES;
 }
 
@@ -123,8 +124,8 @@
 - (void)tableViewColumnDidResize:(NSNotification *)aNotification
 {
     //	NSLog(@"table column was resized");
-    //	NSTableColumn *editedColumn = [[aNotification userInfo] objectForKey:@"NSTableColumn"];
-    //	NSNumber *oldWidth = [[aNotification userInfo] objectForKey:@"NSOldWidth"];
+//    	NSTableColumn *editedColumn = [[aNotification userInfo] objectForKey:@"NSTableColumn"];
+//    	NSNumber *oldWidth = [[aNotification userInfo] objectForKey:@"NSOldWidth"];
     //	NSLog(@"table column %@ was resized from %4.2f to %4.2f", [editedColumn identifier], [oldWidth floatValue], [editedColumn width]);
 }
 
@@ -214,35 +215,46 @@
 //}
 
 ///* Called when window closes or "save" button is clicked. */
-//- (void) saveChanges {
+- (void) saveChanges {
 //    NSLog(@"in saveChanges...");
-//}
+//    [self hasChangesPending];
+    [super saveChanges];
+}
 
-//- (BOOL) hasChangesPending {
-//    NSLog(@"in hasChangesPending: %d", _hasChanges);
-//	return _hasChanges;
-//}
+- (BOOL) hasChangesPending {
+    if (_hasChanges) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Invalid Regular Expression"
+                                         defaultButton:@"Edit"
+                                       alternateButton:nil
+                                           otherButton:nil
+                             informativeTextWithFormat: @""];//[NSString stringWithFormat:@"String \"%@\" is not a valid regular expression.\nReason: %@",[fieldEditor string], e]];
+        [alert beginSheetModalForWindow:[_preferencesView window]
+                          modalDelegate:nil
+                         didEndSelector:nil
+                            contextInfo:nil];
+    }
+	return _hasChanges;
+}
 
 /* Called when we relinquish ownership of the preferences panel. */
-//- (void)moduleWillBeRemoved {
-//}
+- (void)moduleWillBeRemoved {
+}
 
 /* Called after willBeDisplayed, once we "own" the preferences panel. */
 //- (void)moduleWasInstalled {
 //}
 
-//- (BOOL)moduleCanBeRemoved
-//{
+- (BOOL)moduleCanBeRemoved
+{
 //    NSLog(@"in moduleCanBeRemoved");
-//    if ([self hasChangesPending]) return NO;
-//    return YES;
-//}
-//
-//- (BOOL)preferencesWindowShouldClose
-//{
+    return ![self hasChangesPending];
+}
+
+- (BOOL)preferencesWindowShouldClose
+{
 //    NSLog(@"in preferencesWindowShouldClose");
-//    return YES;
-//}
+    return ![self hasChangesPending];
+}
 
 - (void)dealloc
 {
