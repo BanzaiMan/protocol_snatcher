@@ -3,13 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>IBFramework Version</key>
-	<string>644</string>
+	<string>648</string>
 	<key>IBLastKnownRelativeProjectPath</key>
 	<string>../ProtocolSnatcher.xcodeproj</string>
 	<key>IBOldestOS</key>
 	<integer>5</integer>
 	<key>IBOpenObjects</key>
-	<array/>
+	<array>
+		<integer>54</integer>
+	</array>
 	<key>IBSystem Version</key>
 	<string>9C7010</string>
 	<key>targetFramework</key>

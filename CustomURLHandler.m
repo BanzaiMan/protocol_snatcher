@@ -22,6 +22,8 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
     if (err != noErr) {
         if ([GrowlApplicationBridge isGrowlRunning]) {
             // Remember that we are posing as MailApp class at the moment...
+            // 'self' doesn't work here, since it's not defined outside
+            // the class implementation
             [MailApp postGrowlNotificationName:MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_FAILED details:dict];
         } else {
             [[NSAlert alertWithMessageText: [NSString stringWithFormat: @"Unable to mount requested volume"]
@@ -81,10 +83,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
             // there is a problem with this object in URLRewriteRules, so we just fall through to the original method
             NSLog(@"%s contains a non-dictionary object", @"URLRewriteRules");
             return [self _ha_handleClickOnURL:url
-                visibleText:linkText
-                message:msg
-                window:containerWindow
-                dontSwitch:fp24];
+                visibleText:linkText message:msg window:containerWindow dontSwitch:fp24];
         }
 
         NSString *matchRegex   = [aRewriteRule objectForKey:@"matchRegex"];
@@ -95,7 +94,7 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
         [detailedInfo setObject:shareToMount forKey:@"shareToMount"];
         
         if (matchRegex == nil || replaceText == nil || shareToMount == nil) {
-            NSLog(@"Rewrite rule lacks required parameter");
+            NSLog(@"Rewrite rule (shown below) lacks required parameter.\n%@", aRewriteRule);
             continue;
         }
 
@@ -105,13 +104,12 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
             
             NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
             NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: [url absoluteString], @"originalURL",
-                matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"rewrittenURL",unescaped_url_str, @"unescapedURL",shareToMount, @"shareToMount",nil];
+                matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"rewrittenURL",
+                unescaped_url_str, @"unescapedURL",shareToMount, @"shareToMount",nil];
             if ([shareToMount length] > 0 ) {
-                NSError *error;
-                NSDictionary *fsAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:unescaped_url_str error:&error];
-                if (fsAttributes) {
-                    // shareToMount is already mounted
-                    NSLog(@"not attempting share mount");
+                NSDictionary *attributes = [[NSFileManager defaultManager] attributesOfItemAtPath:unescaped_url_str error:NULL];
+                if (attributes) {
+                    // the desired file is already available
                     if ( ! [[NSWorkspace sharedWorkspace] openFile: unescaped_url_str] ) {
                         // failed to open the file, so alert the user
                         if ([GrowlApplicationBridge isGrowlRunning]) {
@@ -127,13 +125,12 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
                     }
                     return YES;
                 }
-                
+                // Try mounting the volume....
                 [GrowlApplicationBridge notifyWithTitle: @"Mouting Remote Volume"
-                                            description: [NSString stringWithFormat:@"Mouting %@", shareToMount]
+                                            description: [NSString stringWithFormat:@"%@", shareToMount]
                                        notificationName: MURLR_GROWL_NOTIFICATION_VOLUME_MOUNT_STARTING
                                                iconData:nil priority:0 isSticky:NO clickContext:nil];
-                NSURL *shareURL = [NSURL URLWithString: shareToMount];
-                if ((err = FSMountServerVolumeAsync( (CFURLRef) shareURL,
+                if ((err = FSMountServerVolumeAsync( (CFURLRef) [NSURL URLWithString: shareToMount],
                     NULL, NULL, NULL, volumeOp, remoteVolumeMountInfo, 0,
                     volumeMountUPP, CFRunLoopGetCurrent(), kCFRunLoopCommonModes)) != noErr) {
                     NSLog(@"Asynchronous remote volume mount returned error: %d", err);
