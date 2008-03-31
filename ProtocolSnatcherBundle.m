@@ -9,6 +9,14 @@
 @implementation ProtocolSnatcherBundle
 + (void) initialize
 {
+#if MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_5
+    [[NSAlert alertWithMessageText:@"OS Version unsupported"
+                     defaultButton:@"OK"
+                   alternateButton:nil
+                       otherButton:nil
+         informativeTextWithFormat:@"MURL requires Mac OS X 10.5 or later"] runModal];
+    return;
+#endif
 	NSBundle *myBundle;
 	[super initialize];
 	myBundle = [NSBundle bundleForClass:self];
