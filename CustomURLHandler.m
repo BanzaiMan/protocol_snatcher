@@ -103,6 +103,11 @@ volumeMountCallback(FSVolumeOperation volumeOp, void *clientData, OSStatus err, 
             range: NSMakeRange(0, [string length])] > 0) {
             
             NSString *unescaped_url_str = [string stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+			
+			while (! [unescaped_url_str isEqualToString:[unescaped_url_str stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding]]) {
+				unescaped_url_str = [unescaped_url_str stringByReplacingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+			}
+			
             NSDictionary *remoteVolumeMountInfo = [[NSDictionary alloc] initWithObjectsAndKeys: [url absoluteString], @"originalURL",
                 matchRegex, @"matchRegex", replaceText, @"replaceText", string, @"rewrittenURL",
                 unescaped_url_str, @"unescapedURL",shareToMount, @"shareToMount",nil];
